@@ -22,6 +22,9 @@
 - Cosmicubes
 - Bundles
 
+## 💾 Installation
+Download the latest release of AUnlocker [here](https://github.com/kk-dev7/AUnlocker/releases) and follow the instructions.
+
 ## ⚠️ Disclaimer
 This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
 
