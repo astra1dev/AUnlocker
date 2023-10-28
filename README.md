@@ -22,6 +22,23 @@
 - Cosmicubes
 - Bundles
 
+## 🔥 Releases
+AUnlocker is compatible with PC / desktop Among Us. This includes Steam, Epic Games and itch.io.
+
+The table below lists the most recent AUnlocker release for each Among Us version. Patch notes can be seen under each new [release](https://github.com/kk-dev7/AUnlocker/releases).
+
+| Among Us Version | AUnlocker Version |
+|:-:|:-:|
+| `2023.20.24`       | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
+| `2023.7.12`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
+| `2023.6.13`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
+| `2023.3.28`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
+| `2023.2.28`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
+| `2022.12.14`       | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
+| `2022.10.25`       | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
+
+Older versions of Among Us may or may not work. 
+
 ## 💾 Installation
 Download the latest release of AUnlocker [here](https://github.com/kk-dev7/AUnlocker/releases) and follow the instructions.
 
