@@ -29,7 +29,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 | Among Us Version | AUnlocker Version |
 |:-:|:-:|
-| `2023.20.24`       | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
+| `2023.10.24`       | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
 | `2023.7.12`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
 | `2023.6.13`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
 | `2023.3.28`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
