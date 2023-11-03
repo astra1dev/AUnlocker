@@ -13,7 +13,7 @@
 
 
 ## 🎉 Features
-**Unlock all:**
+**Unlock:**
 - Hats
 - Visors
 - Skins
@@ -21,6 +21,11 @@
 - Nameplates
 - Cosmicubes
 - Bundles
+- Free chat
+- Friend list
+- Custom name
+- Online gameplay
+- Remove minor status
 
 ## 🔥 Releases
 AUnlocker is compatible with PC / desktop Among Us. This includes Steam, Epic Games and itch.io.
@@ -29,18 +34,23 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 | Among Us Version | AUnlocker Version |
 |:-:|:-:|
-| `2023.10.24`       | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
-| `2023.7.12`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
-| `2023.6.13`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
-| `2023.3.28`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
-| `2023.2.28`        | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
-| `2022.12.14`       | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
-| `2022.10.25`       | v1.0 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.0) |
+| `2023.10.24`       | v1.1 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.1) |
 
-Older versions of Among Us may or may not work. 
+
+Older versions of Among Us may or may not work. If you want to use AUnlocker with an older version, follow the steps [here](https://github.com/kk-dev7/AUnlocker/README.md#-build).
 
 ## 💾 Installation
 Download the latest release of AUnlocker [here](https://github.com/kk-dev7/AUnlocker/releases) and follow the instructions.
+
+## 👷‍♂️ Build
+You can build AUnlocker yourself by following these steps:
+- Run the command "dotnet build" from the folder `AUnlocker/source` where the `csproj.` and the `AUnlockerPlugin.cs` files are located
+- If you get any errors when building, feel free to open a new issue
+- The compiled mod dll will be located here: `AUnlocker/source/bin/Debug/net6.0/AUnlocker.dll`
+
+If you want to use AUnlocker with an older Among Us version, make sure to change this: \
+`<PackageReference Include="AmongUs.GameLibs.Steam" Version="2023.10.24" PrivateAssets="all" />` in `AUnlocker.csproj` to this: \
+`<PackageReference Include="AmongUs.GameLibs.Steam" Version="YOUR_DESIRED_VERSION_HERE" PrivateAssets="all" />` before building.
 
 ## ⚠️ Disclaimer
 This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
