@@ -37,7 +37,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 | `2023.10.24`       | v1.1 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.1) |
 
 
-Older versions of Among Us may or may not work. If you want to use AUnlocker with an older version, follow the steps [here](https://github.com/kk-dev7/AUnlocker/README.md#-build).
+Older versions of Among Us may or may not work. If you want to use AUnlocker with an older version, follow the steps [here](https://github.com/kk-dev7/AUnlocker#%EF%B8%8F-build).
 
 ## 💾 Installation
 Download the latest release of AUnlocker [here](https://github.com/kk-dev7/AUnlocker/releases) and follow the instructions.
