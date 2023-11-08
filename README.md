@@ -48,6 +48,11 @@ You can build AUnlocker yourself by following these steps:
 - If you get any errors when building, feel free to open a new issue
 - The compiled mod dll will be located here: `AUnlocker/source/bin/Debug/net6.0/AUnlocker.dll`
 
+## 🎓 Contributing
+- Found a bug? Want to suggest a new feature? Feel free to open a new issue [here](https://github.com/kk-dev7/AUnlocker/issues/new)!
+- [Here](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) is a great guide if you want to contribute to this project. 
+- For making your own Among Us Mod, please refer to the [Reactor Docs](https://docs.reactor.gg)
+
 If you want to use AUnlocker with an older Among Us version, make sure to change this: \
 `<PackageReference Include="AmongUs.GameLibs.Steam" Version="2023.10.24" PrivateAssets="all" />` in `AUnlocker.csproj` to this: \
 `<PackageReference Include="AmongUs.GameLibs.Steam" Version="YOUR_DESIRED_VERSION_HERE" PrivateAssets="all" />` before building.
