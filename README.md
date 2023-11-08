@@ -55,7 +55,11 @@ If you want to use AUnlocker with an older Among Us version, make sure to change
 ## 🎓 Contributing
 - Found a bug? Want to suggest a new feature? Feel free to open a new issue [here](https://github.com/kk-dev7/AUnlocker/issues/new)!
 - [Here](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) is a great guide if you want to contribute to this project. 
-- For making your own Among Us Mod, please refer to the [Reactor Docs](https://docs.reactor.gg)
+- Here are some resources for making your own Among Us Mod:
+  - [Docs](https://docs.reactor.gg) for [Reactor](https://github.com/NuclearPowered/Reactor), a modding API for Among Us. There you will find information on how to patch Among Us methods. \
+  If you need help, join their [discord](https://reactor.gg/discord), there you'll also find the latest `Assembly-CSharp.dll` files that contain all Among Us methods.
+  - [AUWiki](https://auwiki.duikbo.at/) by Duikboot, documenting the internal workings of Among Us
+  - [BepInEx](https://builds.bepinex.dev/projects/bepinex_be), a modding framework for Unity games that is required for Among Us Mods.
 
 ## ⚠️ Disclaimer
 This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
