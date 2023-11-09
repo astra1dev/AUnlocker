@@ -13,19 +13,16 @@
 
 
 ## 🎉 Features
-**Unlock:**
-- Hats
-- Visors
-- Skins
-- Pets
-- Nameplates
-- Cosmicubes
-- Bundles
-- Free chat
-- Friend list
-- Custom name
-- Online gameplay
-- Remove minor status
+
+| Unlock Cosmetics | Other stuff            |
+|------------------|------------------------|
+| Hats             | Unlock free chat       |
+| Visors           | Unlock friend list     |
+| Skins            | Unlock custom name     |
+| Pets             | Unlock online gameplay |
+| Nameplates       | Remove "minor" status  |
+| Cosmicubes       |                        |
+| Bundles          |                        |
 
 ## 🔥 Releases
 AUnlocker is compatible with PC / desktop Among Us. This includes Steam, Epic Games and itch.io.
@@ -48,9 +45,14 @@ You can build AUnlocker yourself by following these steps:
 - If you get any errors when building, feel free to open a new issue
 - The compiled mod dll will be located here: `AUnlocker/source/bin/Debug/net6.0/AUnlocker.dll`
 
-If you want to use AUnlocker with an older Among Us version, make sure to change this: \
-`<PackageReference Include="AmongUs.GameLibs.Steam" Version="2023.10.24" PrivateAssets="all" />` in `AUnlocker.csproj` to this: \
-`<PackageReference Include="AmongUs.GameLibs.Steam" Version="YOUR_DESIRED_VERSION_HERE" PrivateAssets="all" />` before building.
+If you want to use AUnlocker with an older Among Us version, make sure to change this: 
+```
+<PackageReference Include="AmongUs.GameLibs.Steam" Version="2023.10.24" PrivateAssets="all" />
+``` 
+in `AUnlocker.csproj` (before building) to this: 
+```
+<PackageReference Include="AmongUs.GameLibs.Steam" Version="YOUR_DESIRED_VERSION_HERE" PrivateAssets="all" />
+```
 
 ## 🎓 Contributing
 - Found a bug? Want to suggest a new feature? Feel free to open a new issue [here](https://github.com/kk-dev7/AUnlocker/issues/new)!
