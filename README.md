@@ -27,18 +27,18 @@
 ## 🔥 Releases
 AUnlocker is compatible with PC / desktop Among Us. This includes Steam, Epic Games and itch.io.
 
-The table below lists the most recent AUnlocker release for each Among Us version. Patch notes can be seen under each new [release](https://github.com/kk-dev7/AUnlocker/releases).
+The table below lists the most recent AUnlocker release for each Among Us version. Patch notes can be seen under each new [release](https://github.com/astra1dev/AUnlocker/releases).
 
 | Among Us Version | AUnlocker Version |
 |:-:|:-:|
-| `2023.11.28`       | Soon :)
-| `2023.10.24`       | v1.1 [(Download)](https://github.com/kk-dev7/AUnlocker/releases/tag/v1.1) |
+| `2023.11.28`       | v1.1.1 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.1) |
+| `2023.10.24`       | v1.1.0 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.0) |
 
 
-Older versions of Among Us may or may not work. If you want to use AUnlocker with an older version, follow the steps [here](https://github.com/kk-dev7/AUnlocker#%EF%B8%8F-build).
+Older versions of Among Us may or may not work. If you want to use AUnlocker with an older version, follow the steps [here](https://github.com/astra1dev/AUnlocker#%EF%B8%8F-build).
 
 ## 💾 Installation
-Download the latest release of AUnlocker [here](https://github.com/kk-dev7/AUnlocker/releases) and follow the instructions.
+Download the latest release of AUnlocker [here](https://github.com/astra1dev/AUnlocker/releases) and follow the instructions.
 
 ## 👷‍♂️ Build
 You can build AUnlocker yourself by following these steps:
@@ -56,7 +56,7 @@ in `AUnlocker.csproj` (before building) to this:
 ```
 
 ## 🎓 Contributing
-- Found a bug? Want to suggest a new feature? Feel free to open a new issue [here](https://github.com/kk-dev7/AUnlocker/issues/new)!
+- Found a bug? Want to suggest a new feature? Feel free to open a new issue [here](https://github.com/astra1dev/AUnlocker/issues/new)!
 - [Here](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) is a great guide if you want to contribute to this project. 
 - Here are some resources for making your own Among Us Mod:
   - [Docs](https://docs.reactor.gg) for [Reactor](https://github.com/NuclearPowered/Reactor), a modding API for Among Us. There you will find information on how to patch Among Us methods. \
