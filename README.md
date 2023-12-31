@@ -14,13 +14,13 @@
 
 ## 🎉 Features
 
-| Unlock Cosmetics | Other stuff            |
-|------------------|------------------------|
-| Hats             | Unlock free chat       |
-| Visors           | Unlock friend list     |
-| Skins            | Unlock custom name     |
-| Pets             | Unlock online gameplay |
-| Nameplates       | Remove "minor" status  |
+| Unlock Cosmetics | Other stuff            | Chat stuff                   | 
+|------------------|------------------------|------------------------------|
+| Hats             | Unlock free chat       | No cooldown between messages |
+| Visors           | Unlock friend list     | No character limit           |
+| Skins            | Unlock custom name     | Copy-pasting allowed         |
+| Pets             | Unlock online gameplay | URLs and Emails allowed      |
+| Nameplates       | Remove "minor" status  | Special characters allowed   |
 | Cosmicubes       |                        |
 | Bundles          |                        |
 
@@ -31,6 +31,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 | Among Us Version | AUnlocker Version |
 |:-:|:-:|
+| `2023.11.28`       | v1.1.2 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.2) |
 | `2023.11.28`       | v1.1.1 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.1) |
 | `2023.10.24`       | v1.1.0 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.0) |
 
