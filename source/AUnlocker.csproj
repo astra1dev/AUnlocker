@@ -4,7 +4,7 @@
         <LangVersion>latest</LangVersion>
         <DebugType>embedded</DebugType>
 
-        <VersionPrefix>1.1.1</VersionPrefix>
+        <VersionPrefix>1.1.2</VersionPrefix>
         <VersionSuffix>dev</VersionSuffix>
         <Description>Simple Among Us Mod that unlocks all cosmetics</Description>
         <!-- <Authors>Astral</Authors> -->
