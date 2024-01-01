@@ -9,12 +9,12 @@
 </p>
 
 <p align="center">
-<b>Simple Among Us Mod that unlocks all cosmetics</b>
+<b>🔓Unlock Among Us: cosmetics, account, chat and more!🎉</b>
 
 
 ## 🎉 Features
 
-| Unlock Cosmetics | Other stuff            | Chat stuff                   | 
+| Unlock Cosmetics | Account Patches        | Chat Patches                 | 
 |------------------|------------------------|------------------------------|
 | Hats             | Unlock free chat       | No cooldown between messages |
 | Visors           | Unlock friend list     | No character limit           |
