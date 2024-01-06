@@ -3,9 +3,15 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Made%20with-C%23-1f425f.svg?style=plastic&logo=csharp&color=000000&labelColor=A200FF">
-  <img src="https://img.shields.io/badge/license-GPL-brightgreen.svg?style=plastic&logo=GNU&label=License">
-  <img src="https://img.shields.io/badge/Reactor-blue.svg?style=plastic&logo=React&color=000000&label=Using">
+  <a href="https://learn.microsoft.com/en-us/dotnet/csharp/">
+    <img src="https://img.shields.io/badge/Made%20with-C%23-1f425f.svg?style=plastic&logo=csharp&color=000000&labelColor=A200FF">
+  </a>
+  <a href="https://www.gnu.org/licenses/gpl-3.0.html">
+    <img src="https://img.shields.io/badge/license-GPL-brightgreen.svg?style=plastic&logo=GNU&label=License">
+  </a>
+  <a href="https://github.com/astra1dev/AUnlocker/releases/latest">
+    <img src="https://img.shields.io/badge/version-1.1.2-blue.svg?style=plastic&logo=GitHub&color=ff5500&label=Version">
+  </a>
 </p>
 
 <p align="center">
