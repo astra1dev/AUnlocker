@@ -57,6 +57,7 @@ Older versions of Among Us may or may not work. If you want to use AUnlocker wit
 <details>
   <summary><h3>👶 This is my first time installing an Among Us mod</h3></summary>
 
+## Windows
 - Download `AUnlocker_v*.zip` from the latest release found [here](https://github.com/astra1dev/AUnlocker/releases).
 
 - Extract the contents of the zip into your Among Us folder.
@@ -64,6 +65,9 @@ Older versions of Among Us may or may not work. If you want to use AUnlocker wit
     If you have AU on Steam, you can find the folder like this: Right-click AU in your library, click on `manage` and then on `browse local files`
    
 - Launch Among Us. The first launch will take **MUCH** longer, so don't worry if you have to wait a few minutes.
+
+## Linux
+Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.html) to get BepInEx (framework AUnlocker is build upon) working. Then follow the steps for Windows.
   
 </details>
 
