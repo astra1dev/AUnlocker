@@ -82,7 +82,8 @@ Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.ht
 
 # 👷‍♂️ Build
 You can build AUnlocker yourself by following these steps:
-- Run the command "dotnet build" from the folder `AUnlocker/source` where the `csproj.` and the `AUnlockerPlugin.cs` files are located
+- Download the necessary files with `git clone https://github.com/astra1dev/AUnlocker` or with the repo zip file.
+- Run the command `dotnet build` from the folder `AUnlocker/source` where the `csproj.` and the `AUnlockerPlugin.cs` files are located
 - If you get any errors when building, feel free to open a new issue
 - The compiled mod dll will be located here: `AUnlocker/source/bin/Debug/net6.0/AUnlocker.dll`
 
