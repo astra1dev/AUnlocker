@@ -67,7 +67,7 @@ Older versions of Among Us may or may not work. If you want to use AUnlocker wit
 - Launch Among Us. The first launch will take **MUCH** longer, so don't worry if you have to wait a few minutes.
 
 ## Linux
-Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.html) to get BepInEx (framework AUnlocker is build upon) working. Then follow the steps for Windows.
+Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.html) and [this guide](https://docs.bepinex.dev/master/articles/advanced/steam_interop.html) to get BepInEx (framework AUnlocker is build upon) working. Then follow the steps for Windows.
   
 </details>
 
