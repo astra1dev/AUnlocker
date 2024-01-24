@@ -22,11 +22,11 @@
 
 | Unlock Cosmetics | Account Patches        | Chat Patches                 | 
 |------------------|------------------------|------------------------------|
-| Hats             | Unlock free chat       | Copy-pasting allowed         |
-| Visors           | Unlock friend list     | URLs and Emails allowed      |
-| Skins            | Unlock custom name     | Special characters allowed   |
-| Pets             | Unlock online gameplay | 
-| Nameplates       | Remove "minor" status  | 
+| Hats             | Unlock free chat       | No cooldown between messages |
+| Visors           | Unlock friend list     | No character limit           |
+| Skins            | Unlock custom name     | Copy-pasting allowed         |
+| Pets             | Unlock online gameplay | URLs and Emails allowed      |
+| Nameplates       | Remove "minor" status  | Special characters allowed   |
 | Cosmicubes       |                        |
 | Bundles          |                        |
 
