@@ -9,8 +9,8 @@
   <a href="https://www.gnu.org/licenses/gpl-3.0.html">
     <img src="https://img.shields.io/badge/license-GPL-brightgreen.svg?style=plastic&logo=GNU&label=License">
   </a>
-  <a href="https://github.com/astra1dev/AUnlocker/releases/latest">
-    <img src="https://img.shields.io/badge/version-1.1.2-blue.svg?style=plastic&logo=GitHub&color=ff5500&label=Version">
+  <a href="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml">
+    <img src="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml/badge.svg?event=push&style=plastic">
   </a>
 </p>
 
