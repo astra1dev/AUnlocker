@@ -22,11 +22,11 @@
 
 | Unlock Cosmetics | Account Patches        | Chat Patches                 | 
 |------------------|------------------------|------------------------------|
-| Hats             | Unlock free chat       | No cooldown between messages |
-| Visors           | Unlock friend list     | No character limit           |
-| Skins            | Unlock custom name     | Copy-pasting allowed         |
-| Pets             | Unlock online gameplay | URLs and Emails allowed      |
-| Nameplates       | Remove "minor" status  | Special characters allowed   |
+| Hats             | Unlock free chat       | Copy-pasting allowed         |
+| Visors           | Unlock friend list     | URLs and Emails allowed      |
+| Skins            | Unlock custom name     | Special characters allowed   |
+| Pets             | Unlock online gameplay | 
+| Nameplates       | Remove "minor" status  | 
 | Cosmicubes       |                        |
 | Bundles          |                        |
 
@@ -84,8 +84,8 @@ Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.ht
 You can build AUnlocker yourself by following these steps:
 - Download the necessary files with `git clone https://github.com/astra1dev/AUnlocker` or with the repo zip file.
 - Run the command `dotnet build` from the folder `AUnlocker/source` where the `csproj.` and the `AUnlockerPlugin.cs` files are located
-- If you get any errors when building, feel free to open a new issue
 - The compiled mod dll will be located here: `AUnlocker/source/bin/Debug/net6.0/AUnlocker.dll`
+- If you get any errors when building, feel free to open a new issue
 
 If you want to use AUnlocker with an older Among Us version, make sure to change this: 
 ```
