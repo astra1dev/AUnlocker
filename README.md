@@ -50,8 +50,6 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 | `2023.10.24`       | v1.1.0 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.0) |
 
 
-Older versions of Among Us may or may not work. If you want to use AUnlocker with an older version, follow the steps [here](https://github.com/astra1dev/AUnlocker#%EF%B8%8F-build).
-
 <hr>
 
 # 💾 Installation
@@ -63,7 +61,6 @@ Older versions of Among Us may or may not work. If you want to use AUnlocker wit
 
 - Extract the contents of the zip into your Among Us folder.
 
-    If you have AU on Steam, you can find the folder like this: Right-click AU in your library, click on `manage` and then on `browse local files`
    
 - Launch Among Us. The first launch will take **MUCH** longer, so don't worry if you have to wait a few minutes.
 
@@ -72,7 +69,9 @@ Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.ht
   
 </details>
 
+
 <details>
+
   <summary><h3>👴 I installed one or more Among Us mods in the past</h3></summary>
 
 - You should see a folder called `BepInEx` inside your Among Us folder. 
@@ -81,32 +80,46 @@ Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.ht
 
 <hr>
 
-# 👷‍♂️ Build
-You can build AUnlocker yourself by following these steps:
-- Download the necessary files with `git clone https://github.com/astra1dev/AUnlocker` or with the repo zip file.
-- Run the command `dotnet build` from the folder `AUnlocker/source` where the `csproj.` and the `AUnlockerPlugin.cs` files are located
-- The compiled mod dll will be located here: `AUnlocker/source/bin/Debug/net6.0/AUnlocker.dll`
-- If you get any errors when building, feel free to open a new issue
+# ❓ FAQ
+Click to expand each topic
 
-If you want to use AUnlocker with an older Among Us version, make sure to change this: 
-```
-<PackageReference Include="AmongUs.GameLibs.Steam" Version="2023.10.24" PrivateAssets="all" />
-``` 
-in `AUnlocker.csproj` (before building) to this: 
-```
-<PackageReference Include="AmongUs.GameLibs.Steam" Version="YOUR_DESIRED_VERSION_HERE" PrivateAssets="all" />
-```
+<details>
+  <summary><h3>❗ I'm having issues installing AUnlocker</h3></summary>
 
-<hr>
+- Make sure you are running the latest Among Us version with the latest AUnlocker release
+- Make sure you are extracting `AUnlocker_v*.zip` to the correct location.
 
-# 🎓 Contributing
-- Found a bug? Want to suggest a new feature? Feel free to open a new issue [here](https://github.com/astra1dev/AUnlocker/issues/new)!
-- [Here](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) is a great guide if you want to contribute to this project. 
-- Here are some resources for making your own Among Us Mod:
-  - [Docs](https://docs.reactor.gg) for [Reactor](https://github.com/NuclearPowered/Reactor), a modding API for Among Us. There you will find information on how to patch Among Us methods. \
-  If you need help, join their [discord](https://reactor.gg/discord), there you'll also find the latest `Assembly-CSharp.dll` files that contain all Among Us methods.
-  - [AUWiki](https://auwiki.duikbo.at/) by Duikboot, documenting the internal workings of Among Us
-  - [BepInEx](https://builds.bepinex.dev/projects/bepinex_be), a modding framework for Unity games that is required for Among Us Mods.
+  - **Steam:** Right-click AU in your library, click on `manage` and then on `browse local files`
+  - **Epic Games:** Right-click AU in your library, click on `manage` and then on the little folder icon next to `Installation`
+  - **Itch.io:** Open the `C:\Games\Itch Games\` folder 
+- Your game folder should look like this after installation:
+<img src="https://github.com/astra1dev/AUnlocker/assets/90265231/14226f03-a003-4efc-b27b-6df53fb394d6" width=410 height=240>
+  
+</details>
+
+<details>
+  <summary><h3>👷‍♂️ I want to build AUnlocker myself</h3></summary>
+
+If you don't want to download the pre-compiled DLL, you can build AUnlocker from source by following these steps:
+- Download the necessary files with `git clone https://github.com/astra1dev/AUnlocker`
+- Run the command `dotnet build` from the AUnlocker folder (where `AUnlocker.sln` is located)
+- The compiled mod dll will be located here: `AUnlocker/src/bin/Debug/net6.0/AUnlocker.dll`
+</details>
+
+<details>
+  <summary><h3>👨‍💻 I want to contribute to this project</h3></summary>
+
+General contribution:
+- For bugs and feature suggestions, feel free to open a new issue [here](https://github.com/astra1dev/AUnlocker/issues/new)!
+- Feel free to fork this repo and create a pull request ([how?](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project))
+
+Getting started modding Among Us:
+- Learn C# and Unity, as well as [BepInEx](https://builds.bepinex.dev/projects/bepinex_be) and Harmony
+- Take a look at the [docs](https://docs.reactor.gg) for [Reactor](https://github.com/NuclearPowered/Reactor), a modding API for Among Us. \
+  Join their [discord](https://reactor.gg/discord) for the latest `Assembly-CSharp.dll` files that contain the Among Us client source code.
+- Take a look at [sus.wiki](https://github.com/roobscoob/among-us-protocol) to learn more about the Among Us network protocol
+
+</details>
 
 <hr>
 
