@@ -3,14 +3,17 @@
 </p>
 
 <p align="center">
-  <a href="https://learn.microsoft.com/en-us/dotnet/csharp/">
-    <img src="https://img.shields.io/badge/Made%20with-C%23-1f425f.svg?style=plastic&logo=csharp&color=000000&labelColor=A200FF">
-  </a>
   <a href="https://www.gnu.org/licenses/gpl-3.0.html">
-    <img src="https://img.shields.io/badge/license-GPL-brightgreen.svg?style=plastic&logo=GNU&label=License">
+    <img src="https://img.shields.io/badge/license-GPL-yellow.svg?style=plastic&logo=GNU&label=License">
   </a>
   <a href="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml">
     <img src="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml/badge.svg?event=push&style=plastic">
+  </a>
+    <a href="../../releases/latest">
+    <img src="https://img.shields.io/github/release/astra1dev/AUnlocker.svg?label=version&style=plastic">
+  </a>
+  <a href="../../releases">
+    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/total.svg?style=plastic&color=red">
   </a>
 </p>
 
