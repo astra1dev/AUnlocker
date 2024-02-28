@@ -9,11 +9,8 @@
   <a href="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml">
     <img src="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml/badge.svg?event=push&style=plastic">
   </a>
-    <a href="../../releases/latest">
-    <img src="https://img.shields.io/github/release/astra1dev/AUnlocker.svg?label=version&style=plastic">
-  </a>
-  <a href="../../releases">
-    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/total.svg?style=plastic&color=red">
+  <a href="https://discord.gg/VXWgMKwXeQ">
+    <img src="https://img.shields.io/badge/Join%20us%20on-Discord-blue?style=plastic&logo=discord" alt="Discord">
   </a>
 </p>
 
@@ -130,3 +127,13 @@ Getting started modding Among Us:
 This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
 
 This mod does not unlock all cosmetics **permanently**, so it does **not** add them to your account. This is because your progress is stored on the Innersloth servers and we cannot just modify it. However, this mod uses BepInEx and the Reactor Framework to Postfix Among Us game methods and unlock all cosmetics **temporarily**. If you uninstall this mod, the cosmetics will be locked again. The cosmetics you have already unlocked legitimately, e.g. through buying a cosmicube, are **untouched** by this mod.
+
+<hr>
+
+GitHub Stats:
+<a href="../../releases/latest">
+    <img src="https://img.shields.io/github/release/astra1dev/AUnlocker.svg?label=version&style=plastic">
+</a>
+<a href="../../releases">
+    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/total.svg?style=plastic&color=red">
+</a>
