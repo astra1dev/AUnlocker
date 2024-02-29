@@ -3,6 +3,7 @@ using HarmonyLib;
 namespace AUnlocker;
 
 
+// Some of the below patches are from https://github.com/scp222thj/MalumMenu/blob/main/src/Passive/UnlockFeaturesPatch.cs
 // Unlock freechat
 [HarmonyPatch(typeof(EOSManager), nameof(EOSManager.IsFreechatAllowed))]
 public static class UnlockFreechat

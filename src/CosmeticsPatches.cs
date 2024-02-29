@@ -7,6 +7,7 @@ namespace AUnlocker;
 public static class UnlockCosmetics
 {
     // loop through all cosmetics and set them free
+    // Source: https://github.com/scp222thj/MalumMenu/blob/main/src/Passive/FreeCosmeticsPatch.cs
     public static void Postfix(HatManager __instance)
     {
         foreach (var bundle in __instance.allBundles)
