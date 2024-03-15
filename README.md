@@ -30,6 +30,8 @@
 | Cosmicubes       |                        |
 | Bundles          |                        |
 
+These features can be individually enabled / disabled by editing the file `[YOUR_AMONG_US_FOLDER]/BepInEx/config/AUnlocker.cfg`
+
 <hr>
 
 # 🔥 Releases
