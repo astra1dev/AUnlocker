@@ -4,7 +4,7 @@
         <LangVersion>latest</LangVersion>
         <DebugType>embedded</DebugType>
 
-        <VersionPrefix>1.1.4</VersionPrefix>
+        <VersionPrefix>1.1.5</VersionPrefix>
         <VersionSuffix>dev</VersionSuffix>
         <Description>Unlock Among Us: cosmetics, account, chat and more!</Description>
         <!-- <Authors>Astral</Authors> -->

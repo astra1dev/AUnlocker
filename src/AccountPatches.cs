@@ -8,10 +8,12 @@ namespace AUnlocker;
 [HarmonyPatch(typeof(EOSManager), nameof(EOSManager.IsFreechatAllowed))]
 public static class UnlockFreechat
 {
-    public static bool Prefix(EOSManager __instance, ref bool __result)
+    public static void Postfix(ref bool __result)
     {
-        __result = true;
-        return false;
+        if (AUnlocker.PatchAccount.Value) 
+        {
+            __result = true;
+        }
     }
 }
 
@@ -20,10 +22,12 @@ public static class UnlockFreechat
 [HarmonyPatch(typeof(EOSManager), nameof(EOSManager.IsFriendsListAllowed))]
 public static class UnlockFriendlist
 {
-    public static bool Prefix(EOSManager __instance, ref bool __result)
+    public static void Postfix(ref bool __result)
     {
-        __result = true;
-        return false;
+        if (AUnlocker.PatchAccount.Value)
+        {
+            __result = true;
+        }
     }
 }
 
@@ -32,10 +36,12 @@ public static class UnlockFriendlist
 [HarmonyPatch(typeof(EOSManager), nameof(EOSManager.IsMinorOrWaiting))]
 public static class RemoveMinorStatus
 {
-    public static bool Prefix(EOSManager __instance, ref bool __result)
+    public static void Postfix(ref bool __result)
     {
-        __result = false;
-        return false;
+        if (AUnlocker.PatchAccount.Value)
+        {
+            __result = false;
+        }
     }
 }
 
@@ -46,7 +52,10 @@ public static class OnlineGameplay
 {
     public static void Prefix(ref bool canOnline)
     {
-        canOnline = true;
+        if (AUnlocker.PatchAccount.Value)
+        {
+            canOnline = true;
+        }
     }
 }
 
@@ -56,7 +65,10 @@ public static class OnlineGameplay2
 {
     public static void Postfix(ref bool __result)
     {
-            __result = true;     
+        if (AUnlocker.PatchAccount.Value)
+        {
+            __result = true;
+        } 
     }
 }
 
@@ -67,7 +79,10 @@ public static class CanJoinGame
 {
     public static void Prefix()
     {
-        AmongUs.Data.DataManager.Player.Account.LoginStatus = EOSManager.AccountLoginStatus.LoggedIn;
+        if (AUnlocker.PatchAccount.Value)
+        {
+            AmongUs.Data.DataManager.Player.Account.LoginStatus = EOSManager.AccountLoginStatus.LoggedIn;
+        }
     }
 }
 
@@ -78,6 +93,9 @@ public static class CustomNameEnabled
 {
     public static void Prefix(ref bool canSetName)
     {
-        canSetName = true;
+        if (AUnlocker.PatchAccount.Value)
+        {
+            canSetName = true;
+        }
     }
 }
