@@ -20,7 +20,6 @@ public static class ChatJailbreak_ChatController_Update_Postfix
     }
 }
 
-
 // Allow URLs in messages
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.SendFreeChat))]
 public static class AllowURLS_ChatController_SendFreeChat_Prefix
@@ -38,8 +37,7 @@ public static class AllowURLS_ChatController_SendFreeChat_Prefix
     }
 }
 
-
-// Allow special characters
+// Allow special characters (beware: some get you kicked by anti-cheat)
 [HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.IsCharAllowed))]
 public static class AllowAllCharacters_TextBoxTMP_IsCharAllowed_Prefix
 {
@@ -65,7 +63,6 @@ public static class AllowAllCharacters_TextBoxTMP_IsCharAllowed_Prefix
     }
 }
 
-
 // Allow copying from the chatbox
 [HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.Update))]
 public static class AllowCopy_TextBoxTMP_Update_Postfix
@@ -76,7 +73,7 @@ public static class AllowCopy_TextBoxTMP_Update_Postfix
         { 
             if (!__instance.hasFocus){return;}
 
-            // If player presses Ctrl + C, copy the text from the chatbox to the clipboard
+            // If the user is pressing Ctrl + C, copy the text from the chatbox to the device's clipboard
             if((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKeyDown(KeyCode.C))
             {
                 ClipboardHelper.PutClipboardString(__instance.text);

@@ -4,13 +4,13 @@ namespace AUnlocker;
 
 
 [HarmonyPatch(typeof(HatManager), nameof(HatManager.Initialize))]
-public static class UnlockCosmetics
+public static class UnlockCosmetics_HatManager_Initialize_Postfix
 {
-    // loop through all cosmetics and set them free
-    // Source: https://github.com/scp222thj/MalumMenu/blob/main/src/Passive/FreeCosmeticsPatch.cs
+    // loop through all cosmetics and set them to free
+    // Source: https://github.com/scp222thj/MalumMenu/blob/6e1a7b72fc017184063da4f538f6bca476b21290/src/Cheats/CosmeticsUnlocker.cs
     public static void Postfix(HatManager __instance)
     {
-        if (AUnlocker.PatchCosmetics.Value)
+        if (AUnlocker.UnlockCosmetics.Value)
         { 
             foreach (var bundle in __instance.allBundles)
             { bundle.Free = true; }

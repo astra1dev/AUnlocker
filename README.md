@@ -20,15 +20,15 @@
 
 # 🎉 Features
 
-| Unlock Cosmetics | Account Patches        | Chat Patches                 | 
-|------------------|------------------------|------------------------------|
-| Hats             | Unlock free chat       | Copy-pasting allowed         |
-| Visors           | Unlock friend list     | URLs and Emails allowed      |
-| Skins            | Unlock custom name     | Special characters allowed   |
-| Pets             | Unlock online gameplay | 
-| Nameplates       | Remove "minor" status  | 
-| Cosmicubes       |                        |
-| Bundles          |                        |
+| Unlock Cosmetics | Account Patches | Chat Patches | Other Patches |
+|------------------|-----------------|--------------|---------------|
+| Hats             | Unlock free chat          | Copy-pasting allowed        | Unlock FPS
+| Visors           | Unlock friend list        | URLs and Emails allowed     | Unlock April Fools Mode
+| Skins            | Unlock custom name        | Special characters allowed  | NoTelemetry
+| Pets             | Unlock online gameplay    | 
+| Nameplates       | Remove "minor" status     | 
+| Cosmicubes       | Remove disconnect penalty |
+| Bundles          |                           |
 
 These features can be individually enabled / disabled by editing the file `[YOUR_AMONG_US_FOLDER]/BepInEx/config/AUnlocker.cfg`
 
@@ -46,6 +46,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 | Among Us Version | AUnlocker Version |
 |:-:|:-:|
+| `2024.8.13`        | v1.1.6 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.6) |
 | `2024.6.18`        | v1.1.5 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.5) |
 | `2024.3.05`        | v1.1.4 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.4) |
 | `2023.11.28`       | v1.1.3 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.3) |
