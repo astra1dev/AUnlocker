@@ -23,6 +23,7 @@ If applicable, add screenshots to help explain your problem.
  - Operating System: [e.g. Windows 10]
  - Game version [e.g. v2024.6.18]
  - AUnlocker version [e.g. 1.1.4]
+ - Other Among Us Mods you are using [e.g. TownOfHost v5.1.8]
 
 **Additional context**
 Add any other context about the problem here.
