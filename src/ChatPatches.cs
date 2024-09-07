@@ -16,6 +16,7 @@ public static class ChatJailbreak_ChatController_Update_Postfix
             __instance.freeChatField.textArea.AllowPaste = true;
             __instance.freeChatField.textArea.AllowSymbols = true;
             __instance.freeChatField.textArea.AllowEmail = true;
+            __instance.freeChatField.textArea.allowAllCharacters = true;
         }
     }
 }
@@ -45,13 +46,19 @@ public static class AllowAllCharacters_TextBoxTMP_IsCharAllowed_Prefix
     {
         if (AUnlocker.PatchChat.Value)
         { 
-            __result = !(i == '\b');    // Bugfix: '\b' messing with chat message
+            // Bugfix: backspace messing with chat message;
+            // newline / "enter" to prevent message sending "randomly" (see issue #25)
+            __result = !(i == '\b'|| i == '\n' || i == '\r');    
             return false;
         }
         else return true;
     }
+}
 
-    public static void Postfix(TextBoxTMP __instance)
+[HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.Start))]
+public static class AllowAllCharacters_TextBoxTMP_Start_Postfix
+{
+       public static void Postfix(TextBoxTMP __instance)
     {
         if (AUnlocker.PatchChat.Value)
         { 

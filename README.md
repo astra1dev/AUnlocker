@@ -20,7 +20,7 @@
 
 # 🎉 Features
 
-| Unlock Cosmetics | Account Patches | Chat Patches | Other Patches |
+| Unlock Cosmetics[*](https://github.com/astra1dev/AUnlocker?tab=readme-ov-file#%EF%B8%8F-disclaimer) | Account Patches | Chat Patches | Other Patches |
 |------------------|-----------------|--------------|---------------|
 | Hats             | Unlock free chat          | Copy-pasting allowed        | Unlock FPS
 | Visors           | Unlock friend list        | URLs and Emails allowed     | Unlock April Fools Mode
@@ -29,15 +29,14 @@
 | Nameplates       | Remove "minor" status     | 
 | Cosmicubes       | Remove disconnect penalty |
 | Bundles          |                           |
-
-These features can be individually enabled / disabled by editing the file `[YOUR_AMONG_US_FOLDER]/BepInEx/config/AUnlocker.cfg`
+> [!NOTE]
+> Features can be individually enabled & disabled by editing the file `[YOUR_AMONG_US_FOLDER]/BepInEx/config/AUnlocker.cfg`
 
 <hr>
 
 # 🔥 Releases
 Before you download anything, make sure your platform is supported:
-- ✅ PC / Desktop (Steam, itch.io, Epic Games)
-- ❌ Microsoft Store
+- ✅ PC / Desktop (Steam, itch.io, Epic Games, Microsoft Store)
 - ❌ Mobile (Google Play & App Store)
 - ❌ Consoles (Playstation, Nintendo Switch, XBox)
 
@@ -46,6 +45,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 | Among Us Version | AUnlocker Version |
 |:-:|:-:|
+| `2024.9.4`        | v1.1.7 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
 | `2024.8.13`        | v1.1.6 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.6) |
 | `2024.6.18`        | v1.1.5 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.5) |
 | `2024.3.05`        | v1.1.4 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.4) |
@@ -59,14 +59,14 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 # 💾 Installation
 ## Windows
-- Download the latest `AUnlocker_v*.zip` file from [here](https://github.com/astra1dev/AUnlocker/releases). Make sure you are running the latest Among Us version.
+- [Download](https://github.com/astra1dev/AUnlocker/releases/latest) either `AUnlocker_v*_Steam_Epic_Itch.zip` or `AUnlocker_v*_MicrosoftStore.zip` depending on your edition of Among Us.
 - Extract the contents of the zip into your Among Us folder. You can find your Among Us folder like this:
-  - **Steam:** Right-click Among Us in your library → click `manage` → click on `browse local files`
-  - **Epic Games:** Right-click Among Us in your library → click `manage` → click on the little folder icon next to `Installation`
+  - **Steam:** Right-click Among Us in your library → click `manage` → click  `browse local files`
+  - **Epic Games:** Right-click Among Us in your library → click `manage` → click the small folder icon next to `Installation`
   - **Itch.io:** Open the Itch.io app → Right-click Among Us in your library → click `manage` → click `open folder in Explorer`.
+  - **Microsoft Store:** Check [this support article](https://answers.microsoft.com/en-us/xbox/forum/all/where-can-i-find-the-gamefiles-of-a-game/5cb9a0c3-7948-4316-abc5-f27d1767b932) on how to find and access your Among Us folder.
 - Your game folder should look like this after installation:
 <img src="https://github.com/astra1dev/AUnlocker/assets/90265231/14226f03-a003-4efc-b27b-6df53fb394d6" width=410 height=240>
-
 - Launch Among Us. The first launch will take **MUCH** longer, so don't worry if you have to wait a few minutes.
 
 ## 🐧 Linux
@@ -74,14 +74,14 @@ Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.ht
 
 <hr>
 
-<b>If you already installed one or more Among Us mods in the past:</b>
+<b>👾 If you are already using other mods or already have BepInEx installed:</b>
 - You should see a folder called `BepInEx` inside your Among Us folder. 
-- Download `AUnlocker_v*.dll` from the [latest release](https://github.com/astra1dev/AUnlocker/releases), place it into `BepInEx/plugins` and launch Among Us.
+- Download `AUnlocker_v*.dll` from the [latest release](https://github.com/astra1dev/AUnlocker/releases/latest), place it into `BepInEx/plugins` and launch Among Us.
 
-<b>If you don't want to download the pre-compiled DLL, you can build AUnlocker from source by following these steps:</b>
+<b>👷‍♂️ If you don't want to download the pre-compiled DLL, you can build AUnlocker from source by following these steps:</b>
 - Download the necessary files with `git clone https://github.com/astra1dev/AUnlocker`
 - Run the command `dotnet build` from the AUnlocker folder (where `AUnlocker.sln` is located)
-- The compiled mod dll will be located here: `AUnlocker/src/bin/Debug/net6.0/AUnlocker.dll`
+- The compiled mod dll will be located here: `src/bin/Debug/net6.0/AUnlocker.dll`
 
 <hr>
 
@@ -100,16 +100,20 @@ Getting started modding Among Us:
 <hr>
 
 # ⚠️ Disclaimer
-This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
 
-This mod does not unlock all cosmetics **permanently**, so it does **not** add them to your account. This is because your progress is stored on the Innersloth servers and we cannot just modify it. However, this mod uses BepInEx and the Reactor Framework to Postfix Among Us game methods and unlock all cosmetics **temporarily**. If you uninstall this mod, the cosmetics will be locked again. The cosmetics you have already unlocked legitimately, e.g. through buying a cosmicube, are **untouched** by this mod.
+AUnlocker does not unlock all cosmetics **permanently**, so it does **not** add them to your account. This is because your progress is stored on the Innersloth servers. If you uninstall this mod, the cosmetics will be locked again. The cosmetics you have already unlocked, e.g. through buying a cosmicube, are **untouched** by this mod.
+
+This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
 
 <hr>
 
-GitHub Stats:
+<b>📊 Stats:</b>
 <a href="../../releases/latest">
     <img src="https://img.shields.io/github/release/astra1dev/AUnlocker.svg?label=version&style=plastic">
 </a>
 <a href="../../releases">
     <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/total.svg?style=plastic&color=red">
+</a>
+<a href="../../releases/latest">
+    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/latest/total?style=plastic">
 </a>

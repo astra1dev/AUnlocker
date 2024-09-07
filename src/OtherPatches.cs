@@ -9,10 +9,7 @@ public static class UnlockFPS_MainMenuManager_Start_Postfix
 {
     public static void Postfix(MainMenuManager __instance)
     {
-        if (AUnlocker.UnlockFPS.Value)
-        {
-            Application.targetFrameRate = 165;
-        }
+        Application.targetFrameRate = AUnlocker.UnlockFPS.Value;
     }
 }
 

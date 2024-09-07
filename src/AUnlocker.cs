@@ -24,7 +24,7 @@ public partial class AUnlocker : BasePlugin
     public static ConfigEntry<bool> UnlockCosmetics;
 
     // OtherPatches
-    public static ConfigEntry<bool> UnlockFPS;
+    public static ConfigEntry<int> UnlockFPS;
     public static ConfigEntry<bool> NoTelemetry;
     public static ConfigEntry<bool> UnlockAprilFoolsMode;
     public static ConfigEntry<bool> EnableHorseMode;
@@ -40,7 +40,7 @@ public partial class AUnlocker : BasePlugin
         // CosmeticPatches
         UnlockCosmetics = Config.Bind("CosmeticPatches", "CosmeticPatches", true, "Unlocks all cosmetics");
         // OtherPatches
-        UnlockFPS = Config.Bind("OtherPatches", "UnlockFPS", false, "Unlock FPS");
+        UnlockFPS = Config.Bind("OtherPatches", "UnlockFPS", 60, "Enter how many FPS you want");
         NoTelemetry = Config.Bind("OtherPatches", "NoTelemetry", true, "Stop the game from collecting analytics and sending them to Innersloth");
         UnlockAprilFoolsMode = Config.Bind("OtherPatches", "UnlockAprilFoolsMode", false, "Add the ability to enable Long Boi Mode (only client-side)");
         EnableHorseMode = Config.Bind("OtherPatches", "EnableHorseMode", false, "Enable Horse Mode (only client-side)");
