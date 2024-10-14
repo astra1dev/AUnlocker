@@ -38,7 +38,7 @@
 Before you download anything, make sure your platform is supported:
 - ✅ PC / Desktop (Steam, itch.io, Epic Games, Microsoft Store)
 - ❌ Mobile (Google Play & App Store)
-- ❌ Consoles (Playstation, Nintendo Switch, XBox)
+- ❌ Console (Playstation, Nintendo Switch, XBox)
 
 
 The table below lists the most recent AUnlocker release for each Among Us version. Patch notes can be seen under each new [release](https://github.com/astra1dev/AUnlocker/releases).
@@ -58,7 +58,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 <hr>
 
 # 💾 Installation
-## Windows
+## 🪟 Windows
 - [Download](https://github.com/astra1dev/AUnlocker/releases/latest) either `AUnlocker_v*_Steam_Epic_Itch.zip` or `AUnlocker_v*_MicrosoftStore.zip` depending on your edition of Among Us.
 - Extract the contents of the zip into your Among Us folder. You can find your Among Us folder like this:
   - **Steam:** Right-click Among Us in your library → click `manage` → click  `browse local files`
@@ -71,6 +71,8 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 ## 🐧 Linux
 Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.html) and [this guide](https://docs.bepinex.dev/master/articles/advanced/steam_interop.html) to get BepInEx (framework AUnlocker is built upon) working. Then follow the steps for Windows.
+
+If you are experiencing crashes or errors like `Unable to execute IL2CPP chainloader`, set your launch arguments to `PROTON_NO_ESYNC=1 PROTON_USE_WINED3D=1 %command%` 
 
 <hr>
 
