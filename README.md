@@ -40,10 +40,8 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 | Among Us Version | AUnlocker Version |
 |:-:|:-:|
-| `2024.11.26`     | 
-[v1.1.7](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
-| `2024.10.29`     | 
-[v1.1.7](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
+| `2024.11.26`     | [v1.1.7](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
+| `2024.10.29`     | [v1.1.7](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
 | `2024.9.4`       |  [v1.1.7](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
 | `2024.8.13`      | [v1.1.6](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.6) |
 | `2024.6.18`      | [v1.1.5](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.5) |
