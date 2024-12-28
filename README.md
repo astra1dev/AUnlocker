@@ -18,7 +18,7 @@
 <b>🔓Unlock Among Us: cosmetics, account, chat and more!🎉</b>
 
 # 🎉 Features
-| Unlock Cosmetics[*](https://github.com/astra1dev/AUnlocker?tab=readme-ov-file#%EF%B8%8F-disclaimer) | Account Patches | Chat Patches | Other Patches |
+| Unlock Cosmetics[*](https://github.com/astra1dev/AUnlocker?tab=readme-ov-file#%EF%B8%8F-disclaimer) | Account | Chat | Others |
 |------------------|-----------------|--------------|---------------|
 | Hats             | Unlock free chat          | Copy-pasting allowed        | Unlock FPS
 | Visors           | Unlock friend list        | URLs and Emails allowed     | Unlock April Fools Mode
@@ -40,14 +40,14 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 | Among Us Version | AUnlocker Version |
 |:-:|:-:|
-| `2024.9.4` and newer       | v1.1.7 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
-| `2024.8.13`        | v1.1.6 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.6) |
-| `2024.6.18`        | v1.1.5 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.5) |
-| `2024.3.05`        | v1.1.4 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.4) |
-| `2023.11.28`       | v1.1.3 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.3) |
-| `2023.11.28`       | v1.1.2 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.2) |
-| `2023.11.28`       | v1.1.1 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.1) |
-| `2023.10.24`       | v1.1.0 [(Download)](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.0) |
+| `2024.9.4` and newer       | [v1.1.7](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
+| `2024.8.13`        | [v1.1.6](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.6) |
+| `2024.6.18`        | [v1.1.5](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.5) |
+| `2024.3.05`        | [v1.1.4](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.4) |
+| `2023.11.28`       | [v1.1.3](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.3) |
+| `2023.11.28`       | [v1.1.2](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.2) |
+| `2023.11.28`       | [v1.1.1](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.1) |
+| `2023.10.24`       | [v1.1.0](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.0) |
 
 # 💾 Installation
 ## 🪟 Windows
@@ -77,18 +77,18 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 - Make sure you have the [Microsoft .NET SDK](https://dotnet.microsoft.com/en-us/download) and [git](https://git-scm.com/downloads) installed.
 - Download the necessary files with `git clone https://github.com/astra1dev/AUnlocker`
 - Run the command `dotnet build` from the AUnlocker folder (where `AUnlocker.sln` is located)
-- The compiled dll will be located here: `src/bin/Debug/net6.0/AUnlocker.dll`.
+- The compiled DLL will be located here: `src/bin/Debug/net6.0/AUnlocker.dll`. Put it into `BepInEx/plugins` and launch Among Us.
 
 # 👨‍💻 Contributing
 
 General contribution:
-- For bugs and feature suggestions, feel free to open a new issue [here](https://github.com/astra1dev/AUnlocker/issues/new)!
-- Feel free to fork this repo and create a pull request ([how?](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project))
+- For bug reports and feature requests, [open a new issue](https://github.com/astra1dev/AUnlocker/issues/new)
+- If you want to add a new feature or edit / improve existing code, fork this repo and create a pull request with your changes.  ([how?](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project))
 
 Getting started modding Among Us:
-- Learn C# and Unity, as well as [BepInEx](https://builds.bepinex.dev/projects/bepinex_be) and Harmony
-- Take a look at the [docs](https://docs.reactor.gg) for [Reactor](https://github.com/NuclearPowered/Reactor), a modding API for Among Us. \
-  Join their [discord](https://reactor.gg/discord) for the latest `Assembly-CSharp.dll` files that contain the Among Us client source code.
+- Learn [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) and [Unity](https://unity.com), as well as [BepInEx](https://github.com/BepInEx/BepInEx) and [HarmonyX](https://github.com/BepInEx/HarmonyX)
+- Read the [docs](https://docs.reactor.gg) for [Reactor](https://github.com/NuclearPowered/Reactor), a modding API for Among Us. \
+  Join their [discord](https://reactor.gg/discord) for the latest `Assembly-CSharp.dll` files. Open them using [dnSpy](https://github.com/dnSpy/dnSpy) to view the game's decompiled client code.
 - Take a look at [sus.wiki](https://github.com/roobscoob/among-us-protocol) to learn more about the Among Us network protocol
 
 # ⚠️ Disclaimer
