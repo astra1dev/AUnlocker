@@ -18,7 +18,7 @@
 <b>🔓Unlock Among Us: cosmetics, account, chat and more!🎉</b>
 
 # 🎉 Features
-| Unlock Cosmetics[*](https://github.com/astra1dev/AUnlocker?tab=readme-ov-file#%EF%B8%8F-disclaimer) | Account | Chat | Others |
+| Unlock Cosmetics[*](/README.md#️-disclaimer) | Account | Chat | Others |
 |------------------|-----------------|--------------|---------------|
 | Hats             | Unlock free chat          | Copy-pasting allowed        | Unlock FPS
 | Visors           | Unlock friend list        | URLs and Emails allowed     | Unlock April Fools Mode
@@ -36,22 +36,22 @@ Before you download anything, make sure your platform is supported:
 - ❌ Mobile (Google Play & App Store)
 - ❌ Console (Playstation, Nintendo Switch, Xbox)
 
-The table below lists the most recent AUnlocker release for each Among Us version. Release notes can be found below each new [release](https://github.com/astra1dev/AUnlocker/releases).
+The table below lists the most recent AUnlocker release for each Among Us version. Release notes can be found below each new [release](/releases).
 
 | Among Us Version | AUnlocker Version |
 |:-:|:-:|
-| `2024.11.26`     | [v1.1.7](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
-| `2024.10.29`     | [v1.1.7](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
-| `2024.9.4`       |  [v1.1.7](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.7) |
-| `2024.8.13`      | [v1.1.6](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.6) |
-| `2024.6.18`      | [v1.1.5](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.5) |
-| `2024.3.05`      | [v1.1.4](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.4) |
-| `2023.11.28`     | [v1.1.3](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.3) |
-| `2023.10.24`     | [v1.1.0](https://github.com/astra1dev/AUnlocker/releases/tag/v1.1.0) |
+| `2024.11.26`     | [v1.1.7](/releases/tag/v1.1.7) |
+| `2024.10.29`     | [v1.1.7](/releases/tag/v1.1.7) |
+| `2024.9.4`       |  [v1.1.7](/releases/tag/v1.1.7) |
+| `2024.8.13`      | [v1.1.6](/releases/tag/v1.1.6) |
+| `2024.6.18`      | [v1.1.5](/releases/tag/v1.1.5) |
+| `2024.3.05`      | [v1.1.4](/releases/tag/v1.1.4) |
+| `2023.11.28`     | [v1.1.3](/releases/tag/v1.1.3) |
+| `2023.10.24`     | [v1.1.0](/releases/tag/v1.1.0) |
 
 # 💾 Installation
 ## 🪟 Windows
-- [Download](https://github.com/astra1dev/AUnlocker/releases/latest) either `AUnlocker_v*_Steam_Epic_Itch.zip` or `AUnlocker_v*_MicrosoftStore.zip` depending on your edition of Among Us.
+- [Download](/releases/latest) either `AUnlocker_v*_Steam_Epic_Itch.zip` or `AUnlocker_v*_MicrosoftStore.zip` depending on your edition of Among Us.
 - Extract the contents of the zip into your Among Us folder. You can find your Among Us folder like this:
   - **Steam:** Right-click Among Us in your library → `Manage` → `Browse local files`
   - **Epic Games:** Right-click Among Us in your library → `Manage` → click the small folder icon next to `Installation`
@@ -71,7 +71,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 <b>👾 If you are already using other mods or already have BepInEx installed:</b>
 - You should see a folder called `BepInEx` inside your Among Us folder. 
-- Download `AUnlocker_v*.dll` from the [latest release](https://github.com/astra1dev/AUnlocker/releases/latest), put it into `BepInEx/plugins` and launch Among Us.
+- Download `AUnlocker_v*.dll` from the [latest release](/releases/latest), put it into `BepInEx/plugins` and launch Among Us.
 
 <b>👷‍♂️ If you don't want to download the pre-compiled DLL, you can build AUnlocker from source by following these steps:</b>
 - Make sure you have the [Microsoft .NET SDK](https://dotnet.microsoft.com/en-us/download) and [git](https://git-scm.com/downloads) installed.
@@ -82,7 +82,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 # 👨‍💻 Contributing
 
 General contribution:
-- For bug reports and feature requests, [open a new issue](https://github.com/astra1dev/AUnlocker/issues/new)
+- For bug reports and feature requests, [open a new issue](/issues/new)
 - If you want to add a new feature or edit / improve existing code, fork this repo and create a pull request with your changes.  ([how?](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project))
 
 Getting started modding Among Us:
@@ -90,6 +90,8 @@ Getting started modding Among Us:
 - Read the [docs](https://docs.reactor.gg) for [Reactor](https://github.com/NuclearPowered/Reactor), a modding API for Among Us. \
   Join their [discord](https://reactor.gg/discord) for the latest `Assembly-CSharp.dll` files. Open them using [dnSpy](https://github.com/dnSpy/dnSpy) to view the game's decompiled client code.
 - Take a look at [sus.wiki](https://github.com/roobscoob/among-us-protocol) to learn more about the Among Us network protocol
+
+For more detailed contribution guidelines, read [CONTRIBUTING.md](/.github/CONTRIBUTING.md)
 
 # ⚠️ Disclaimer
 
