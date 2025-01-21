@@ -9,9 +9,6 @@
   <a href="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml">
     <img src="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml/badge.svg?event=push&style=plastic">
   </a>
-  <a href="https://discord.gg/VXWgMKwXeQ">
-    <img src="https://img.shields.io/badge/Join%20us%20on-Discord-blue?style=plastic&logo=discord" alt="Discord">
-  </a>
 </p>
 
 <p align="center">
@@ -42,7 +39,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 |:-:|:-:|
 | `2024.11.26`     | [v1.1.7](../../releases/tag/v1.1.7) |
 | `2024.10.29`     | [v1.1.7](../../releases/tag/v1.1.7) |
-| `2024.9.4`       |  [v1.1.7](../../releases/tag/v1.1.7) |
+| `2024.9.4`       | [v1.1.7](../../releases/tag/v1.1.7) |
 | `2024.8.13`      | [v1.1.6](../../releases/tag/v1.1.6) |
 | `2024.6.18`      | [v1.1.5](../../releases/tag/v1.1.5) |
 | `2024.3.05`      | [v1.1.4](../../releases/tag/v1.1.4) |
@@ -80,7 +77,6 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 - The compiled DLL will be located here: `src/bin/Debug/net6.0/AUnlocker.dll`. Put it into `BepInEx/plugins` and launch Among Us.
 
 # 👨‍💻 Contributing
-
 General contribution:
 - For bug reports and feature requests, [open a new issue](/issues/new)
 - If you want to add a new feature or edit / improve existing code, fork this repo and create a pull request with your changes.  ([how?](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project))
@@ -94,7 +90,6 @@ Getting started modding Among Us:
 For more detailed contribution guidelines, read [CONTRIBUTING.md](/.github/CONTRIBUTING.md)
 
 # ⚠️ Disclaimer
-
 AUnlocker does not unlock all cosmetics **permanently**, so it does **not** add them to your account. This is because your progress is stored on the Innersloth servers. If you uninstall this mod, the cosmetics will be locked again. The cosmetics you have already unlocked, e.g. through buying a cosmicube, are **untouched** by this mod.
 
 This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
