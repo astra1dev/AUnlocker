@@ -24,4 +24,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: AUnlocker.dll
-          path: AUnlocker/src/bin/Debug/net6.0/AUnlocker.dll
+          path: /home/runner/work/AUnlocker/AUnlocker/src/bin/Release/net6.0/AUnlocker.dll
