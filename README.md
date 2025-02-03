@@ -9,6 +9,12 @@
   <a href="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml">
     <img src="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml/badge.svg?event=push&style=plastic">
   </a>
+  <a href="../../releases">
+    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/total.svg?style=plastic&color=red">
+  </a>
+  <a href="../../releases/latest">
+    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/latest/total?style=plastic">
+  </a>
 </p>
 
 <p align="center">
@@ -95,14 +101,3 @@ AUnlocker does not unlock all cosmetics **permanently**, so it does **not** add 
 This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
 
 <hr>
-
-<b>📊 Stats:</b>
-<a href="../../releases/latest">
-    <img src="https://img.shields.io/github/release/astra1dev/AUnlocker.svg?label=version&style=plastic">
-</a>
-<a href="../../releases">
-    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/total.svg?style=plastic&color=red">
-</a>
-<a href="../../releases/latest">
-    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/latest/total?style=plastic">
-</a>

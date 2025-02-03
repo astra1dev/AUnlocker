@@ -3,6 +3,7 @@ using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 using BepInEx.Configuration;
 using UnityEngine.Analytics;
+using UnityEngine.CrashReportHandler;
 
 namespace AUnlocker;
 
