@@ -3,20 +3,68 @@ using UnityEngine;
 
 namespace AUnlocker;
 
-
 // ChatJailbreak
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.Update))]
 public static class ChatJailbreak_ChatController_Update_Postfix
 {
     public static void Postfix(ChatController __instance)
     {
-        if (AUnlocker.PatchChat.Value)
+        // [UNSAFE] No Chat Cooldown
+        if (AUnlocker.NoChatCooldown.Value) 
+        {
+            // if (!__instance.freeChatField.textArea.hasFocus) return;
+            __instance.timeSinceLastMessage = 3f;
+        }
+
+        // [UNSAFE] No Character Limit
+        if (AUnlocker.NoCharacterLimit.Value) 
+        {
+            __instance.freeChatField.textArea.characterLimit = int.MaxValue;
+        }
+
+        else if (AUnlocker.PatchChat.Value)
         { 
-            if (!__instance.freeChatField.textArea.hasFocus) return;
             __instance.freeChatField.textArea.AllowPaste = true;
             __instance.freeChatField.textArea.AllowSymbols = true;
             __instance.freeChatField.textArea.AllowEmail = true;
             __instance.freeChatField.textArea.allowAllCharacters = true;
+            __instance.freeChatField.textArea.characterLimit = 120;  // above 120 characters anticheat will kick you
+        }
+    }
+}
+
+// Edit Color indicators for chatbox (only visual)
+[HarmonyPatch(typeof(FreeChatInputField), nameof(FreeChatInputField.UpdateCharCount))]
+public static class EditColorIndicators_FreeChatInputField_UpdateCharCount_Postfix
+{
+    public static void Postfix(FreeChatInputField __instance)
+    {
+        if (AUnlocker.NoCharacterLimit.Value) 
+        {
+            int length = __instance.textArea.text.Length;
+            // Show new character limit below text field
+            __instance.charCountText.SetText($"{length}/{__instance.textArea.characterLimit}");
+
+            if (length < 1610612735) // Black if not close to limit (under 75%)
+                __instance.charCountText.color = Color.black;
+            else if (length < 2147483647) // Yellow if close to limit (under 100%)
+                __instance.charCountText.color = new Color(1f, 1f, 0f, 1f);
+            else // Red if limit reached (equal or over 100%)
+                __instance.charCountText.color = Color.red;
+        }
+
+        else if (AUnlocker.PatchChat.Value) 
+        {
+            int length = __instance.textArea.text.Length;
+            // Show new character limit below text field
+            __instance.charCountText.SetText($"{length}/{__instance.textArea.characterLimit}");
+
+            if (length < 90) // Black if not close to limit (under 75%)
+                __instance.charCountText.color = Color.black;
+            else if (length < 120) // Yellow if close to limit (under 100%)
+                __instance.charCountText.color = new Color(1f, 1f, 0f, 1f);
+            else // Red if limit reached (equal or over 100%)
+                __instance.charCountText.color = Color.red;
         }
     }
 }
