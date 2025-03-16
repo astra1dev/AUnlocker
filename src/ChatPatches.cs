@@ -115,12 +115,12 @@ public static class AllowAllCharacters_TextBoxTMP_IsCharAllowed_Prefix
                 __result = true;
                 return false;
             }
-            if (__instance.SymbolChars.Contains(i))
+            if (TextBoxTMP.SymbolChars.Contains(i))
             {
                 __result = true;
                 return false;
             }
-            if (__instance.EmailChars.Contains(i))
+            if (TextBoxTMP.EmailChars.Contains(i))
             {
                 __result = true;
                 return false;
