@@ -21,17 +21,32 @@
 <b>🔓Unlock Among Us: cosmetics, account, chat and more!🎉</b>
 
 # 🎉 Features
-| Unlock Cosmetics[*](/README.md#️-disclaimer) | Account | Chat | Others |
-|------------------|-----------------|--------------|---------------|
-| Hats             | Unlock free chat          | Copy-pasting allowed        | Uncap FPS
-| Visors           | Unlock friend list        | URLs and Emails allowed     | Unlock April Fools Mode
-| Skins            | Unlock custom name        | Special characters allowed  | No Telemetry
-| Pets             | Ability to play online    | 
-| Nameplates       | Remove "minor" status     | 
-| Cosmicubes       | No disconnect penalty     |
-| Bundles          |                           |
+- 🎭 Unlock Cosmetics[*](/README.md#️-disclaimer) (Hats, Visors, Skins, Pets, Nameplates, Cosmicubes, Bundles)
+- 🌐 Account Features
+  - Removes the following restrictions that apply to guest accounts:
+    - Not being able to set a custom name
+    - Quick Chat Only
+    - Not being able to use the friend list
+  - Removes the following restrictions that apply to minor accounts:
+    - Not being able to play online
+  - Removes the time penalty after disconnecting from too many lobbies
+- 💬 Chat Features
+  - Use `Ctrl + C` and `Ctrl + V` to copy-paste chat messages
+  - Be able to send URLs and Email addresses
+  - Increase the character limit from 100 to 120
+- ✨ Other Features
+  - Remove the 60 FPS cap 
+  - Prevent the game from collecting analytics and sending them to Innersloth
+  - Be able to activate the April Fools Mode (Long Boi and Horse Mode)
+- 💣 Unsafe
+  - Be able to send any character in chat
+  - No character limit in chat
+  - No 3s cooldown between chat messages
+
 > [!NOTE]
 > Features can be individually enabled & disabled by editing the file `[YOUR_AMONG_US_FOLDER]/BepInEx/config/AUnlocker.cfg`
+>
+> `💣 Unsafe` Features can get you kicked by the anti-cheat. Use them with caution.
 
 # 🔥 Releases
 Before you download anything, make sure your platform is supported:

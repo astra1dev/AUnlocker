@@ -42,16 +42,16 @@ public partial class AUnlocker : BasePlugin
         UnlockMinor = Config.Bind("Account", "RemoveMinorStatus", false, "Remove minor status and restrictions (no online play)");
         RemovePenalty = Config.Bind("Account", "NoDisconnectPenalty", true, "Remove the penalty after disconnecting from too many lobbies");
         // Chat
-        PatchChat = Config.Bind("Chat", "Enabled", true, "Allow Ctrl+C, Ctrl+V and Ctrl+X (copy-pasting)\nSet character limit to 120");
+        PatchChat = Config.Bind("Chat", "Enabled", true, "Allow Ctrl+C and Ctrl+V (copy-pasting)\nBe able to send URLs and Email addresses\nIncrease the character limit from 100 to 120");
         // Cosmetics
-        UnlockCosmetics = Config.Bind("Cosmetics", "UnlockAll", true, "Unlocks all cosmetics");
+        UnlockCosmetics = Config.Bind("Cosmetics", "UnlockAll", true, "Unlock all cosmetics");
         // Other
-        UnlockFPS = Config.Bind("Other", "FPS", 60, "Enter how many FPS you want");
-        NoTelemetry = Config.Bind("Other", "NoTelemetry", true, "Stop the game from collecting analytics and sending them to Innersloth");
+        UnlockFPS = Config.Bind("Other", "FPS", 60, "Set the game's FPS cap to this value");
+        NoTelemetry = Config.Bind("Other", "NoTelemetry", true, "Prevent the game from collecting analytics and sending them to Innersloth");
         UnlockAprilFoolsMode = Config.Bind("Other", "UnlockAprilFoolsMode", false, "Add the ability to enable Long Boi Mode (only client-side)");
         EnableHorseMode = Config.Bind("Other", "EnableHorseMode", false, "Enable Horse Mode (only client-side)");
         // Unsafe
-        AllowAllCharacters = Config.Bind("Unsafe", "AllowAllCharacters", false, "THESE ARE UNSAFE AND CAN GET YOU KICKED BY ANTICHEAT, USE WITH CAUTION\n\nAllow all characters in chat");
+        AllowAllCharacters = Config.Bind("Unsafe", "AllowAllCharacters", false, "THESE ARE UNSAFE AND CAN GET YOU KICKED BY ANTICHEAT, USE WITH CAUTION\n\nBe able to send any character in chat");
         NoCharacterLimit = Config.Bind("Unsafe", "NoCharacterLimit", false, "No character limit in chat");
         NoChatCooldown = Config.Bind("Unsafe", "NoChatCooldown", false, "No 3s cooldown between chat messages");
 
