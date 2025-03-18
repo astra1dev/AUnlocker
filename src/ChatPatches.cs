@@ -86,13 +86,13 @@ public static class AllowURLS_ChatController_SendFreeChat_Prefix
     }
 }
 
-// Allow special characters (beware: some get you kicked by anti-cheat)
+// [UNSAFE] Allow any characters
 [HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.IsCharAllowed))]
 public static class AllowAllCharacters_TextBoxTMP_IsCharAllowed_Prefix
 {
     public static bool Prefix(TextBoxTMP __instance, char i, ref bool __result)
     {
-        if (AUnlocker.PatchChat.Value)
+        if (AUnlocker.AllowAllCharacters.Value)
         {
             // Bugfix: chinese characters and others (see issue #31)
             if (i >= 'À' && i <= 'ÿ')
