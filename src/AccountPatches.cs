@@ -1,3 +1,4 @@
+using AmongUs.Data.Player;
 using HarmonyLib;
 
 namespace AUnlocker;
@@ -11,7 +12,7 @@ public static class UnlockFreechat_EOSManager_IsFreechatAllowed_Postfix
 {
     public static void Postfix(ref bool __result)
     {
-        if (AUnlocker.UnlockGuest.Value) 
+        if (AUnlocker.UnlockGuest.Value)
         {
             __result = true;
         }
@@ -75,7 +76,7 @@ public static class OnlineGameplay_AccountManager_CanPlayOnline_Postfix
         if (AUnlocker.UnlockMinor.Value)
         {
             __result = true;
-        } 
+        }
     }
 }
 
@@ -93,14 +94,13 @@ public static class SetLoggedIn_InnerNetClient_JoinGame_Prefix
 }
 
 // RemovePenalty Patch
-[HarmonyPatch(typeof(StatsManager), nameof(StatsManager.BanMinutesLeft), MethodType.Getter)]
-public static class RemoveDisconnectPenalty_StatsManager_BanMinutesLeft_Postfix
+[HarmonyPatch(typeof(PlayerBanData), nameof(PlayerBanData.BanMinutesLeft), MethodType.Getter)]
+public static class RemoveDisconnectPenalty_PlayerBanData_BanMinutesLeft_Postfix
 {
-    public static void Postfix(StatsManager __instance, ref int __result)
+    public static void Postfix(PlayerBanData __instance, ref int __result)
     {
-        if (AUnlocker.RemovePenalty.Value){
-            __instance.BanPoints = 0f; // Remove all BanPoints
-            __result = 0;              // Remove all BanMinutes
-        }
+        if (!AUnlocker.RemovePenalty.Value) return;
+        __instance.BanPoints = 0f; // Remove all BanPoints
+        __result = 0;              // Remove all BanMinutes
     }
 }

@@ -57,19 +57,18 @@ public partial class AUnlocker : BasePlugin
 
         Harmony.PatchAll();
 
-        if (NoTelemetry.Value) {
-            Analytics.deviceStatsEnabled = false;
-            Analytics.enabled = false;
-            Analytics.initializeOnStartup = false;
-            Analytics.limitUserTracking = true;
-            CrashReportHandler.enableCaptureExceptions = false;
-            PerformanceReporting.enabled = false;
+        if (!NoTelemetry.Value) return;
+        Analytics.deviceStatsEnabled = false;
+        Analytics.enabled = false;
+        Analytics.initializeOnStartup = false;
+        Analytics.limitUserTracking = true;
+        CrashReportHandler.enableCaptureExceptions = false;
+        PerformanceReporting.enabled = false;
 
-            // If Among Us updates their IAP / Analytics system, we will need to use this:
-                // using Unity.Services.Analytics;
-                // using Unity.Services.Core;
-                // AnalyticsService.Instance.OptOut();
-            // More Info: https://discussions.unity.com/t/iap-privacy-issue/881743
-        }
+        // If Among Us updates their IAP / Analytics system, we will need to use this:
+            // using Unity.Services.Analytics;
+            // using Unity.Services.Core;
+            // AnalyticsService.Instance.OptOut();
+        // More Info: https://discussions.unity.com/t/iap-privacy-issue/881743
     }
 }
