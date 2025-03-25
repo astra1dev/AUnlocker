@@ -58,14 +58,15 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 | Among Us Version | AUnlocker Version |
 |:-:|:-:|
-| `2024.11.26`     | [v1.1.7](../../releases/tag/v1.1.7) |
-| `2024.10.29`     | [v1.1.7](../../releases/tag/v1.1.7) |
-| `2024.9.4`       | [v1.1.7](../../releases/tag/v1.1.7) |
-| `2024.8.13`      | [v1.1.6](../../releases/tag/v1.1.6) |
-| `2024.6.18`      | [v1.1.5](../../releases/tag/v1.1.5) |
-| `2024.3.05`      | [v1.1.4](../../releases/tag/v1.1.4) |
-| `2023.11.28`     | [v1.1.3](../../releases/tag/v1.1.3) |
-| `2023.10.24`     | [v1.1.0](../../releases/tag/v1.1.0) |
+| `16.0.0` (`2025.3.25`) | [v1.1.8](../../releases/tag/v1.1.8) |
+| `2024.11.26`           | [v1.1.7](../../releases/tag/v1.1.7) |
+| `2024.10.29`           | [v1.1.7](../../releases/tag/v1.1.7) |
+| `2024.9.4`             | [v1.1.7](../../releases/tag/v1.1.7) |
+| `2024.8.13`            | [v1.1.6](../../releases/tag/v1.1.6) |
+| `2024.6.18`            | [v1.1.5](../../releases/tag/v1.1.5) |
+| `2024.3.05`            | [v1.1.4](../../releases/tag/v1.1.4) |
+| `2023.11.28`           | [v1.1.3](../../releases/tag/v1.1.3) |
+| `2023.10.24`           | [v1.1.0](../../releases/tag/v1.1.0) |
 
 # 💾 Installation
 ## 🪟 Windows
