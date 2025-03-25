@@ -9,23 +9,44 @@
   <a href="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml">
     <img src="https://github.com/astra1dev/AUnlocker/actions/workflows/main.yml/badge.svg?event=push&style=plastic">
   </a>
+  <a href="../../releases">
+    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/total.svg?style=plastic&color=red">
+  </a>
+  <a href="../../releases/latest">
+    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/latest/total?style=plastic">
+  </a>
 </p>
 
 <p align="center">
 <b>🔓Unlock Among Us: cosmetics, account, chat and more!🎉</b>
 
 # 🎉 Features
-| Unlock Cosmetics[*](/README.md#️-disclaimer) | Account | Chat | Others |
-|------------------|-----------------|--------------|---------------|
-| Hats             | Unlock free chat          | Copy-pasting allowed        | Unlock FPS
-| Visors           | Unlock friend list        | URLs and Emails allowed     | Unlock April Fools Mode
-| Skins            | Unlock custom name        | Special characters allowed  | No Telemetry
-| Pets             | Ability to play online    | 
-| Nameplates       | Remove "minor" status     | 
-| Cosmicubes       | No disconnect penalty     |
-| Bundles          |                           |
+- 🎭 Unlock Cosmetics[*](/README.md#️-disclaimer) (Hats, Visors, Skins, Pets, Nameplates, Cosmicubes, Bundles)
+- 🌐 Account Features
+  - Removes the following restrictions that apply to guest accounts:
+    - Not being able to set a custom name
+    - Quick Chat Only
+    - Not being able to use the friend list
+  - Removes the following restrictions that apply to minor accounts:
+    - Not being able to play online
+  - Removes the time penalty after disconnecting from too many lobbies
+- 💬 Chat Features
+  - Use `Ctrl + C` and `Ctrl + V` to copy-paste chat messages
+  - Be able to send URLs and Email addresses
+  - Increase the character limit from 100 to 120
+- ✨ Other Features
+  - Remove the 60 FPS cap 
+  - Prevent the game from collecting analytics and sending them to Innersloth
+  - Be able to activate the April Fools Mode (Long Boi and Horse Mode)
+- 💣 Unsafe
+  - Be able to send any character in chat
+  - No character limit in chat
+  - No 3s cooldown between chat messages
+
 > [!NOTE]
 > Features can be individually enabled & disabled by editing the file `[YOUR_AMONG_US_FOLDER]/BepInEx/config/AUnlocker.cfg`
+>
+> `💣 Unsafe` Features can get you kicked by the anti-cheat. Use them with caution.
 
 # 🔥 Releases
 Before you download anything, make sure your platform is supported:
@@ -93,16 +114,3 @@ For more detailed contribution guidelines, read [CONTRIBUTING.md](/.github/CONTR
 AUnlocker does not unlock all cosmetics **permanently**, so it does **not** add them to your account. This is because your progress is stored on the Innersloth servers. If you uninstall this mod, the cosmetics will be locked again. The cosmetics you have already unlocked, e.g. through buying a cosmicube, are **untouched** by this mod.
 
 This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
-
-<hr>
-
-<b>📊 Stats:</b>
-<a href="../../releases/latest">
-    <img src="https://img.shields.io/github/release/astra1dev/AUnlocker.svg?label=version&style=plastic">
-</a>
-<a href="../../releases">
-    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/total.svg?style=plastic&color=red">
-</a>
-<a href="../../releases/latest">
-    <img src="https://img.shields.io/github/downloads/astra1dev/AUnlocker/latest/total?style=plastic">
-</a>
