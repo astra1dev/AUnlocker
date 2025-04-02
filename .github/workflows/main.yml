@@ -43,8 +43,8 @@ jobs:
 
       - name: Re-pack BepInEx with AUnlocker
         run: |
-          cd BepInEx_x86 && zip -r ../AUnlocker_Steam_Epic_Itch.zip . && cd ..
-          cd BepInEx_x64 && zip -r ../AUnlocker_MicrosoftStore.zip . && cd ..
+          cd BepInEx_x86 && zip -r ../AUnlocker_Steam_Epic_Itch.zip ./* && cd ..
+          cd BepInEx_x64 && zip -r ../AUnlocker_MicrosoftStore.zip ./* && cd ..
 
       - name: Upload AUnlocker_Steam_Epic_Itch.zip artifact
         uses: actions/upload-artifact@v4
