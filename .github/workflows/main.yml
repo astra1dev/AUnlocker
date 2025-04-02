@@ -21,7 +21,37 @@ jobs:
         with:
           verbosity: Diagnostic
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload AUnlocker.dll artifact
+        uses: actions/upload-artifact@v4
         with:
           name: AUnlocker.dll
           path: /home/runner/work/AUnlocker/AUnlocker/src/bin/Release/net6.0/AUnlocker.dll
+
+      - name: Download and extract BepInEx
+        run: |
+          wget -O BepInEx_x64.zip https://builds.bepinex.dev/projects/bepinex_be/697/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.697%2B5362580.zip
+          unzip BepInEx_x64.zip -d BepInEx_x64
+          wget -O BepInEx_x86.zip https://builds.bepinex.dev/projects/bepinex_be/697/BepInEx-Unity.IL2CPP-win-x86-6.0.0-be.697%2B5362580.zip
+          unzip BepInEx_x86.zip -d BepInEx_x86
+
+      - name: Copy AUnlocker.dll to BepInEx/plugins
+        run: |
+          cp /home/runner/work/AUnlocker/AUnlocker/src/bin/Release/net6.0/AUnlocker.dll BepInEx_x86/BepInEx/plugins/
+          cp /home/runner/work/AUnlocker/AUnlocker/src/bin/Release/net6.0/AUnlocker.dll BepInEx_x64/BepInEx/plugins/
+
+      - name: Re-pack BepInEx with AUnlocker
+        run: |
+          zip -r AUnlocker_x86.zip BepInEx_x86
+          zip -r AUnlocker_x64.zip BepInEx_x64
+
+      - name: Upload AUnlocker_Steam_Epic_Itch.zip artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AUnlocker_Steam_Epic_Itch.zip
+          path: AUnlocker_x86.zip
+
+      - name: Upload AUnlocker_MicrosoftStore.zip artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AUnlocker_MicrosoftStore.zip
+          path: AUnlocker_x64.zip
