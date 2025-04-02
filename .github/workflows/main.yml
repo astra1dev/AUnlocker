@@ -36,6 +36,8 @@ jobs:
 
       - name: Copy AUnlocker.dll to BepInEx/plugins
         run: |
+          chmod -R 755 BepInEx_x86
+          chmod -R 755 BepInEx_x64
           cp /home/runner/work/AUnlocker/AUnlocker/src/bin/Release/net6.0/AUnlocker.dll BepInEx_x86/BepInEx/plugins/
           cp /home/runner/work/AUnlocker/AUnlocker/src/bin/Release/net6.0/AUnlocker.dll BepInEx_x64/BepInEx/plugins/
 
