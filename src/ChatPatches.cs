@@ -3,10 +3,13 @@ using UnityEngine;
 
 namespace AUnlocker;
 
-// ChatJailbreak
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.Update))]
 public static class ChatJailbreak_ChatController_Update_Postfix
 {
+    /// <summary>
+    /// Remove the chat cooldown and the character limit.
+    /// </summary>
+    /// <param name="__instance">The <c>ChatController</c> instance.</param>
     public static void Postfix(ChatController __instance)
     {
         // [UNSAFE] No Chat Cooldown
@@ -28,162 +31,182 @@ public static class ChatJailbreak_ChatController_Update_Postfix
             __instance.freeChatField.textArea.AllowSymbols = true;
             __instance.freeChatField.textArea.AllowEmail = true;
             __instance.freeChatField.textArea.allowAllCharacters = true;
-            __instance.freeChatField.textArea.characterLimit = 120;  // above 120 characters anticheat will kick you
+            __instance.freeChatField.textArea.characterLimit = 120;  // above 120 characters anti-cheat will kick you
         }
     }
 }
 
-// Edit Color indicators for chatbox (only visual)
 [HarmonyPatch(typeof(FreeChatInputField), nameof(FreeChatInputField.UpdateCharCount))]
 public static class EditColorIndicators_FreeChatInputField_UpdateCharCount_Postfix
 {
+    /// <summary>
+    /// Update the character count color indicator based on the current text length.
+    /// </summary>
+    /// <param name="__instance">The <c>FreeChatInputField</c> instance.</param>
     public static void Postfix(FreeChatInputField __instance)
     {
         if (AUnlocker.NoCharacterLimit.Value)
         {
-            int length = __instance.textArea.text.Length;
+            var length = __instance.textArea.text.Length;
             // Show new character limit below text field
             __instance.charCountText.SetText($"{length}/{__instance.textArea.characterLimit}");
 
-            if (length < 1610612735) // Black if not close to limit (under 75%)
-                __instance.charCountText.color = Color.black;
-            else if (length < 2147483647) // Yellow if close to limit (under 100%)
-                __instance.charCountText.color = new Color(1f, 1f, 0f, 1f);
-            else // Red if limit reached (equal or over 100%)
-                __instance.charCountText.color = Color.red;
+            __instance.charCountText.color = length switch
+            {
+                // Black if not close to limit (under 75%)
+                < 1610612735 => Color.black,
+                // Yellow if close to limit (under 100%)
+                < 2147483647 => new Color(1f, 1f, 0f, 1f),
+                _ => Color.red
+            };
         }
 
         else if (AUnlocker.PatchChat.Value)
         {
-            int length = __instance.textArea.text.Length;
+            var length = __instance.textArea.text.Length;
             // Show new character limit below text field
             __instance.charCountText.SetText($"{length}/{__instance.textArea.characterLimit}");
 
-            if (length < 90) // Black if not close to limit (under 75%)
-                __instance.charCountText.color = Color.black;
-            else if (length < 120) // Yellow if close to limit (under 100%)
-                __instance.charCountText.color = new Color(1f, 1f, 0f, 1f);
-            else // Red if limit reached (equal or over 100%)
-                __instance.charCountText.color = Color.red;
+            __instance.charCountText.color = length switch
+            {
+                // Black if not close to limit (under 75%)
+                < 90 => Color.black,
+                // Yellow if close to limit (under 100%)
+                < 120 => new Color(1f, 1f, 0f, 1f),
+                _ => Color.red
+            };
         }
     }
 }
 
-// Allow URLs in messages
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.SendFreeChat))]
 public static class AllowURLS_ChatController_SendFreeChat_Prefix
 {
+    /// <summary>
+    /// Remove the URL filtering when sending a chat message.
+    /// </summary>
+    /// <param name="__instance">The <c>ChatController</c> instance.</param>
+    /// <returns><c>false</c> to skip the original method, <c>true</c> to allow the original method to run.</returns>
     public static bool Prefix(ChatController __instance)
     {
-        if (AUnlocker.PatchChat.Value)
-        {
-            string text = __instance.freeChatField.Text;
-            ChatController.Logger.Debug("SendFreeChat () :: Sending message: '" + text + "'", null);
-            PlayerControl.LocalPlayer.RpcSendChat(text);
-            return false;
-        }
-        return true;
+        if (!AUnlocker.PatchChat.Value) return true;
+
+        var text = __instance.freeChatField.Text;
+        ChatController.Logger.Debug($"SendFreeChat() :: Sending message: '{text}'");
+        PlayerControl.LocalPlayer.RpcSendChat(text);
+        return false;
     }
 }
 
-// [UNSAFE] Allow any characters
 [HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.IsCharAllowed))]
 public static class AllowAllCharacters_TextBoxTMP_IsCharAllowed_Prefix
 {
-    public static bool Prefix(TextBoxTMP __instance, char i, ref bool __result)
+    /// <summary>
+    /// Allow any character to be typed into the chatbox.
+    /// </summary>
+    /// <param name="__instance">The <c>TextBoxTMP</c> instance.</param>
+    /// <param name="__result">Original return value of <c>IsCharAllowed</c>.</param>
+    /// <param name="i"> The character to check.</param>
+    /// <returns><c>false</c> to skip the original method, <c>true</c> to allow the original method to run.</returns>
+    public static bool Prefix(TextBoxTMP __instance, ref bool __result, char i)
     {
-        if (AUnlocker.AllowAllCharacters.Value)
+        // Original game code:
+        // public bool IsCharAllowed(char i)
+        // {
+        //   return this.IpMode ? i >= '0' && i <= '9' || i == '.' : i == ' ' || i >= 'A' && i <= 'Z' || i >= 'a' && i <= 'z' || i >= '0' && i <= '9' || i >= 'À' && i <= 'ÿ' || i >= 'Ѐ' && i <= 'џ' || i >= '\u3040' && i <= '㆟' || i >= 'ⱡ' && i <= '힣' || this.AllowSymbols && TextBoxTMP.SymbolChars.Contains(i) || this.AllowEmail && TextBoxTMP.EmailChars.Contains(i);
+        // }
+
+        if (!AUnlocker.AllowAllCharacters.Value) return true;
+
+        if (i is >= 'À' and <= 'ÿ')
         {
-            // Bugfix: chinese characters and others (see issue #31)
-            if (i >= 'À' && i <= 'ÿ')
-            {
-                __result = true;
-                return false;
-            }
-            if (i >= 'Ѐ' && i <= 'џ')
-            {
-                __result = true;
-                return false;
-            }
-            if (i >= '\u3040' && i <= '㆟')
-            {
-                __result = true;
-                return false;
-            }
-            if (i >= 'ⱡ' && i <= '힣')
-            {
-                __result = true;
-                return false;
-            }
-            if (TextBoxTMP.SymbolChars.Contains(i))
-            {
-                __result = true;
-                return false;
-            }
-            if (TextBoxTMP.EmailChars.Contains(i))
-            {
-                __result = true;
-                return false;
-            }
-            // Bugfix: backspace messing with chat message;
-            // newline / "enter" to prevent message sending "randomly" (see issue #25)
-            if (i == '\b' || i == '\n' || i == '\r')
-            {
-                __result = false;
-                return false;
-            }
-
-            // // logging
-            // string charRepresentation = i switch
-            // {
-            //     '\b' => "\\b",
-            //     '\n' => "\\n",
-            //     '\r' => "\\r",
-            //     _ => i.ToString()
-            // };
-
-            // Debug.Log($"IsCharAllowed({charRepresentation}) (Unicode: {(int)i}) = {__result}");
-
-            // accept any other character by default (including emojis, special characters, etc.)
-            // this can cause issues where we would have to deny certain characters 
-            // that are messing with the chatbox (like we saw in issues #25 and #31)
             __result = true;
             return false;
         }
-        return true;
+        if (i is >= 'Ѐ' and <= 'џ')
+        {
+            __result = true;
+            return false;
+        }
+        if (i is >= '\u3040' and <= '㆟')
+        {
+            __result = true;
+            return false;
+        }
+        if (i is >= 'ⱡ' and <= '힣')
+        {
+            __result = true;
+            return false;
+        }
+        if (TextBoxTMP.SymbolChars.Contains(i))
+        {
+            __result = true;
+            return false;
+        }
+        if (TextBoxTMP.EmailChars.Contains(i))
+        {
+            __result = true;
+            return false;
+        }
+        // Bugfix: backspace messing with chat message;
+        // newline / "enter" to prevent message sending "randomly" (see issue #25)
+        if (i is '\b' or '\n' or '\r')
+        {
+            __result = false;
+            return false;
+        }
+
+        // // logging
+        // string charRepresentation = i switch
+        // {
+        //     '\b' => "\\b",
+        //     '\n' => "\\n",
+        //     '\r' => "\\r",
+        //     _ => i.ToString()
+        // };
+
+        // Debug.Log($"IsCharAllowed({charRepresentation}) (Unicode: {(int)i}) = {__result}");
+
+        // accept any other character by default (including emojis, special characters, etc.)
+        // this can cause issues where we would have to deny certain characters
+        // that are messing with the chatbox (like we saw in issues #25 and #31)
+        __result = true;
+        return false;
     }
 }
 
 [HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.Start))]
-public static class AllowAllCharacters_TextBoxTMP_Start_Postfix
+public static class AllowPaste_TextBoxTMP_Start_Postfix
 {
-       public static void Postfix(TextBoxTMP __instance)
+    /// <summary>
+    /// Allow email symbols to be typed into the chatbox and enables pasting text with CTRL + V.
+    /// </summary>
+    /// <param name="__instance">The <c>TextBoxTMP</c> instance.</param>
+    public static void Postfix(TextBoxTMP __instance)
     {
-        if (AUnlocker.PatchChat.Value)
-        {
-            __instance.allowAllCharacters = true; // not used by game's code, but I include it anyway
-            __instance.AllowEmail = true;
-            __instance.AllowPaste = true;
-            __instance.AllowSymbols = true;
-        }
+        if (!AUnlocker.PatchChat.Value) return;
+
+        __instance.allowAllCharacters = true; // not used by game's code, but I include it anyway
+        __instance.AllowEmail = true;
+        __instance.AllowPaste = true;
+        __instance.AllowSymbols = true;
     }
 }
 
-// Allow copying from the chatbox
 [HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.Update))]
 public static class AllowCopy_TextBoxTMP_Update_Postfix
 {
+    /// <summary>
+    /// Allow copying text from the chatbox to the device's clipboard when pressing CTRL + C.
+    /// </summary>
+    /// <param name="__instance">The <c>TextBoxTMP</c> instance.</param>
     public static void Postfix(TextBoxTMP __instance)
     {
-        if (AUnlocker.PatchChat.Value)
-        {
-            if (!__instance.hasFocus){return;}
+        if (!AUnlocker.PatchChat.Value || !__instance.hasFocus) return;
 
-            // If the user is pressing Ctrl + C, copy the text from the chatbox to the device's clipboard
-            if((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKeyDown(KeyCode.C))
-            {
-                ClipboardHelper.PutClipboardString(__instance.text);
-            }
+        if ((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKeyDown(KeyCode.C))
+        {
+            ClipboardHelper.PutClipboardString(__instance.text);
         }
     }
 }
