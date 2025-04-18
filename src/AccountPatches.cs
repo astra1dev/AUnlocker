@@ -117,7 +117,7 @@ public static class SetLoggedIn_InnerNetClient_JoinGame_Prefix
 }
 
 [HarmonyPatch(typeof(PlayerBanData), nameof(PlayerBanData.BanPoints), MethodType.Setter)]
-public static class RemoveDisconnectPenalty_PlayerBanData_BanMinutesLeft_Prefix
+public static class RemoveDisconnectPenalty_PlayerBanData_BanPoints_Prefix
 {
     /// <summary>
     /// Remove the time penalty after disconnecting from too many lobbies.
