@@ -93,3 +93,27 @@ public static class MoreLobbyInfo_GameContainer_SetupGameInfo_Postfix
                                    $"<#b0f>{platformId}</color>\n{lobbyTime}\n{separator}</size>";
     }
 }
+
+[HarmonyPatch(typeof(HudManager))]
+[HarmonyPatch("SetHudActive", typeof(PlayerControl), typeof(RoleBehaviour), typeof(bool))]
+public static class ShowTaskPanelInMeetings_HudManager_SetHudActive
+{
+    /// <summary>
+    /// Show the task panel (contains a list of your tasks) during meetings.
+    /// </summary>
+    /// <param name="__instance">The <c>HudManager</c> instance.</param>
+    /// <param name="role"> The role of the player.</param>
+    /// <param name="isActive">Whether to set the Hud to active or inactive.</param>
+    public static void Postfix(HudManager __instance, RoleBehaviour role, bool isActive)
+    {
+        if (!AUnlocker.ShowTaskPanelInMeetings.Value) return;
+        if (!MeetingHud.Instance) return;
+
+        // Modify openPosition so the task panel appears on top of the meeting screen
+        var openPosition = __instance.TaskPanel.openPosition;
+        openPosition.z = -20f;
+        __instance.TaskPanel.openPosition = openPosition;
+
+        __instance.TaskPanel.gameObject.SetActive(true);
+    }
+}
