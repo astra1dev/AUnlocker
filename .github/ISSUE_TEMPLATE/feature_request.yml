@@ -1,0 +1,34 @@
+name: 🚀 Feature request
+description: Suggest a new feature or enhancement.
+labels: ["type: enhancement"]
+title: ""
+
+body:
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: Describe the feature or enhancement you would like to see.
+      placeholder: |
+        A clear and concise description of the feature or enhancement.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Provide any additional information that may be relevant to the feature request.
+      placeholder: |
+        Any other context about the feature request here.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: duplicate-check
+    attributes:
+      label: Duplicate Check
+      description: Confirm that you have searched existing feature requests to ensure this is not a duplicate.
+      options:
+        - label: I confirm that I have searched existing feature requests and this is not a duplicate.
+          required: true

@@ -1,0 +1,100 @@
+name: 🐛 Bug report
+description: Report a bug, crash, or unexpected behavior.
+labels: ["type: bug"]
+title: ''
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Attachments**
+        - Please upload the `BepInEx/LogOutput.log` file to help diagnose the issue.
+        - If applicable, include screenshots to provide more context about the problem.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the bug in detail.
+      placeholder: |
+        A clear and concise description of what the bug is.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: Describe what you expected to happen.
+      placeholder: |
+        A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Provide a minimal set of steps to reproduce the issue.
+      placeholder: |
+        1. Step one
+        2. Step two
+        3. Step three
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: |
+        Provide any additional information that may be relevant to the issue.
+        
+        Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
+      placeholder: |
+        Any other context about the problem here.
+    validations:
+      required: false
+
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating System
+      description: Specify your operating system (e.g., Windows 10, Linux Mint 22.1).
+    validations:
+      required: true
+
+  - type: input
+    id: game-version
+    attributes:
+      label: Game Version
+      description: Specify the game version (e.g., v2024.6.18, v16.0.2).
+    validations:
+      required: true
+
+  - type: input
+    id: aunlocker-version
+    attributes:
+      label: AUnlocker Version
+      description: Specify the AUnlocker version (e.g., 1.1.4).
+    validations:
+      required: true
+
+  - type: input
+    id: other-mods
+    attributes:
+      label: Other Mods
+      description: List any other Among Us mods you are using (e.g., TownOfHost v5.1.8).
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      description: Make sure that you have checked the following before submitting your issue
+      options:
+        - label: I confirm that this issue does NOT occur in the vanilla game (without AUnlocker or BepInEx installed).
+          required: true
+        - label: I confirm that I have searched existing issues and this is not a duplicate.
+          required: true
