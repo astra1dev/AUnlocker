@@ -102,7 +102,7 @@ public static class ShowTaskPanelInMeetings_HudManager_SetHudActive
     /// Show the task panel (contains a list of your tasks) during meetings.
     /// </summary>
     /// <param name="__instance">The <c>HudManager</c> instance.</param>
-    /// <param name="role"> The role of the player.</param>
+    /// <param name="role">The role of the player.</param>
     /// <param name="isActive">Whether to set the Hud to active or inactive.</param>
     public static void Postfix(HudManager __instance, RoleBehaviour role, bool isActive)
     {
