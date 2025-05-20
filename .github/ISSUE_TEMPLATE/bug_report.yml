@@ -1,7 +1,6 @@
 name: 🐛 Bug report
 description: Report a bug, crash, or unexpected behavior.
 labels: ["type: bug"]
-title: " "
 
 body:
   - type: markdown
