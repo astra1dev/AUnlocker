@@ -63,6 +63,21 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: game-platform
+    attributes:
+      label: Game Platform
+      description: Select the platform you are using Among Us on.
+      options:
+        - Steam
+        - Itch.io
+        - Epic Games Store
+        - Microsoft Store
+        - Xbox App
+
+    validations:
+      required: true
+
   - type: input
     id: game-version
     attributes:
