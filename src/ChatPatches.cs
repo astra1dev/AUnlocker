@@ -27,7 +27,7 @@ public static class ChatJailbreak_ChatController_Update_Postfix
 
         else if (AUnlocker.PatchChat.Value)
         {
-            __instance.freeChatField.textArea.AllowPaste = true;
+            //__instance.freeChatField.textArea.AllowPaste = true;
             __instance.freeChatField.textArea.AllowSymbols = true;
             __instance.freeChatField.textArea.AllowEmail = true;
             __instance.freeChatField.textArea.allowAllCharacters = true;
@@ -188,7 +188,7 @@ public static class AllowPaste_TextBoxTMP_Start_Postfix
 
         __instance.allowAllCharacters = true; // not used by game's code, but I include it anyway
         __instance.AllowEmail = true;
-        __instance.AllowPaste = true;
+        //__instance.AllowPaste = true;
         __instance.AllowSymbols = true;
     }
 }
@@ -197,16 +197,29 @@ public static class AllowPaste_TextBoxTMP_Start_Postfix
 public static class AllowCopy_TextBoxTMP_Update_Postfix
 {
     /// <summary>
-    /// Allow copying text from the chatbox to the device's clipboard when pressing CTRL + C.
+    /// Allow copying, pasting and cutting text between the chatbox and the device's clipboard.
     /// </summary>
     /// <param name="__instance">The <c>TextBoxTMP</c> instance.</param>
     public static void Postfix(TextBoxTMP __instance)
     {
         if (!AUnlocker.PatchChat.Value || !__instance.hasFocus) return;
 
-        if ((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKeyDown(KeyCode.C))
+        if (!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.RightControl)) return;
+
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            ClipboardHelper.PutClipboardString(__instance.text);
+            // ClipboardHelper.PutClipboardString(__instance.text);
+            GUIUtility.systemCopyBuffer = __instance.text;
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            __instance.SetText(__instance.text + GUIUtility.systemCopyBuffer);
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            // ClipboardHelper.PutClipboardString(__instance.text);
+            GUIUtility.systemCopyBuffer = __instance.text;
+            __instance.SetText("");
         }
     }
 }
