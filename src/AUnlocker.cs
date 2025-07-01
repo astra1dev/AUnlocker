@@ -23,6 +23,7 @@ public partial class AUnlocker : BasePlugin
 
     // Cosmetics
     public static ConfigEntry<bool> UnlockCosmetics;
+    public static ConfigEntry<bool> DontShowCosmeticsInGame;
 
     // Other
     public static ConfigEntry<int> UnlockFPS;
@@ -50,6 +51,7 @@ public partial class AUnlocker : BasePlugin
         PatchChat = Config.Bind("Chat", "Enabled", true, "Allow Ctrl+C and Ctrl+V (copy-pasting)\nBe able to send URLs and Email addresses\nIncrease the character limit from 100 to 120");
         // Cosmetics
         UnlockCosmetics = Config.Bind("Cosmetics", "UnlockAll", true, "Unlock all cosmetics");
+        DontShowCosmeticsInGame = Config.Bind("Cosmetics", "DontShowCosmeticsInGame", false, "Don't show any cosmetics in-game (only client-side)");
         // Other
         UnlockFPS = Config.Bind("Other", "FPS", 60, "Set the game's FPS cap to this value");
         DisableTelemetry = Config.Bind("Other", "DisableTelemetry", true, "Prevent the game from collecting analytics and sending them to Innersloth");
