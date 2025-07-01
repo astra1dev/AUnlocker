@@ -37,6 +37,7 @@ public partial class AUnlocker : BasePlugin
     public static ConfigEntry<bool> AllowAllCharacters;
     public static ConfigEntry<bool> NoCharacterLimit;
     public static ConfigEntry<bool> NoChatCooldown;
+    public static ConfigEntry<bool> NoOptionsLimits;
 
     /// <summary>
     /// Initialize the plugin, set up configuration entries and apply patches.
@@ -63,6 +64,7 @@ public partial class AUnlocker : BasePlugin
         AllowAllCharacters = Config.Bind("Unsafe", "AllowAllCharacters", false, "THESE ARE UNSAFE AND CAN GET YOU KICKED BY ANTI-CHEAT, USE WITH CAUTION\n\nBe able to send any character in chat");
         NoCharacterLimit = Config.Bind("Unsafe", "NoCharacterLimit", false, "No character limit in chat");
         NoChatCooldown = Config.Bind("Unsafe", "NoChatCooldown", false, "No 3s cooldown between chat messages");
+        NoOptionsLimits = Config.Bind("Unsafe", "NoOptionsLimits", false, "No limits on game host options (e.g. amount of impostors)");
 
         Harmony.PatchAll();
 
