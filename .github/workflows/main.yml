@@ -44,11 +44,11 @@ jobs:
       - name: Upload AUnlocker_Steam_Itch.zip artifact
         uses: actions/upload-artifact@v4
         with:
-          name: AUnlocker_Steam_Epic_Itch
+          name: AUnlocker_Steam_Itch
           path: BepInEx_x86
 
       - name: Upload AUnlocker_EpicGames_MicrosoftStore_XboxApp.zip artifact
         uses: actions/upload-artifact@v4
         with:
-          name: AUnlocker_MicrosoftStore_XboxApp
+          name: AUnlocker_EpicGames_MicrosoftStore_XboxApp
           path: BepInEx_x64
