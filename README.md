@@ -46,6 +46,7 @@
   - Be able to send any character in chat
   - No character limit in chat
   - No 3s cooldown between chat messages
+  - No limits on game host options (e.g. amount of impostors)
 
 > [!NOTE]
 > Features can be individually enabled & disabled by editing the file `[YOUR_AMONG_US_FOLDER]/BepInEx/config/AUnlocker.cfg`
@@ -62,7 +63,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 |    Among Us Version    |          AUnlocker Version          |
 |:----------------------:|:-----------------------------------:|
-| `16.1.0` (`2025.6.10`) | [v1.2.0](../../releases/tag/v1.2.0) |
+| `16.1.0` (`2025.6.10`) | [v1.2.1](../../releases/tag/v1.2.1) |
 | `16.0.5` (`2025.5.20`) | [v1.2.0](../../releases/tag/v1.2.0) |
 | `16.0.2` (`2025.3.31`) | [v1.1.8](../../releases/tag/v1.1.8) |
 | `16.0.0` (`2025.3.25`) | [v1.1.8](../../releases/tag/v1.1.8) |

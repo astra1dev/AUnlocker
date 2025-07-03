@@ -2,6 +2,7 @@ using BepInEx;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 using BepInEx.Configuration;
+using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.CrashReportHandler;
 
@@ -12,6 +13,9 @@ namespace AUnlocker;
 public partial class AUnlocker : BasePlugin
 {
     public Harmony Harmony { get; } = new(Id);
+
+    // General
+    public static ConfigEntry<KeyCode> ReloadConfigKeybind;
 
     // Account
     public static ConfigEntry<bool> UnlockGuest;
@@ -44,6 +48,8 @@ public partial class AUnlocker : BasePlugin
     /// </summary>
     public override void Load()
     {
+        // General
+        ReloadConfigKeybind = Config.Bind("General", "ReloadConfigKeybind", KeyCode.F6, "The keyboard key used to reload the configuration file");
         // Account
         UnlockGuest = Config.Bind("Account", "RemoveGuestStatus", false, "Remove guest restrictions (no custom name, no free chat, no friend list)");
         UnlockMinor = Config.Bind("Account", "RemoveMinorStatus", false, "Remove minor status and restrictions (no online play)");
@@ -81,5 +87,19 @@ public partial class AUnlocker : BasePlugin
             // using Unity.Services.Core;
             // AnalyticsService.Instance.OptOut();
         // More Info: https://discussions.unity.com/t/iap-privacy-issue/881743
+
+        AddComponent<KeybindListener>().Plugin = this;
+    }
+}
+
+public class KeybindListener : MonoBehaviour
+{
+    public AUnlocker Plugin { get; internal set; }
+
+    public void Update()
+    {
+        if (!Input.GetKeyDown(AUnlocker.ReloadConfigKeybind.Value)) return;
+        Plugin.Config.Reload();
+        Plugin.Log.LogInfo("Configuration reloaded.");
     }
 }
