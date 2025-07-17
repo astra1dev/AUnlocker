@@ -64,3 +64,14 @@ public static class DontShowCosmeticsInGame_PlayerControl_FixedUpdate_Postfix
         __instance.SetPet("", 0);
     }
 }
+
+[HarmonyPatch(typeof(PlayerPurchasesData), nameof(PlayerPurchasesData.GetPurchase))]
+public static class UnlockCosmetics_PlayerPurchasesData_GetPurchase_Prefix
+{
+    public static bool Prefix(PlayerPurchasesData __instance, string itemKey, string bundleKey, ref bool __result)
+    {
+        if (!AUnlocker.UnlockCosmetics.Value) return true;
+        __result = true;
+        return false;
+    }
+}
