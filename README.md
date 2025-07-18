@@ -37,7 +37,8 @@
   - Be able to send URLs and Email addresses
   - Increase the character limit from 100 to 120
 - ✨ Other Features
-  - Remove the 60 FPS cap 
+  - Remove the 60 FPS cap
+  - Resize the in-game buttons (Use, Kill, Report, etc.)
   - Prevent the game from collecting analytics and sending them to Innersloth
   - Be able to activate the April Fools Mode (Long Boi and Horse Mode)
   - Show more information when finding a game: host name, lobby code, host platform, and lobby age

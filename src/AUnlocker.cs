@@ -16,6 +16,7 @@ public partial class AUnlocker : BasePlugin
 
     // General
     public static ConfigEntry<KeyCode> ReloadConfigKeybind;
+    public static ConfigEntry<float> ButtonSize;
 
     // Account
     public static ConfigEntry<bool> UnlockGuest;
@@ -50,6 +51,7 @@ public partial class AUnlocker : BasePlugin
     {
         // General
         ReloadConfigKeybind = Config.Bind("General", "ReloadConfigKeybind", KeyCode.F6, "The keyboard key used to reload the configuration file");
+        ButtonSize = Config.Bind("General", "ButtonSize", 1f, "Resize the in-game buttons (Use, Kill, Report, etc.)\nSet to 1.0 to disable scaling");
         // Account
         UnlockGuest = Config.Bind("Account", "RemoveGuestStatus", false, "Remove guest restrictions (no custom name, no free chat, no friend list)");
         UnlockMinor = Config.Bind("Account", "RemoveMinorStatus", false, "Remove minor status and restrictions (no online play)");
@@ -89,6 +91,7 @@ public partial class AUnlocker : BasePlugin
         // More Info: https://discussions.unity.com/t/iap-privacy-issue/881743
 
         AddComponent<KeybindListener>().Plugin = this;
+        HudManager_Start_Patch.Plugin = this;
     }
 }
 
@@ -101,5 +104,48 @@ public class KeybindListener : MonoBehaviour
         if (!Input.GetKeyDown(AUnlocker.ReloadConfigKeybind.Value)) return;
         Plugin.Config.Reload();
         Plugin.Log.LogInfo("Configuration reloaded.");
+    }
+}
+
+// https://github.com/AU-Avengers/TOU-Mira/blob/main/TownOfUs/Patches/HudManagerPatches.cs#L57
+public static class Resize
+{
+    /// <summary>
+    /// Resize the in-game buttons (Use, Kill, Report, etc.) based on the given scale factor.
+    /// </summary>
+    /// <param name="scaleFactor">The scale factor to apply to the buttons.</param>
+    public static void ResizeUI(float scaleFactor)
+    {
+        // Resize the buttons by scaleFactor
+        foreach (var button in HudManager.Instance.GetComponentsInChildren<ActionButton>(true))
+            button.gameObject.transform.localScale *= scaleFactor;
+
+        // Make sure the buttons have fitting distance between them
+        foreach (var arrange in HudManager.Instance.transform.FindChild("Buttons")
+                     .GetComponentsInChildren<GridArrange>(true))
+            arrange.CellSize *= new Vector2(scaleFactor, scaleFactor);
+
+        // Change DistanceFromEdge for the buttons depending on scaleFactor
+        // (closer to the edge for smaller scale factor, further from the edge for larger scale factor)
+        foreach (var aspect in HudManager.Instance.transform.FindChild("Buttons")
+                     .GetComponentsInChildren<AspectPosition>(true))
+        {
+            if (aspect.gameObject.transform.parent.name == "TopRight") { continue; }
+            if (aspect.gameObject.transform.parent.transform.parent.name == "TopRight") { continue; }
+            aspect.gameObject.SetActive(!aspect.isActiveAndEnabled);
+            aspect.DistanceFromEdge *= new Vector2(scaleFactor, scaleFactor);
+            aspect.gameObject.SetActive(!aspect.isActiveAndEnabled);
+        }
+    }
+}
+
+[HarmonyPatch(typeof(HudManager), nameof(HudManager.Start))]
+public static class HudManager_Start_Patch
+{
+    public static AUnlocker Plugin { get; internal set; }
+    public static void Postfix()
+    {
+        Resize.ResizeUI(AUnlocker.ButtonSize.Value);
+        Plugin.Log.LogInfo("UI resized to " + AUnlocker.ButtonSize.Value * 100 + "%");
     }
 }
