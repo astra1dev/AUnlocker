@@ -25,6 +25,7 @@ public partial class AUnlocker : BasePlugin
 
     // Chat
     public static ConfigEntry<bool> PatchChat;
+    public static ConfigEntry<int> ChatHistoryLimit;
 
     // Cosmetics
     public static ConfigEntry<bool> UnlockCosmetics;
@@ -58,6 +59,7 @@ public partial class AUnlocker : BasePlugin
         RemovePenalty = Config.Bind("Account", "NoDisconnectPenalty", true, "Remove the penalty after disconnecting from too many lobbies");
         // Chat
         PatchChat = Config.Bind("Chat", "Enabled", true, "Allow Ctrl+C and Ctrl+V (copy-pasting)\nBe able to send URLs and Email addresses\nIncrease the character limit from 100 to 120");
+        ChatHistoryLimit = Config.Bind("Chat", "ChatHistoryLimit", 20, "The maximum amount of chat messages to keep in the chat history");
         // Cosmetics
         UnlockCosmetics = Config.Bind("Cosmetics", "UnlockAll", true, "Unlock all cosmetics");
         DontShowCosmeticsInGame = Config.Bind("Cosmetics", "DontShowCosmeticsInGame", false, "Don't show any cosmetics in-game (only client-side)");
