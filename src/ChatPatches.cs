@@ -193,7 +193,7 @@ public static class AllowPaste_TextBoxTMP_Start_Postfix
     }
 }
 
-[HarmonyPatch(typeof(ObjectPoolBehavior), nameof(ObjectPoolBehavior.InitPool))]
+[HarmonyPatch(typeof(ChatController), nameof(ChatController.Awake))]
 public static class ChatHistoryLimit_ObjectPoolBehavior_InitPool_Postfix
 {
     /// <summary>
@@ -201,10 +201,11 @@ public static class ChatHistoryLimit_ObjectPoolBehavior_InitPool_Postfix
     /// </summary>
     /// <param name="__instance">The <c>ObjectPoolBehavior</c> instance.</param>
     /// <returns><c>false</c> to skip the original method, <c>true</c> to allow the original method to run.</returns>
-    public static bool Prefix(ObjectPoolBehavior __instance)
+    public static void Postfix(ChatController __instance)
     {
-        __instance.poolSize = AUnlocker.ChatHistoryLimit.Value;
-        return true;
+        __instance.chatBubblePool.poolSize = AUnlocker.ChatHistoryLimit.Value;
+        // Call ReclaimOldest so the pool is re-initialized with our new size
+        __instance.chatBubblePool.ReclaimOldest();
     }
 }
 
