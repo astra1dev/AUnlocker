@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using HarmonyLib;
 using InnerNet;
@@ -16,39 +17,74 @@ public static class UnlockFPS_MainMenuManager_Start_Postfix
     }
 }
 
-[HarmonyPatch(typeof(AprilFoolsMode), nameof(AprilFoolsMode.ShouldShowAprilFoolsToggle))]
-public static class UnlockAprilFoolsMode_AprilFoolsMode_ShouldShowAprilFoolsToggle_Postfix
+/// <summary>
+/// Set the player's body type according to the `AprilFoolsMode` config option (Horse, Long, or LongHorse). (client-side only)
+/// </summary>
+[HarmonyPatch]
+public static class AprilFoolsPatches
 {
-    /// <summary>
-    /// Force the "April Fools' Mode (Limited Cosmetics)" banner to be visible.
-    /// Enabling it activates long boi mode (client-side only).
-    /// </summary>
-    /// <param name="__result">Original return value of <c>ShouldShowAprilFoolsToggle</c>.</param>
-    public static void Postfix(ref bool __result)
+    [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.BodyType), MethodType.Getter)]
+    [HarmonyPrefix]
+    public static bool AprilFoolsMode_PlayerControl_BodyType_Prefix(ref PlayerBodyTypes __result)
     {
-        if (AUnlocker.UnlockAprilFoolsMode.Value)
+        switch (AUnlocker.AprilFoolsMode.Value)
         {
-            // Remove check if the current server time is within the first week of april
-            __result = true;
+            case "Horse":
+                __result = PlayerBodyTypes.Horse;
+                return false;
+            case "Long":
+                __result = PlayerBodyTypes.Long;
+                return false;
+            case "LongHorse":
+                __result = PlayerBodyTypes.LongSeeker;
+                return false;
+            default:
+                return true;
         }
     }
-}
 
-// maybe remove the below patch and patch ShouldHorseAround instead
-// this will probably allow horse mode to work in HnS properly
-
-// maybe also remove the above patch and patch ShouldLongAround instead
-[HarmonyPatch(typeof(NormalGameManager), nameof(NormalGameManager.GetBodyType))]
-public static class EnableHorseMode_NormalGameManager_GetBodyType_Postfix
-{
-    /// <summary>
-    /// Set the player's body type to Horse when the horse mode config setting is enabled. (client-side only)
-    /// </summary>
-    /// <param name="__result">Original return value of <c>GetBodyType</c>.</param>
-    public static void Postfix(ref PlayerBodyTypes __result)
+    [HarmonyPatch(typeof(PlayerPhysics), nameof(PlayerPhysics.SetBodyType))]
+    [HarmonyPrefix]
+    public static void AprilFoolsMode_PlayerPhyics_SetBodyType_Prefix(ref PlayerBodyTypes bodyType)
     {
-        if (!AUnlocker.EnableHorseMode.Value) return;
-        __result = PlayerBodyTypes.Horse;
+        bodyType = AUnlocker.AprilFoolsMode.Value switch
+        {
+            "Horse" => PlayerBodyTypes.Horse,
+            "Long" => PlayerBodyTypes.Long,
+            "LongHorse" => PlayerBodyTypes.LongSeeker,
+            _ => bodyType
+        };
+    }
+
+    // Remove checks for ShouldLongAround() in LongBoiPlayerBody.Awake() and .Start()
+    // Patching ShouldLongAround() directly doesn't work anymore for some reason
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(LongBoiPlayerBody), nameof(LongBoiPlayerBody.Awake))]
+    public static bool LongBodyAwakePatch(LongBoiPlayerBody __instance)
+    {
+        __instance.cosmeticLayer.OnSetBodyAsGhost += (Action)__instance.SetPoolableGhost;
+        __instance.cosmeticLayer.OnColorChange += (Action<int>)__instance.SetHeightFromColor;
+        __instance.cosmeticLayer.OnCosmeticSet += (Action<string, int, CosmeticsLayer.CosmeticKind>)__instance.OnCosmeticSet;
+        return false;
+    }
+
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(LongBoiPlayerBody), nameof(LongBoiPlayerBody.Start))]
+    public static bool LongBodyStartPatch(LongBoiPlayerBody __instance)
+    {
+        __instance.ShouldLongAround = true;
+        if (__instance.hideCosmeticsQC) __instance.cosmeticLayer.SetHatVisorVisible(false);
+        __instance.SetupNeckGrowth();
+        if (__instance.isExiledPlayer)
+        {
+            var instance = ShipStatus.Instance;
+            if (!instance || instance.Type != ShipStatus.MapType.Fungle)
+            {
+                __instance.cosmeticLayer.AdjustCosmeticRotations(-17.75f);
+            }
+        }
+        if (!__instance.isPoolablePlayer) __instance.cosmeticLayer.ValidateCosmetics();
+        return false;
     }
 }
 
