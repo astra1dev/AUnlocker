@@ -18,14 +18,13 @@ public static class UnlockFPS_MainMenuManager_Start_Postfix
 }
 
 /// <summary>
-/// Set the player's body type according to the `AprilFoolsMode` config option (Horse, Long, or LongHorse). (client-side only)
+/// Set the player's body type according to the <c>AprilFoolsMode</c> config option (Horse, Long, or LongHorse). (client-side only)
+/// https://github.com/AU-Avengers/TOU-Mira/blob/dev/TownOfUs/Patches/AprilFools/AprilFools.cs#L115
 /// </summary>
-[HarmonyPatch]
-public static class AprilFoolsPatches
+[HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.BodyType), MethodType.Getter)]
+public static class AprilFoolsMode_PlayerControl_BodyType_Prefix
 {
-    [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.BodyType), MethodType.Getter)]
-    [HarmonyPrefix]
-    public static bool AprilFoolsMode_PlayerControl_BodyType_Prefix(ref PlayerBodyTypes __result)
+    public static bool Prefix(ref PlayerBodyTypes __result)
     {
         switch (AUnlocker.AprilFoolsMode.Value)
         {
@@ -42,10 +41,12 @@ public static class AprilFoolsPatches
                 return true;
         }
     }
+}
 
-    [HarmonyPatch(typeof(PlayerPhysics), nameof(PlayerPhysics.SetBodyType))]
-    [HarmonyPrefix]
-    public static void AprilFoolsMode_PlayerPhyics_SetBodyType_Prefix(ref PlayerBodyTypes bodyType)
+[HarmonyPatch(typeof(PlayerPhysics), nameof(PlayerPhysics.SetBodyType))]
+public static class AprilFoolsMode_PlayerPhysics_SetBodyType_Prefix
+{
+    public static void Prefix(ref PlayerBodyTypes bodyType)
     {
         bodyType = AUnlocker.AprilFoolsMode.Value switch
         {
@@ -55,22 +56,26 @@ public static class AprilFoolsPatches
             _ => bodyType
         };
     }
+}
 
-    // Remove checks for ShouldLongAround() in LongBoiPlayerBody.Awake() and .Start()
-    // Patching ShouldLongAround() directly doesn't work anymore for some reason
-    [HarmonyPrefix]
-    [HarmonyPatch(typeof(LongBoiPlayerBody), nameof(LongBoiPlayerBody.Awake))]
-    public static bool LongBodyAwakePatch(LongBoiPlayerBody __instance)
+// Remove checks for ShouldLongAround() in LongBoiPlayerBody.Awake() and .Start()
+// Patching ShouldLongAround() directly doesn't work anymore for some reason
+[HarmonyPatch(typeof(LongBoiPlayerBody), nameof(LongBoiPlayerBody.Awake))]
+public static class AprilFoolsMode_LongBoiPlayerBody_Awake_Prefix
+{
+    public static bool Prefix(LongBoiPlayerBody __instance)
     {
         __instance.cosmeticLayer.OnSetBodyAsGhost += (Action)__instance.SetPoolableGhost;
         __instance.cosmeticLayer.OnColorChange += (Action<int>)__instance.SetHeightFromColor;
         __instance.cosmeticLayer.OnCosmeticSet += (Action<string, int, CosmeticsLayer.CosmeticKind>)__instance.OnCosmeticSet;
         return false;
     }
+}
 
-    [HarmonyPrefix]
-    [HarmonyPatch(typeof(LongBoiPlayerBody), nameof(LongBoiPlayerBody.Start))]
-    public static bool LongBodyStartPatch(LongBoiPlayerBody __instance)
+[HarmonyPatch(typeof(LongBoiPlayerBody), nameof(LongBoiPlayerBody.Start))]
+public static class AprilFoolsMode_LongBoiPlayerBody_Start_Prefix
+{
+    public static bool Prefix(LongBoiPlayerBody __instance)
     {
         __instance.ShouldLongAround = true;
         if (__instance.hideCosmeticsQC) __instance.cosmeticLayer.SetHatVisorVisible(false);

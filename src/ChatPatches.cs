@@ -194,12 +194,12 @@ public static class AllowPaste_TextBoxTMP_Start_Postfix
 }
 
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.Awake))]
-public static class ChatHistoryLimit_ObjectPoolBehavior_InitPool_Postfix
+public static class ChatHistoryLimit_ChatController_Awake_Postfix
 {
     /// <summary>
     /// Modify the maximum amount of chat messages to keep in the chat history.
     /// </summary>
-    /// <param name="__instance">The <c>ObjectPoolBehavior</c> instance.</param>
+    /// <param name="__instance">The <c>ChatController</c> instance.</param>
     /// <returns><c>false</c> to skip the original method, <c>true</c> to allow the original method to run.</returns>
     public static void Postfix(ChatController __instance)
     {
