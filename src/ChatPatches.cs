@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using HarmonyLib;
 using UnityEngine;
 using static AUnlocker.ChatHistory_ChatController_SendChat_Prefix;
@@ -152,7 +155,7 @@ public static class ChatHistory_ChatController_SendChat_Prefix
     public static readonly List<string> ChatHistory = [];
 
     /// <summary>
-    /// When sending a chat message (either via pressing enter or clicking the send button), add it to the chat history.
+    /// When sending a chat message, add it to the chat history.
     /// </summary>
     /// <param name="__instance">The <c>ChatController</c> instance.</param>
     /// <returns><c>false</c> to skip the original method, <c>true</c> to allow the original method to run.</returns>
@@ -160,7 +163,7 @@ public static class ChatHistory_ChatController_SendChat_Prefix
     {
         var text = __instance.freeChatField.textArea.text;
         // Add to chat history if empty or not the same as the previous message
-        // Also this intentionally allows empty / whitespace-only messages to be added to history
+        // This also intentionally allows empty / whitespace-only messages to be added to history
         if (ChatHistory.LastOrDefault() != text)
             ChatHistory.Add(text);
         ChatJailbreak_ChatController_Update_Postfix.CurrentHistorySelection = ChatHistory.Count;
