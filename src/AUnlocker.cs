@@ -92,6 +92,7 @@ public partial class AUnlocker : BasePlugin
 
         AddComponent<KeybindListener>().Plugin = this;
         HudManager_Start_Patch.Plugin = this;
+        ChatJailbreak_ChatController_Update_Postfix.Plugin = this;
     }
 }
 

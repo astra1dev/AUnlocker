@@ -34,6 +34,7 @@
   - Removes the time penalty after disconnecting from too many lobbies
 - 💬 Chat Features
   - Use `Ctrl + C` and `Ctrl + V` to copy-paste chat messages
+  - Scroll through your previously sent chat messages using the Up and Down arrow keys
   - Be able to send URLs and Email addresses
   - Increase the character limit from 100 to 120
   - Modify the maximum amount of chat messages to keep in the chat history
