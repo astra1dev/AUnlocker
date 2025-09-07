@@ -42,7 +42,7 @@
   - Remove the 60 FPS cap
   - Resize the in-game buttons (Use, Kill, Report, etc.)
   - Prevent the game from collecting analytics and sending them to Innersloth
-  - Be able to activate the April Fools Mode (Long Boi and Horse Mode)
+  - Be able to activate the April Fools Mode (Seeker, Long Boi and Horse Mode)
   - Show more information when finding a game: host name, lobby code, host platform, and lobby age
   - Show the task panel (contains a list of your tasks) during meetings
 - 💣 Unsafe
@@ -66,7 +66,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 |    Among Us Version    |          AUnlocker Version          |
 |:----------------------:|:-----------------------------------:|
-| `16.1.0` (`2025.6.10`) | [v1.2.1](../../releases/tag/v1.2.1) |
+| `16.1.0` (`2025.6.10`) | [v1.2.2](../../releases/tag/v1.2.2) |
 | `16.0.5` (`2025.5.20`) | [v1.2.0](../../releases/tag/v1.2.0) |
 | `16.0.2` (`2025.3.31`) | [v1.1.8](../../releases/tag/v1.1.8) |
 | `16.0.0` (`2025.3.25`) | [v1.1.8](../../releases/tag/v1.1.8) |

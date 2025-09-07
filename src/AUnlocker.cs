@@ -65,7 +65,7 @@ public partial class AUnlocker : BasePlugin
         // Other
         UnlockFPS = Config.Bind("Other", "FPS", 60, "Set the game's FPS cap to this value");
         DisableTelemetry = Config.Bind("Other", "DisableTelemetry", true, "Prevent the game from collecting analytics and sending them to Innersloth");
-        AprilFoolsMode = Config.Bind("Other", "AprilFoolsMode", "Disabled", "Enable April Fools Mode (only client-side)\n\nOptions: Disabled, Long, Horse, LongHorse");
+        AprilFoolsMode = Config.Bind("Other", "AprilFoolsMode", "Disabled", "Enable April Fools Mode (only client-side)\n\nOptions: Disabled, Horse, Seeker, Long, LongHorse");
         MoreLobbyInfo = Config.Bind("Other", "MoreLobbyInfo", false, "Show more information when finding a game: host name (e.g. Astral), lobby code (e.g. KLHCEG), host platform (e.g. Epic), and lobby age in minutes (e.g. 4:20)");
         ShowTaskPanelInMeetings = Config.Bind("Other", "ShowTaskPanelInMeetings", false, "Show the task panel (contains a list of your tasks) during meetings");
         // Unsafe

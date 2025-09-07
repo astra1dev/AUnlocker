@@ -31,6 +31,9 @@ public static class AprilFoolsMode_PlayerControl_BodyType_Prefix
             case "Horse":
                 __result = PlayerBodyTypes.Horse;
                 return false;
+            case "Seeker":
+                __result = PlayerBodyTypes.Seeker;
+                return false;
             case "Long":
                 __result = PlayerBodyTypes.Long;
                 return false;
@@ -51,6 +54,7 @@ public static class AprilFoolsMode_PlayerPhysics_SetBodyType_Prefix
         bodyType = AUnlocker.AprilFoolsMode.Value switch
         {
             "Horse" => PlayerBodyTypes.Horse,
+            "Seeker" => PlayerBodyTypes.Seeker,
             "Long" => PlayerBodyTypes.Long,
             "LongHorse" => PlayerBodyTypes.LongSeeker,
             _ => bodyType
