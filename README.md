@@ -66,6 +66,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 |    Among Us Version    |          AUnlocker Version          |
 |:----------------------:|:-----------------------------------:|
+| `17.0.0` (`2025.9.9`)  | [v1.2.2](../../releases/tag/v1.2.2) |
 | `16.1.0` (`2025.6.10`) | [v1.2.2](../../releases/tag/v1.2.2) |
 | `16.0.5` (`2025.5.20`) | [v1.2.0](../../releases/tag/v1.2.0) |
 | `16.0.2` (`2025.3.31`) | [v1.1.8](../../releases/tag/v1.1.8) |
