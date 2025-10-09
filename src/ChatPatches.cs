@@ -181,68 +181,19 @@ public static class AllowAllCharacters_TextBoxTMP_IsCharAllowed_Prefix
     /// <param name="__result">Original return value of <c>IsCharAllowed</c>.</param>
     /// <param name="i"> The character to check.</param>
     /// <returns><c>false</c> to skip the original method, <c>true</c> to allow the original method to run.</returns>
-    public static bool Prefix(TextBoxTMP __instance, ref bool __result, char i)
+    public static bool Prefix(TextBoxTMP __instance, char i, ref bool __result)
     {
-        // Original game code:
-        // public bool IsCharAllowed(char i)
-        // {
-        //   return this.IpMode ? i >= '0' && i <= '9' || i == '.' : i == ' ' || i >= 'A' && i <= 'Z' || i >= 'a' && i <= 'z' || i >= '0' && i <= '9' || i >= 'À' && i <= 'ÿ' || i >= 'Ѐ' && i <= 'џ' || i >= '\u3040' && i <= '㆟' || i >= 'ⱡ' && i <= '힣' || this.AllowSymbols && TextBoxTMP.SymbolChars.Contains(i) || this.AllowEmail && TextBoxTMP.EmailChars.Contains(i);
-        // }
-
         if (!AUnlocker.AllowAllCharacters.Value) return true;
 
-        if (i is >= 'À' and <= 'ÿ')
-        {
-            __result = true;
-            return false;
-        }
-        if (i is >= 'Ѐ' and <= 'џ')
-        {
-            __result = true;
-            return false;
-        }
-        if (i is >= '\u3040' and <= '㆟')
-        {
-            __result = true;
-            return false;
-        }
-        if (i is >= 'ⱡ' and <= '힣')
-        {
-            __result = true;
-            return false;
-        }
-        if (TextBoxTMP.SymbolChars.Contains(i))
-        {
-            __result = true;
-            return false;
-        }
-        if (TextBoxTMP.EmailChars.Contains(i))
-        {
-            __result = true;
-            return false;
-        }
-        // Bugfix: backspace messing with chat message;
-        // newline / "enter" to prevent message sending "randomly" (see issue #25)
-        if (i is '\b' or '\n' or '\r')
+        // Bugfix: backspace and newline messing with chat message
+        HashSet<char> blockedSymbols = ['\b', '\r'];
+
+        if (blockedSymbols.Contains(i))
         {
             __result = false;
             return false;
         }
 
-        // // logging
-        // string charRepresentation = i switch
-        // {
-        //     '\b' => "\\b",
-        //     '\n' => "\\n",
-        //     '\r' => "\\r",
-        //     _ => i.ToString()
-        // };
-
-        // Debug.Log($"IsCharAllowed({charRepresentation}) (Unicode: {(int)i}) = {__result}");
-
-        // accept any other character by default (including emojis, special characters, etc.)
-        // this can cause issues where we would have to deny certain characters
-        // that are messing with the chatbox (like we saw in issues #25 and #31)
         __result = true;
         return false;
     }
