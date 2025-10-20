@@ -139,6 +139,24 @@ public static class MoreLobbyInfo_GameContainer_SetupGameInfo_Postfix
     }
 }
 
+[HarmonyPatch(typeof(FindAGameManager), nameof(FindAGameManager.HandleList))]
+public static class MoreLobbyInfo_FindAGameManager_HandleList_Postfix
+{
+    /// <summary>
+    /// Display the exact number of lobbies online instead of an approximation like "500+"
+    /// </summary>
+    /// <param name="totalGames">The total game data.</param>
+    /// <param name="response">The list of games and metadata from <c>HttpMatchmakerManager</c>.</param>
+    /// <param name="__instance">The <c>FindAGameManager</c> instance.</param>
+    public static void Postfix(InnerNetClient.TotalGameData totalGames,
+        HttpMatchmakerManager.FindGamesListFilteredResponse response, FindAGameManager __instance)
+    {
+        if (!AUnlocker.MoreLobbyInfo.Value) return;
+
+        __instance.TotalText.text = response.Metadata.AllGamesCount.ToString();
+    }
+}
+
 [HarmonyPatch(typeof(HudManager))]
 [HarmonyPatch("SetHudActive", typeof(PlayerControl), typeof(RoleBehaviour), typeof(bool))]
 public static class ShowTaskPanelInMeetings_HudManager_SetHudActive

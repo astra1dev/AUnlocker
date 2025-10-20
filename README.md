@@ -43,7 +43,7 @@
   - Resize the in-game buttons (Use, Kill, Report, etc.)
   - Prevent the game from collecting analytics and sending them to Innersloth
   - Be able to activate the April Fools Mode (Seeker, Long Boi and Horse Mode)
-  - Show more information when finding a game: host name, lobby code, host platform, and lobby age
+  - Show more information when finding a game: host name, lobby code, host platform, lobby age, and exact number of lobbies online
   - Show the task panel (contains a list of your tasks) during meetings
 - 💣 Unsafe
   - Be able to send any character in chat
