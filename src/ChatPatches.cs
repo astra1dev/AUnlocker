@@ -36,6 +36,12 @@ public static class ChatJailbreak_ChatController_Update_Postfix
             __instance.freeChatField.textArea.characterLimit = int.MaxValue;
         }
 
+        // Set chat cooldown to 2.1s opposed to orginal 3s
+        if (__instance.timeSinceLastMessage < 0.9f)
+        {
+            __instance.timeSinceLastMessage = 0.9f;
+        }
+
         else if (AUnlocker.PatchChat.Value)
         {
             //__instance.freeChatField.textArea.AllowPaste = true;
