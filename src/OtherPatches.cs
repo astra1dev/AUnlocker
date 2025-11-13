@@ -159,7 +159,7 @@ public static class MoreLobbyInfo_FindAGameManager_HandleList_Postfix
 
 [HarmonyPatch(typeof(HudManager))]
 [HarmonyPatch("SetHudActive", typeof(PlayerControl), typeof(RoleBehaviour), typeof(bool))]
-public static class ShowTaskPanelInMeetings_HudManager_SetHudActive
+public static class ShowTaskPanelInMeetings_HudManager_SetHudActive_Postfix
 {
     /// <summary>
     /// Show the task panel (contains a list of your tasks) during meetings.
@@ -178,5 +178,24 @@ public static class ShowTaskPanelInMeetings_HudManager_SetHudActive
         __instance.TaskPanel.openPosition = openPosition;
 
         __instance.TaskPanel.gameObject.SetActive(true);
+    }
+}
+
+[HarmonyPatch(typeof(GameStartManager), nameof(GameStartManager.Start))]
+public static class ShowLobbyTimer_GameStartManager_Start_Postfix
+{
+    /// <summary>
+    /// Always display the timer in the bottom left corner to indicate when the server will close the lobby (Works only as Host).
+    /// </summary>
+    /// <param name="__instance">The <c>GameStartManager</c> instance.</param>
+    public static void Postfix(GameStartManager __instance)
+    {
+        if (!AUnlocker.AlwaysShowLobbyTimer.Value) return;
+
+        if (__instance == null) return;
+        if (!GameData.Instance || !AmongUsClient.Instance || AmongUsClient.Instance.NetworkMode == NetworkModes.LocalGame) return;
+        if (!AmongUsClient.Instance.AmHost) return;
+
+        HudManager.Instance.ShowLobbyTimer(600);
     }
 }

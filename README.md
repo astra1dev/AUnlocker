@@ -44,6 +44,7 @@
   - Prevent the game from collecting analytics and sending them to Innersloth
   - Be able to activate the April Fools Mode (Seeker, Long Boi and Horse Mode)
   - Show more information when finding a game: host name, lobby code, host platform, lobby age, and exact number of lobbies online
+  - Always display the timer in the bottom left corner to indicate when the server will close the lobby (Works only as Host)
   - Show the task panel (contains a list of your tasks) during meetings
 - 💣 Unsafe
   - Be able to send any character in chat
@@ -64,21 +65,22 @@ Before you download anything, make sure your platform is supported:
 
 The table below lists the most recent AUnlocker release for each Among Us version. Release notes can be found below each new [release](../../releases).
 
-|    Among Us Version    |          AUnlocker Version          |
-|:----------------------:|:-----------------------------------:|
-| `17.0.0` (`2025.9.9`)  | [v1.2.2](../../releases/tag/v1.2.2) |
-| `16.1.0` (`2025.6.10`) | [v1.2.2](../../releases/tag/v1.2.2) |
-| `16.0.5` (`2025.5.20`) | [v1.2.0](../../releases/tag/v1.2.0) |
-| `16.0.2` (`2025.3.31`) | [v1.1.8](../../releases/tag/v1.1.8) |
-| `16.0.0` (`2025.3.25`) | [v1.1.8](../../releases/tag/v1.1.8) |
-|      `2024.11.26`      | [v1.1.7](../../releases/tag/v1.1.7) |
-|      `2024.10.29`      | [v1.1.7](../../releases/tag/v1.1.7) |
-|       `2024.9.4`       | [v1.1.7](../../releases/tag/v1.1.7) |
-|      `2024.8.13`       | [v1.1.6](../../releases/tag/v1.1.6) |
-|      `2024.6.18`       | [v1.1.5](../../releases/tag/v1.1.5) |
-|      `2024.3.05`       | [v1.1.4](../../releases/tag/v1.1.4) |
-|      `2023.11.28`      | [v1.1.3](../../releases/tag/v1.1.3) |
-|      `2023.10.24`      | [v1.1.0](../../releases/tag/v1.1.0) |
+|    Among Us Version     |          AUnlocker Version          |
+|:-----------------------:|:-----------------------------------:|
+| `17.0.1` (`2025.10.14`) | [v1.2.2](../../releases/tag/v1.2.2) |
+|  `17.0.0` (`2025.9.9`)  | [v1.2.2](../../releases/tag/v1.2.2) |
+| `16.1.0` (`2025.6.10`)  | [v1.2.2](../../releases/tag/v1.2.2) |
+| `16.0.5` (`2025.5.20`)  | [v1.2.0](../../releases/tag/v1.2.0) |
+| `16.0.2` (`2025.3.31`)  | [v1.1.8](../../releases/tag/v1.1.8) |
+| `16.0.0` (`2025.3.25`)  | [v1.1.8](../../releases/tag/v1.1.8) |
+|      `2024.11.26`       | [v1.1.7](../../releases/tag/v1.1.7) |
+|      `2024.10.29`       | [v1.1.7](../../releases/tag/v1.1.7) |
+|       `2024.9.4`        | [v1.1.7](../../releases/tag/v1.1.7) |
+|       `2024.8.13`       | [v1.1.6](../../releases/tag/v1.1.6) |
+|       `2024.6.18`       | [v1.1.5](../../releases/tag/v1.1.5) |
+|       `2024.3.05`       | [v1.1.4](../../releases/tag/v1.1.4) |
+|      `2023.11.28`       | [v1.1.3](../../releases/tag/v1.1.3) |
+|      `2023.10.24`       | [v1.1.0](../../releases/tag/v1.1.0) |
 
 # 💾 Installation
 ## 🪟 Windows

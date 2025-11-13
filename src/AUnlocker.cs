@@ -36,6 +36,7 @@ public partial class AUnlocker : BasePlugin
     public static ConfigEntry<bool> DisableTelemetry;
     public static ConfigEntry<string> AprilFoolsMode;
     public static ConfigEntry<bool> MoreLobbyInfo;
+    public static ConfigEntry<bool> AlwaysShowLobbyTimer;
     public static ConfigEntry<bool> ShowTaskPanelInMeetings;
 
     // Unsafe
@@ -68,6 +69,7 @@ public partial class AUnlocker : BasePlugin
         AprilFoolsMode = Config.Bind("Other", "AprilFoolsMode", "Disabled", "Enable April Fools Mode (only client-side)\n\nOptions: Disabled, Horse, Seeker, Long, LongHorse");
         MoreLobbyInfo = Config.Bind("Other", "MoreLobbyInfo", false, "Show more information when finding a game: host name (e.g. Astral), lobby code (e.g. KLHCEG), host platform (e.g. Epic), " +
                                                                      "and lobby age in minutes (e.g. 4:20).\nAdditionally, display the exact number of lobbies online instead of an approximation like '500+'");
+        AlwaysShowLobbyTimer = Config.Bind("Other", "AlwaysShowLobbyTimer", false, "Always display the timer in the bottom left corner to indicate when the server will close the lobby (Works only as Host)");
         ShowTaskPanelInMeetings = Config.Bind("Other", "ShowTaskPanelInMeetings", false, "Show the task panel (contains a list of your tasks) during meetings");
         // Unsafe
         AllowAllCharacters = Config.Bind("Unsafe", "AllowAllCharacters", false, "THESE ARE UNSAFE AND CAN GET YOU KICKED BY ANTI-CHEAT, USE WITH CAUTION\n\nBe able to send any character in chat");
