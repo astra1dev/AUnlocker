@@ -1,3 +1,4 @@
+using AmongUs.GameOptions;
 using HarmonyLib;
 
 namespace AUnlocker;
@@ -66,5 +67,23 @@ public static class NoAntiCheat_PlayerControl_RpcSyncSettings_Prefix
     public static bool Prefix(PlayerControl __instance, byte[] optionsByteArray)
     {
         return !AUnlocker.NoOptionsLimits.Value;
+    }
+}
+
+[HarmonyPatch(typeof(IGameOptionsExtensions), nameof(IGameOptionsExtensions.GetAdjustedNumImpostors))]
+public static class UnlimitedImpostors_IGameOptionsExtensions_GetAdjustedNumImpostors_Prefix
+{
+    /// <summary>
+    /// Prevent clamping of the number of impostors to the original valid range (1-3).
+    /// </summary>
+    /// <param name="__instance">The <c>IGameOptions</c> instance.</param>
+    /// <param name="playerCount">The current player count. Unused even in the original method.</param>
+    /// <param name="__result">Original return value of <c>GetAdjustedNumImpostors</c>.</param>
+    /// <returns><c>false</c> to skip the original method, <c>true</c> to allow the original method to run.</returns>
+    public static bool Prefix(IGameOptions __instance, int playerCount, ref int __result)
+    {
+        if (!AUnlocker.NoOptionsLimits.Value) return true;
+        __result = GameOptionsManager.Instance.CurrentGameOptions.NumImpostors;
+        return false;
     }
 }
