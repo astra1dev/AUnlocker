@@ -13,9 +13,11 @@ Task("Build")
         MSBuildSettings = new DotNetMSBuildSettings()
     };
 
-    if (tag != null) 
+    if (tag != null)
     {
-        settings.MSBuildSettings.Version = tag;
+        // Remove leading 'v' if present (e.g., 'v2.5.3' -> '2.5.3')
+        var numericTag = tag.StartsWith("v") ? tag.Substring(1) : tag;
+        settings.MSBuildSettings.Version = numericTag;
     }
     else if (buildId != 0)
     {
