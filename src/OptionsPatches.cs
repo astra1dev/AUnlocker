@@ -15,7 +15,7 @@ public static class IncreaseWithoutLimits_NumberOption_Increase_Prefix
     {
         if (!AUnlocker.NoOptionsLimits.Value) return true;
         
-        if (Utils.isHideNSeek || !Utils.isHideNSeek && __instance.TitleText.text != "# Impostors" && __instance.TitleText.text != "Player Speed")
+        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode == GameModes.HideNSeek || GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek && __instance.TitleText.text != "# Impostors" && __instance.TitleText.text != "Player Speed")
         {
             __instance.Value +=  __instance.Increment;
             __instance.UpdateValue();
@@ -39,7 +39,7 @@ public static class DecreaseWithoutLimits_NumberOption_Decrease_Prefix
     {
         if (!AUnlocker.NoOptionsLimits.Value) return true;
         
-        if (Utils.isHideNSeek || !Utils.isHideNSeek && __instance.TitleText.text != "# Impostors" && __instance.TitleText.text != "Player Speed")
+        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode == GameModes.HideNSeek || GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek && __instance.TitleText.text != "# Impostors" && __instance.TitleText.text != "Player Speed")
         {
             __instance.Value -=  __instance.Increment;
             __instance.UpdateValue();
@@ -62,7 +62,7 @@ public static class UnlimitedRange_NumberOption_Initialize_Postfix
     {
         if (!AUnlocker.NoOptionsLimits.Value) return;
         
-        if (Utils.isHideNSeek || !Utils.isHideNSeek && __instance.TitleText.text != "# Impostors" && __instance.TitleText.text != "Player Speed")
+        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode == GameModes.HideNSeek || GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek && __instance.TitleText.text != "# Impostors" && __instance.TitleText.text != "Player Speed")
         {
             __instance.ValidRange = new FloatRange(-999f, 999f);
         }
@@ -101,3 +101,4 @@ public static class UnlimitedImpostors_IGameOptionsExtensions_GetAdjustedNumImpo
         return false;
     }
 }
+
