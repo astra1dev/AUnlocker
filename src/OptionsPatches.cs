@@ -101,4 +101,3 @@ public static class UnlimitedImpostors_IGameOptionsExtensions_GetAdjustedNumImpo
         return false;
     }
 }
-
