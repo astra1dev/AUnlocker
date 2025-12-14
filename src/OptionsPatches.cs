@@ -48,6 +48,7 @@ public static class DecreaseWithoutLimits_NumberOption_Decrease_Prefix
             return false;
         }
         else return true;
+    }
 }
 
 [HarmonyPatch(typeof(NumberOption), nameof(NumberOption.Initialize))]
