@@ -14,7 +14,9 @@ public static class IncreaseWithoutLimits_NumberOption_Increase_Prefix
     public static bool Prefix(NumberOption __instance)
     {
         if (!AUnlocker.NoOptionsLimits.Value) return true;
-        __instance.Value +=  __instance.Increment;
+        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek &&
+            __instance.Title is StringNames.GameNumImpostors or StringNames.GamePlayerSpeed) return true;
+        __instance.Value += __instance.Increment;
         __instance.UpdateValue();
         __instance.OnValueChanged.Invoke(__instance);
         __instance.AdjustButtonsActiveState();
@@ -33,7 +35,9 @@ public static class DecreaseWithoutLimits_NumberOption_Decrease_Prefix
     public static bool Prefix(NumberOption __instance)
     {
         if (!AUnlocker.NoOptionsLimits.Value) return true;
-        __instance.Value -=  __instance.Increment;
+        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek &&
+            __instance.Title is StringNames.GameNumImpostors or StringNames.GamePlayerSpeed) return true;
+        __instance.Value -= __instance.Increment;
         __instance.UpdateValue();
         __instance.OnValueChanged.Invoke(__instance);
         __instance.AdjustButtonsActiveState();
@@ -51,6 +55,8 @@ public static class UnlimitedRange_NumberOption_Initialize_Postfix
     public static void Postfix(NumberOption __instance)
     {
         if (!AUnlocker.NoOptionsLimits.Value) return;
+        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek &&
+            __instance.Title is StringNames.GameNumImpostors or StringNames.GamePlayerSpeed) return;
         __instance.ValidRange = new FloatRange(-999f, 999f);
     }
 }
