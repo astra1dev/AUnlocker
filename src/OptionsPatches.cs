@@ -14,16 +14,13 @@ public static class IncreaseWithoutLimits_NumberOption_Increase_Prefix
     public static bool Prefix(NumberOption __instance)
     {
         if (!AUnlocker.NoOptionsLimits.Value) return true;
-        
-        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode == GameModes.HideNSeek || GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek && __instance.TitleText.text != "# Impostors" && __instance.TitleText.text != "Player Speed")
-        {
-            __instance.Value +=  __instance.Increment;
-            __instance.UpdateValue();
-            __instance.OnValueChanged.Invoke(__instance);
-            __instance.AdjustButtonsActiveState();
-            return false;
-        }
-        else return true;
+        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek &&
+            __instance.Title is StringNames.GameNumImpostors or StringNames.GamePlayerSpeed) return true;
+        __instance.Value += __instance.Increment;
+        __instance.UpdateValue();
+        __instance.OnValueChanged.Invoke(__instance);
+        __instance.AdjustButtonsActiveState();
+        return false;
     }
 }
 
@@ -38,16 +35,13 @@ public static class DecreaseWithoutLimits_NumberOption_Decrease_Prefix
     public static bool Prefix(NumberOption __instance)
     {
         if (!AUnlocker.NoOptionsLimits.Value) return true;
-        
-        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode == GameModes.HideNSeek || GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek && __instance.TitleText.text != "# Impostors" && __instance.TitleText.text != "Player Speed")
-        {
-            __instance.Value -=  __instance.Increment;
-            __instance.UpdateValue();
-            __instance.OnValueChanged.Invoke(__instance);
-            __instance.AdjustButtonsActiveState();
-            return false;
-        }
-        else return true;
+        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek &&
+            __instance.Title is StringNames.GameNumImpostors or StringNames.GamePlayerSpeed) return true;
+        __instance.Value -= __instance.Increment;
+        __instance.UpdateValue();
+        __instance.OnValueChanged.Invoke(__instance);
+        __instance.AdjustButtonsActiveState();
+        return false;
     }
 }
 
@@ -61,11 +55,9 @@ public static class UnlimitedRange_NumberOption_Initialize_Postfix
     public static void Postfix(NumberOption __instance)
     {
         if (!AUnlocker.NoOptionsLimits.Value) return;
-        
-        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode == GameModes.HideNSeek || GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek && __instance.TitleText.text != "# Impostors" && __instance.TitleText.text != "Player Speed")
-        {
-            __instance.ValidRange = new FloatRange(-999f, 999f);
-        }
+        if (GameOptionsManager.Instance.CurrentGameOptions.GameMode != GameModes.HideNSeek &&
+            __instance.Title is StringNames.GameNumImpostors or StringNames.GamePlayerSpeed) return;
+        __instance.ValidRange = new FloatRange(-999f, 999f);
     }
 }
 
