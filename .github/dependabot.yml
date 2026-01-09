@@ -10,7 +10,7 @@ registries:
 
 updates:
   # Enable version updates for NuGet packages
-  - package-ecosystem: "NuGet"
+  - package-ecosystem: "nuget"
     directories:
       - "/"
       - "/src"
