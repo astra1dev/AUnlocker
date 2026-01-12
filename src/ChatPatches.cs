@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
@@ -206,10 +205,10 @@ public static class AllowAllCharacters_TextBoxTMP_IsCharAllowed_Prefix
 }
 
 [HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.Start))]
-public static class AllowPaste_TextBoxTMP_Start_Postfix
+public static class AllowSymbols_TextBoxTMP_Start_Postfix
 {
     /// <summary>
-    /// Allow email symbols to be typed into the chatbox and enables pasting text with CTRL + V.
+    /// Allow symbols to be typed into the chatbox.
     /// </summary>
     /// <param name="__instance">The <c>TextBoxTMP</c> instance.</param>
     public static void Postfix(TextBoxTMP __instance)
@@ -218,7 +217,6 @@ public static class AllowPaste_TextBoxTMP_Start_Postfix
 
         __instance.allowAllCharacters = true; // not used by game's code, but I include it anyway
         __instance.AllowEmail = true;
-        //__instance.AllowPaste = true;
         __instance.AllowSymbols = true;
     }
 }
