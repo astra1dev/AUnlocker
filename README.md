@@ -33,10 +33,11 @@
     - Not being able to play online
   - Removes the time penalty after disconnecting from too many lobbies
 - 💬 Chat Features
-  - Use `Ctrl + C` and `Ctrl + V` to copy-paste chat messages
+  - Use `Ctrl + C`, `Ctrl + V` and `Ctrl + X` to copy, paste and cut chat messages
   - Scroll through your previously sent chat messages using the Up and Down arrow keys
-  - Be able to send URLs and Email addresses
+  - Be able to send symbols, URLs and Email addresses
   - Increase the character limit from 100 to 120
+  - Reduce the chat cooldown from 3s to 2.1s
   - Modify the maximum amount of chat messages to keep in the chat history
 - ✨ Other Features
   - Remove the 60 FPS cap
@@ -47,7 +48,6 @@
   - Always display the timer in the bottom left corner to indicate when the server will close the lobby (Works only as Host)
   - Show the task panel (contains a list of your tasks) during meetings
 - 💣 Unsafe
-  - Be able to send any character in chat
   - No character limit in chat
   - No 3s cooldown between chat messages
   - No limits on game host options (e.g. amount of impostors)
@@ -97,14 +97,14 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 - Launch Among Us. The first launch will take **MUCH** longer, so don't worry if you have to wait a few minutes.
 
 ## 🐧 Linux
-- Make sure you are running Among Us under Proton (or Wine). On Steam you can check this by right-clicking Among Us in your library → `Properties` → `Compatibility` → `Force the use of a specific Steam Play compatibility tool`. Test different Proton versions if you're having issues launching the game. 
+- Make sure you are running Among Us under Proton (or Wine). On Steam you can check this by right-clicking Among Us in your library → `Properties` → `Compatibility` → `Force the use of a specific Steam Play compatibility tool`. Test different Proton versions if you're having issues launching the game.
 - Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.html) to get BepInEx (the framework AUnlocker is built upon) working. Alternatively, if you are using Proton with Steam, you can specify the DLL override in the launch options (right-click Among Us in your library → `Properties` → `General` → `Launch Options`): `WINEDLLOVERRIDES="winhttp.dll=n,b" %command%` Then follow the steps for Windows.
-- If you are experiencing crashes or errors like `Unable to execute IL2CPP chainloader`, set your launch options (right-click Among Us in your library → `Properties` → `General` → `Launch Options`) to `PROTON_NO_ESYNC=1 PROTON_USE_WINED3D=1 WINEDLLOVERRIDES="winhttp.dll=n,b" %command%` 
+- If you are experiencing crashes or errors like `Unable to execute IL2CPP chainloader`, set your launch options (right-click Among Us in your library → `Properties` → `General` → `Launch Options`) to `PROTON_NO_ESYNC=1 PROTON_USE_WINED3D=1 WINEDLLOVERRIDES="winhttp.dll=n,b" %command%`
 
 <hr>
 
 <b>👾 If you are already using other mods or already have BepInEx installed:</b>
-- You should see a folder called `BepInEx` inside your Among Us folder. 
+- You should see a folder called `BepInEx` inside your Among Us folder.
 - Download `AUnlocker_v*.dll` from the [latest release](../../releases/latest), put it into `BepInEx/plugins` and launch Among Us.
 
 <b>👷‍♂️ If you don't want to download the pre-compiled DLL, you can build AUnlocker from source by following these steps:</b>
