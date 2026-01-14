@@ -67,6 +67,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 |    Among Us Version     |          AUnlocker Version          |
 |:-----------------------:|:-----------------------------------:|
+| `17.1.0` (`2025.11.18`) | [v1.2.2](../../releases/tag/v1.2.2) |
 | `17.0.1` (`2025.10.14`) | [v1.2.2](../../releases/tag/v1.2.2) |
 |  `17.0.0` (`2025.9.9`)  | [v1.2.2](../../releases/tag/v1.2.2) |
 | `16.1.0` (`2025.6.10`)  | [v1.2.2](../../releases/tag/v1.2.2) |
@@ -97,14 +98,14 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 - Launch Among Us. The first launch will take **MUCH** longer, so don't worry if you have to wait a few minutes.
 
 ## 🐧 Linux
-- Make sure you are running Among Us under Proton (or Wine). On Steam you can check this by right-clicking Among Us in your library → `Properties` → `Compatibility` → `Force the use of a specific Steam Play compatibility tool`. Test different Proton versions if you're having issues launching the game. 
+- Make sure you are running Among Us under Proton (or Wine). On Steam you can check this by right-clicking Among Us in your library → `Properties` → `Compatibility` → `Force the use of a specific Steam Play compatibility tool`. Test different Proton versions if you're having issues launching the game.
 - Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.html) to get BepInEx (the framework AUnlocker is built upon) working. Alternatively, if you are using Proton with Steam, you can specify the DLL override in the launch options (right-click Among Us in your library → `Properties` → `General` → `Launch Options`): `WINEDLLOVERRIDES="winhttp.dll=n,b" %command%` Then follow the steps for Windows.
-- If you are experiencing crashes or errors like `Unable to execute IL2CPP chainloader`, set your launch options (right-click Among Us in your library → `Properties` → `General` → `Launch Options`) to `PROTON_NO_ESYNC=1 PROTON_USE_WINED3D=1 WINEDLLOVERRIDES="winhttp.dll=n,b" %command%` 
+- If you are experiencing crashes or errors like `Unable to execute IL2CPP chainloader`, set your launch options (right-click Among Us in your library → `Properties` → `General` → `Launch Options`) to `PROTON_NO_ESYNC=1 PROTON_USE_WINED3D=1 WINEDLLOVERRIDES="winhttp.dll=n,b" %command%`
 
 <hr>
 
 <b>👾 If you are already using other mods or already have BepInEx installed:</b>
-- You should see a folder called `BepInEx` inside your Among Us folder. 
+- You should see a folder called `BepInEx` inside your Among Us folder.
 - Download `AUnlocker_v*.dll` from the [latest release](../../releases/latest), put it into `BepInEx/plugins` and launch Among Us.
 
 <b>👷‍♂️ If you don't want to download the pre-compiled DLL, you can build AUnlocker from source by following these steps:</b>
