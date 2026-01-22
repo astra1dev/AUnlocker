@@ -120,10 +120,11 @@ General contribution:
 - If you want to add a new feature or edit / improve existing code, fork this repo and create a pull request with your changes.  ([how?](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project))
 
 Getting started modding Among Us:
-- Learn [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) and [Unity](https://unity.com), as well as [BepInEx](https://github.com/BepInEx/BepInEx) and [HarmonyX](https://github.com/BepInEx/HarmonyX)
-- Read the [docs](https://docs.reactor.gg) for [Reactor](https://github.com/NuclearPowered/Reactor), a modding API for Among Us. \
-  Join their [discord](https://reactor.gg/discord) for the latest `Assembly-CSharp.dll` files. Open them using [dnSpy](https://github.com/dnSpy/dnSpy) to view the game's decompiled client code.
-- Take a look at [sus.wiki](https://github.com/roobscoob/among-us-protocol) to learn more about the Among Us network protocol
+- Learn the basics of [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)), [Unity](https://learn.unity.com/), [BepInEx](https://docs.bepinex.dev/master/) and [HarmonyX](https://github.com/BepInEx/HarmonyX/wiki)
+- Read the [Reactor docs](https://docs.reactor.gg) for how to set up your plugin and IDE to work with Among Us. \
+  Join their [discord](https://reactor.gg/discord) to download the latest `Assembly-CSharp.dll`, which you can open using [dnSpyEx](https://github.com/dnSpyEx/dnSpy) or [ILSpy](https://github.com/icsharpcode/ILSpy) to view the game's decompiled client code.
+- Try to read and understand code from your favorite mod (if it's open-source, which most are)
+- Advanced: Take a look at [sus.wiki](https://github.com/roobscoob/among-us-protocol) to learn more about the Among Us network protocol
 
 For more detailed contribution guidelines, read [CONTRIBUTING.md](/.github/CONTRIBUTING.md)
 
