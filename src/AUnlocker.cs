@@ -1,4 +1,5 @@
 using BepInEx;
+using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 using BepInEx.Configuration;
@@ -13,6 +14,7 @@ namespace AUnlocker;
 public partial class AUnlocker : BasePlugin
 {
     public Harmony Harmony { get; } = new(Id);
+    public new static ManualLogSource Log;
 
     // General
     public static ConfigEntry<KeyCode> ReloadConfigKeybind;
@@ -50,6 +52,8 @@ public partial class AUnlocker : BasePlugin
     /// </summary>
     public override void Load()
     {
+        Log = base.Log;
+
         // General
         ReloadConfigKeybind = Config.Bind("General", "ReloadConfigKeybind", KeyCode.F6, "The keyboard key used to reload the configuration file");
         ButtonSize = Config.Bind("General", "ButtonSize", 1f, "Resize the in-game buttons (Use, Kill, Report, etc.)\nSet to 1.0 to disable scaling");
@@ -96,8 +100,6 @@ public partial class AUnlocker : BasePlugin
         // More Info: https://discussions.unity.com/t/iap-privacy-issue/881743
 
         AddComponent<KeybindListener>().Plugin = this;
-        HudManager_Start_Patch.Plugin = this;
-        ChatJailbreak_ChatController_Update_Postfix.Plugin = this;
     }
 }
 
@@ -109,7 +111,7 @@ public class KeybindListener : MonoBehaviour
     {
         if (!Input.GetKeyDown(AUnlocker.ReloadConfigKeybind.Value)) return;
         Plugin.Config.Reload();
-        Plugin.Log.LogInfo("Configuration reloaded.");
+        AUnlocker.Log.LogInfo("Configuration reloaded.");
     }
 }
 
@@ -148,10 +150,9 @@ public static class Resize
 [HarmonyPatch(typeof(HudManager), nameof(HudManager.Start))]
 public static class HudManager_Start_Patch
 {
-    public static AUnlocker Plugin { get; internal set; }
     public static void Postfix()
     {
         Resize.ResizeUI(AUnlocker.ButtonSize.Value);
-        Plugin.Log.LogInfo("UI resized to " + AUnlocker.ButtonSize.Value * 100 + "%");
+        AUnlocker.Log.LogInfo("UI resized to " + AUnlocker.ButtonSize.Value * 100 + "%");
     }
 }

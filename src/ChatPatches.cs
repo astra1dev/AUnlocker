@@ -9,8 +9,6 @@ namespace AUnlocker;
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.Update))]
 public static class ChatJailbreak_ChatController_Update_Postfix
 {
-    public static AUnlocker Plugin { get; internal set; }
-
     // CurrentHistorySelection: -1 = no selection, 0 = first message, Count - 1 = last message
     public static int CurrentHistorySelection = -1;
     private static string inProgressMessage = "";
@@ -63,7 +61,7 @@ public static class ChatJailbreak_ChatController_Update_Postfix
             if (CurrentHistorySelection == 0)
             {
                 SoundManager.Instance.PlaySound(__instance.warningSound, false);
-                Plugin.Log.LogInfo("You have reached the end of your chat history.");
+                AUnlocker.Log.LogInfo("You have reached the end of your chat history.");
             }
             else
             {
