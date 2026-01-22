@@ -33,10 +33,11 @@
     - Not being able to play online
   - Removes the time penalty after disconnecting from too many lobbies
 - 💬 Chat Features
-  - Use `Ctrl + C` and `Ctrl + V` to copy-paste chat messages
+  - Use `Ctrl + C`, `Ctrl + V` and `Ctrl + X` to copy, paste and cut chat messages
   - Scroll through your previously sent chat messages using the Up and Down arrow keys
-  - Be able to send URLs and Email addresses
+  - Be able to send symbols, URLs and Email addresses
   - Increase the character limit from 100 to 120
+  - Reduce the chat cooldown from 3s to 2.1s
   - Modify the maximum amount of chat messages to keep in the chat history
 - ✨ Other Features
   - Remove the 60 FPS cap
@@ -47,7 +48,6 @@
   - Always display the timer in the bottom left corner to indicate when the server will close the lobby (Works only as Host)
   - Show the task panel (contains a list of your tasks) during meetings
 - 💣 Unsafe
-  - Be able to send any character in chat
   - No character limit in chat
   - No 3s cooldown between chat messages
   - No limits on game host options (e.g. amount of impostors)
