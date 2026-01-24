@@ -1,3 +1,4 @@
+using System;
 using HarmonyLib;
 
 namespace AUnlocker;
@@ -6,6 +7,17 @@ namespace AUnlocker;
 public static class UnlockCosmetics_HatManager_Initialize_Postfix
 {
     // https://github.com/scp222thj/MalumMenu/blob/main/src/Cheats/CosmeticsUnlocker.cs
+
+    /// <summary>
+    /// Ensure the patch is not applied on Android.
+    /// </summary>
+    /// <returns>True if the patch should be applied; otherwise, false.</returns>
+#pragma warning disable HARMONIZE004
+    public static bool Prepare()
+#pragma warning restore HARMONIZE004
+    {
+        return !OperatingSystem.IsAndroid();
+    }
 
     /// <summary>
     /// Unlock all cosmetics by setting their price to 0 and marking them as free.
@@ -68,6 +80,17 @@ public static class DontShowCosmeticsInGame_PlayerControl_FixedUpdate_Postfix
 [HarmonyPatch(typeof(PlayerPurchasesData), nameof(PlayerPurchasesData.GetPurchase))]
 public static class UnlockCosmetics_PlayerPurchasesData_GetPurchase_Prefix
 {
+    /// <summary>
+    /// Ensure the patch is not applied on Android.
+    /// </summary>
+    /// <returns>True if the patch should be applied; otherwise, false.</returns>
+#pragma warning disable HARMONIZE004
+    public static bool Prepare()
+#pragma warning restore HARMONIZE004
+    {
+        return !OperatingSystem.IsAndroid();
+    }
+
     public static bool Prefix(PlayerPurchasesData __instance, string itemKey, string bundleKey, ref bool __result)
     {
         if (!AUnlocker.UnlockCosmetics.Value) return true;

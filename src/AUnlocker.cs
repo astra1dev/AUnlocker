@@ -11,7 +11,9 @@ namespace AUnlocker;
 
 [BepInAutoPlugin]
 [BepInProcess("Among Us.exe")]
+#pragma warning disable BepInEx002
 public partial class AUnlocker : BasePlugin
+#pragma warning restore BepInEx002
 {
     public Harmony Harmony { get; } = new(Id);
     public new static ManualLogSource Log;
