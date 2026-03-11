@@ -12,9 +12,7 @@ public static class UnlockCosmetics_HatManager_Initialize_Postfix
     /// Ensure the patch is not applied on Android.
     /// </summary>
     /// <returns>True if the patch should be applied; otherwise, false.</returns>
-#pragma warning disable HARMONIZE004
     public static bool Prepare()
-#pragma warning restore HARMONIZE004
     {
         return !OperatingSystem.IsAndroid();
     }
@@ -84,9 +82,7 @@ public static class UnlockCosmetics_PlayerPurchasesData_GetPurchase_Prefix
     /// Ensure the patch is not applied on Android.
     /// </summary>
     /// <returns>True if the patch should be applied; otherwise, false.</returns>
-#pragma warning disable HARMONIZE004
     public static bool Prepare()
-#pragma warning restore HARMONIZE004
     {
         return !OperatingSystem.IsAndroid();
     }
