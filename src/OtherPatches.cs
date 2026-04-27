@@ -130,6 +130,7 @@ public static class MoreLobbyInfo_GameContainer_SetupGameInfo_Postfix
             Platforms.Switch => "Nintendo Switch",
             Platforms.Xbox => "Xbox",
             Platforms.Playstation => "PlayStation",
+            (Platforms)112 => "Starlight",
             _ => "Unknown"
         };
         // Set the text of the capacity field to include the new information
