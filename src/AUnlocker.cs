@@ -1,3 +1,4 @@
+using AUnlocker.Components;
 using BepInEx;
 using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
@@ -100,18 +101,6 @@ public partial class AUnlocker : BasePlugin
         // More Info: https://discussions.unity.com/t/iap-privacy-issue/881743
 
         AddComponent<KeybindListener>().Plugin = this;
-    }
-}
-
-public class KeybindListener : MonoBehaviour
-{
-    public AUnlocker Plugin { get; internal set; }
-
-    public void Update()
-    {
-        if (!Input.GetKeyDown(AUnlocker.ReloadConfigKeybind.Value)) return;
-        Plugin.Config.Reload();
-        AUnlocker.Log.LogInfo("Configuration reloaded.");
     }
 }
 
