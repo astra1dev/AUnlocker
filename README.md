@@ -63,7 +63,7 @@ Before you download anything, make sure your platform is supported:
 - ❌ Mobile (Google Play & App Store)
 - ❌ Console (Playstation, Nintendo Switch, Xbox)
 
-The table below lists the most recent AUnlocker release for each Among Us version. Release notes can be found below each new [release](../../releases).
+The table below lists the most recent AUnlocker release for each Among Us version. Release notes can be found below each new [release](../../releases) and in [CHANGELOG.md](/docs/CHANGELOG.md).
 
 |    Among Us Version     |          AUnlocker Version          |
 |:-----------------------:|:-----------------------------------:|
@@ -120,7 +120,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 # 👨‍💻 Contributing
 General contribution:
-- For bug reports and feature requests, [open a new issue](/issues/new)
+- For bug reports and feature requests, [open a new issue](../../issues/new/choose)
 - If you want to add a new feature or edit / improve existing code, fork this repo and create a pull request with your changes.  ([how?](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project))
 
 Getting started modding Among Us:
@@ -130,7 +130,7 @@ Getting started modding Among Us:
 - Try to read and understand code from your favorite mod (if it's open-source, which most are)
 - Advanced: Take a look at [sus.wiki](https://github.com/roobscoob/among-us-protocol) to learn more about the Among Us network protocol
 
-For more detailed contribution guidelines, read [CONTRIBUTING.md](/.github/CONTRIBUTING.md)
+For more detailed contribution guidelines, read [CONTRIBUTING.md](/docs/CONTRIBUTING.md)
 
 # ⚠️ Disclaimer
 AUnlocker does not unlock all cosmetics **permanently**, so it does **not** add them to your account. This is because your progress is stored on the Innersloth servers. If you uninstall this mod, the cosmetics will be locked again. The cosmetics you have already unlocked, e.g. through buying a cosmicube, are **untouched** by this mod.
