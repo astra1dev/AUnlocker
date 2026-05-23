@@ -6,7 +6,7 @@ using InnerNet;
 namespace AUnlocker;
 
 [HarmonyPatch(typeof(MainMenuManager), nameof(MainMenuManager.Start))]
-public static class UnlockFPS_MainMenuManager_Start_Postfix
+public static class MainMenuManager_Start
 {
     /// <summary>
     /// Set the target frame rate based on the config setting.
@@ -22,7 +22,7 @@ public static class UnlockFPS_MainMenuManager_Start_Postfix
 /// https://github.com/AU-Avengers/TOU-Mira/blob/dev/TownOfUs/Patches/AprilFools/AprilFools.cs#L115
 /// </summary>
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.BodyType), MethodType.Getter)]
-public static class AprilFoolsMode_PlayerControl_BodyType_Prefix
+public static class PlayerControl_BodyType_Getter
 {
     public static bool Prefix(ref PlayerBodyTypes __result)
     {
@@ -47,7 +47,7 @@ public static class AprilFoolsMode_PlayerControl_BodyType_Prefix
 }
 
 [HarmonyPatch(typeof(PlayerPhysics), nameof(PlayerPhysics.SetBodyType))]
-public static class AprilFoolsMode_PlayerPhysics_SetBodyType_Prefix
+public static class PlayerPhysics_SetBodyType
 {
     public static void Prefix(ref PlayerBodyTypes bodyType)
     {
@@ -65,7 +65,7 @@ public static class AprilFoolsMode_PlayerPhysics_SetBodyType_Prefix
 // Remove checks for ShouldLongAround() in LongBoiPlayerBody.Awake() and .Start()
 // Patching ShouldLongAround() directly doesn't work anymore for some reason
 [HarmonyPatch(typeof(LongBoiPlayerBody), nameof(LongBoiPlayerBody.Awake))]
-public static class AprilFoolsMode_LongBoiPlayerBody_Awake_Prefix
+public static class LongBoiPlayerBody_Awake
 {
     public static bool Prefix(LongBoiPlayerBody __instance)
     {
@@ -77,7 +77,7 @@ public static class AprilFoolsMode_LongBoiPlayerBody_Awake_Prefix
 }
 
 [HarmonyPatch(typeof(LongBoiPlayerBody), nameof(LongBoiPlayerBody.Start))]
-public static class AprilFoolsMode_LongBoiPlayerBody_Start_Prefix
+public static class LongBoiPlayerBody_Start
 {
     public static bool Prefix(LongBoiPlayerBody __instance)
     {
@@ -99,7 +99,7 @@ public static class AprilFoolsMode_LongBoiPlayerBody_Start_Prefix
 
 // https://github.com/g0aty/SickoMenu/blob/main/hooks/LobbyBehaviour.cpp
 [HarmonyPatch(typeof(GameContainer), nameof(GameContainer.SetupGameInfo))]
-public static class MoreLobbyInfo_GameContainer_SetupGameInfo_Postfix
+public static class GameContainer_SetupGameInfo
 {
     /// <summary>
     /// Show more information when finding a game:
@@ -141,7 +141,7 @@ public static class MoreLobbyInfo_GameContainer_SetupGameInfo_Postfix
 }
 
 [HarmonyPatch(typeof(FindAGameManager), nameof(FindAGameManager.HandleList))]
-public static class MoreLobbyInfo_FindAGameManager_HandleList_Postfix
+public static class FindAGameManager_HandleList
 {
     /// <summary>
     /// Display the exact number of lobbies online instead of an approximation like "500+"
@@ -160,7 +160,7 @@ public static class MoreLobbyInfo_FindAGameManager_HandleList_Postfix
 
 [HarmonyPatch(typeof(HudManager))]
 [HarmonyPatch("SetHudActive", typeof(PlayerControl), typeof(RoleBehaviour), typeof(bool))]
-public static class ShowTaskPanelInMeetings_HudManager_SetHudActive_Postfix
+public static class HudManager_SetHudActive
 {
     /// <summary>
     /// Show the task panel (contains a list of your tasks) during meetings.
@@ -183,7 +183,7 @@ public static class ShowTaskPanelInMeetings_HudManager_SetHudActive_Postfix
 }
 
 [HarmonyPatch(typeof(GameStartManager), nameof(GameStartManager.Start))]
-public static class ShowLobbyTimer_GameStartManager_Start_Postfix
+public static class GameStartManager_Start
 {
     /// <summary>
     /// Always display the timer in the bottom left corner to indicate when the server will close the lobby (Works only as Host).

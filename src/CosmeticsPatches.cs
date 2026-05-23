@@ -4,7 +4,7 @@ using HarmonyLib;
 namespace AUnlocker;
 
 [HarmonyPatch(typeof(HatManager), nameof(HatManager.Initialize))]
-public static class UnlockCosmetics_HatManager_Initialize_Postfix
+public static class HatManager_Initialize
 {
     // https://github.com/scp222thj/MalumMenu/blob/main/src/Cheats/CosmeticsUnlocker.cs
 
@@ -58,7 +58,7 @@ public static class UnlockCosmetics_HatManager_Initialize_Postfix
 }
 
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.FixedUpdate))]
-public static class DontShowCosmeticsInGame_PlayerControl_FixedUpdate_Postfix
+public static class PlayerControl_FixedUpdate
 {
     /// <summary>
     /// Don't show any cosmetics in-game (only client-side).
@@ -76,7 +76,7 @@ public static class DontShowCosmeticsInGame_PlayerControl_FixedUpdate_Postfix
 }
 
 [HarmonyPatch(typeof(PlayerPurchasesData), nameof(PlayerPurchasesData.GetPurchase))]
-public static class UnlockCosmetics_PlayerPurchasesData_GetPurchase_Prefix
+public static class PlayerPurchasesData_GetPurchase
 {
     /// <summary>
     /// Ensure the patch is not applied on Android.

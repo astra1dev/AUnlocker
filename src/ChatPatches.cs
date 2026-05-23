@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using UnityEngine;
-using static AUnlocker.ChatHistory_ChatController_SendChat_Prefix;
+using static AUnlocker.ChatController_SendChat;
 
 namespace AUnlocker;
 
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.Update))]
-public static class ChatJailbreak_ChatController_Update_Postfix
+public static class ChatController_Update
 {
     // CurrentHistorySelection: -1 = no selection, 0 = first message, Count - 1 = last message
     public static int CurrentHistorySelection = -1;
@@ -90,7 +90,7 @@ public static class ChatJailbreak_ChatController_Update_Postfix
 }
 
 [HarmonyPatch(typeof(FreeChatInputField), nameof(FreeChatInputField.UpdateCharCount))]
-public static class EditColorIndicators_FreeChatInputField_UpdateCharCount_Postfix
+public static class FreeChatInputField_UpdateCharCount
 {
     /// <summary>
     /// Update the character count color indicator based on the current text length.
@@ -133,7 +133,7 @@ public static class EditColorIndicators_FreeChatInputField_UpdateCharCount_Postf
 }
 
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.SendFreeChat))]
-public static class AllowURLS_ChatController_SendFreeChat_Prefix
+public static class ChatController_SendFreeChat
 {
     /// <summary>
     /// Remove the URL filtering when sending a chat message.
@@ -152,7 +152,7 @@ public static class AllowURLS_ChatController_SendFreeChat_Prefix
 }
 
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.SendChat))]
-public static class ChatHistory_ChatController_SendChat_Prefix
+public static class ChatController_SendChat
 {
     // ChatHistory: index 0 = earliest message, highest index = latest message
     public static readonly List<string> ChatHistory = [];
@@ -169,13 +169,13 @@ public static class ChatHistory_ChatController_SendChat_Prefix
         // This also intentionally allows empty / whitespace-only messages to be added to history
         if (ChatHistory.LastOrDefault() != text)
             ChatHistory.Add(text);
-        ChatJailbreak_ChatController_Update_Postfix.CurrentHistorySelection = ChatHistory.Count;
+        ChatController_Update.CurrentHistorySelection = ChatHistory.Count;
         return true;
     }
 }
 
 [HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.Start))]
-public static class AllowSymbols_TextBoxTMP_Start_Postfix
+public static class TextBoxTMP_Start
 {
     /// <summary>
     /// Allow symbols to be typed into the chatbox.
@@ -192,7 +192,7 @@ public static class AllowSymbols_TextBoxTMP_Start_Postfix
 }
 
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.Awake))]
-public static class ChatHistoryLimit_ChatController_Awake_Postfix
+public static class ChatController_Awake
 {
     /// <summary>
     /// Modify the maximum amount of chat messages to keep in the chat history.
@@ -208,7 +208,7 @@ public static class ChatHistoryLimit_ChatController_Awake_Postfix
 }
 
 [HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.Update))]
-public static class AllowCopy_TextBoxTMP_Update_Postfix
+public static class TextBoxTMP_Update
 {
     /// <summary>
     /// Allow copying, pasting and cutting text between the chatbox and the device's clipboard.
