@@ -137,7 +137,7 @@ public static class Resize
 }
 
 [HarmonyPatch(typeof(HudManager), nameof(HudManager.Start))]
-public static class HudManager_Start_Patch
+public static class HudManager_Start
 {
     public static void Postfix()
     {
