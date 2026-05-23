@@ -29,7 +29,10 @@ public partial class AUnlocker : BasePlugin
     public static ConfigEntry<bool> RemovePenalty;
 
     // Chat
-    public static ConfigEntry<bool> PatchChat;
+    public static ConfigEntry<bool> ChatKeyboardShortcuts;
+    public static ConfigEntry<bool> AllowSymbols;
+    public static ConfigEntry<bool> HigherCharacterLimit;
+    public static ConfigEntry<bool> LowerChatCooldown;
     public static ConfigEntry<int> ChatHistoryLimit;
 
     // Cosmetics
@@ -64,7 +67,10 @@ public partial class AUnlocker : BasePlugin
         UnlockMinor = Config.Bind("Account", "RemoveMinorStatus", false, "Remove minor status and restrictions (no online play)");
         RemovePenalty = Config.Bind("Account", "NoDisconnectPenalty", true, "Remove the penalty after disconnecting from too many lobbies");
         // Chat
-        PatchChat = Config.Bind("Chat", "Enabled", true, "Use Ctrl+C, Ctrl+V and Ctrl+X to copy, paste and cut chat messages\nBe able to send symbols, URLs and Email addresses\nIncrease the character limit from 100 to 120\nReduce the chat cooldown from 3s to 2.1s");
+        ChatKeyboardShortcuts = Config.Bind("Chat", "ChatKeyboardShortcuts", true, "Use Ctrl+C, Ctrl+V and Ctrl+X to copy, paste and cut chat messages");
+        AllowSymbols = Config.Bind("Chat", "AllowSymbols", true, "Be able to send symbols, URLs and Email addresses");
+        HigherCharacterLimit = Config.Bind("Chat", "HigherCharacterLimit", true, "Increase the character limit from 100 to 120");
+        LowerChatCooldown = Config.Bind("Chat", "LowerChatCooldown", true, "Reduce the chat cooldown from 3s to 2.1s");
         ChatHistoryLimit = Config.Bind("Chat", "ChatHistoryLimit", 20, "The maximum amount of chat messages to keep in the chat history");
         // Cosmetics
         UnlockCosmetics = Config.Bind("Cosmetics", "UnlockAll", true, "Unlock all cosmetics");

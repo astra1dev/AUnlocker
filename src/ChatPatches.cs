@@ -27,25 +27,32 @@ public static class ChatController_Update
             __instance.timeSinceLastMessage = 3f;
         }
 
-        // [UNSAFE] No Character Limit
-        if (AUnlocker.NoCharacterLimit.Value)
-        {
-            __instance.freeChatField.textArea.characterLimit = int.MaxValue;
-        }
-
-        else if (AUnlocker.PatchChat.Value)
+        else if (AUnlocker.LowerChatCooldown.Value)
         {
             // Set chat cooldown to 2.1s opposed to original 3s
             if (__instance.timeSinceLastMessage < 0.9f)
             {
                 __instance.timeSinceLastMessage = 0.9f;
             }
+        }
 
+        // [UNSAFE] No Character Limit
+        if (AUnlocker.NoCharacterLimit.Value)
+        {
+            __instance.freeChatField.textArea.characterLimit = int.MaxValue;
+        }
+
+        else if (AUnlocker.HigherCharacterLimit.Value)
+        {
+            __instance.freeChatField.textArea.characterLimit = 120;  // above 120 characters anti-cheat will kick you
+        }
+
+        if (AUnlocker.AllowSymbols.Value)
+        {
             //__instance.freeChatField.textArea.AllowPaste = true;
             __instance.freeChatField.textArea.AllowSymbols = true;
             __instance.freeChatField.textArea.AllowEmail = true;
             __instance.freeChatField.textArea.allowAllCharacters = true;
-            __instance.freeChatField.textArea.characterLimit = 120;  // above 120 characters anti-cheat will kick you
         }
 
         // User is trying to navigate up the chat history
@@ -114,7 +121,7 @@ public static class FreeChatInputField_UpdateCharCount
             };
         }
 
-        else if (AUnlocker.PatchChat.Value)
+        else if (AUnlocker.HigherCharacterLimit.Value)
         {
             var length = __instance.textArea.text.Length;
             // Show new character limit below text field
@@ -142,7 +149,7 @@ public static class ChatController_SendFreeChat
     /// <returns><c>false</c> to skip the original method, <c>true</c> to allow the original method to run.</returns>
     public static bool Prefix(ChatController __instance)
     {
-        if (!AUnlocker.PatchChat.Value) return true;
+        if (!AUnlocker.AllowSymbols.Value) return true;
 
         var text = __instance.freeChatField.Text;
         ChatController.Logger.Debug($"SendFreeChat() :: Sending message: '{text}'");
@@ -183,7 +190,7 @@ public static class TextBoxTMP_Start
     /// <param name="__instance">The <c>TextBoxTMP</c> instance.</param>
     public static void Postfix(TextBoxTMP __instance)
     {
-        if (!AUnlocker.PatchChat.Value) return;
+        if (!AUnlocker.AllowSymbols.Value) return;
 
         __instance.allowAllCharacters = true; // not used by game's code, but I include it anyway
         __instance.AllowEmail = true;
@@ -216,7 +223,7 @@ public static class TextBoxTMP_Update
     /// <param name="__instance">The <c>TextBoxTMP</c> instance.</param>
     public static void Postfix(TextBoxTMP __instance)
     {
-        if (!AUnlocker.PatchChat.Value || !__instance.hasFocus) return;
+        if (!AUnlocker.ChatKeyboardShortcuts.Value || !__instance.hasFocus) return;
 
         if (!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.RightControl)) return;
 
