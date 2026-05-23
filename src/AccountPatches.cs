@@ -6,7 +6,7 @@ namespace AUnlocker;
 // Some of the below patches are from https://github.com/scp222thj/MalumMenu/
 
 [HarmonyPatch(typeof(EOSManager), nameof(EOSManager.IsFreechatAllowed))]
-public static class UnlockFreechat_EOSManager_IsFreechatAllowed_Postfix
+public static class EOSManager_IsFreechatAllowed
 {
     /// <summary>
     /// Allow creating and joining free chat lobbies instead of quick chat only.
@@ -22,7 +22,7 @@ public static class UnlockFreechat_EOSManager_IsFreechatAllowed_Postfix
 }
 
 [HarmonyPatch(typeof(EOSManager), nameof(EOSManager.IsFriendsListAllowed))]
-public static class UnlockFriendlist_EOSManager_IsFriendsListAllowed_Postfix
+public static class EOSManager_IsFriendsListAllowed
 {
     /// <summary>
     /// Allow using the friends list.
@@ -38,7 +38,7 @@ public static class UnlockFriendlist_EOSManager_IsFriendsListAllowed_Postfix
 }
 
 [HarmonyPatch(typeof(FullAccount), nameof(FullAccount.CanSetCustomName))]
-public static class CustomNameEnabled_FullAccount_CanSetCustomName_Prefix
+public static class FullAccount_CanSetCustomName
 {
     /// <summary>
     /// Allow setting a custom name.
@@ -54,7 +54,7 @@ public static class CustomNameEnabled_FullAccount_CanSetCustomName_Prefix
 }
 
 [HarmonyPatch(typeof(EOSManager), nameof(EOSManager.IsMinorOrWaiting))]
-public static class RemoveMinorStatus_EOSManager_IsMinorOrWaiting_Postfix
+public static class EOSManager_IsMinorOrWaiting
 {
     /// <summary>
     /// Remove "minor" status.
@@ -70,7 +70,7 @@ public static class RemoveMinorStatus_EOSManager_IsMinorOrWaiting_Postfix
 }
 
 [HarmonyPatch(typeof(EOSManager), nameof(EOSManager.IsAllowedOnline))]
-public static class OnlineGameplay_EOSManager_IsAllowedOnline_Prefix
+public static class EOSManager_IsAllowedOnline
 {
     /// <summary>
     /// Allow creating and joining online lobbies.
@@ -86,7 +86,7 @@ public static class OnlineGameplay_EOSManager_IsAllowedOnline_Prefix
 }
 
 [HarmonyPatch(typeof(AccountManager), nameof(AccountManager.CanPlayOnline))]
-public static class OnlineGameplay_AccountManager_CanPlayOnline_Postfix
+public static class AccountManager_CanPlayOnline
 {
     /// <summary>
     /// Allow creating and joining online lobbies.
@@ -102,7 +102,7 @@ public static class OnlineGameplay_AccountManager_CanPlayOnline_Postfix
 }
 
 [HarmonyPatch(typeof(InnerNet.InnerNetClient), nameof(InnerNet.InnerNetClient.JoinGame))]
-public static class SetLoggedIn_InnerNetClient_JoinGame_Prefix
+public static class InnerNetClient_JoinGame
 {
     /// <summary>
     /// Set the login status to "logged in" to allow joining public games.
@@ -117,7 +117,7 @@ public static class SetLoggedIn_InnerNetClient_JoinGame_Prefix
 }
 
 [HarmonyPatch(typeof(PlayerBanData), nameof(PlayerBanData.BanPoints), MethodType.Setter)]
-public static class RemoveDisconnectPenalty_PlayerBanData_BanPoints_Prefix
+public static class PlayerBanData_BanPoints_Setter
 {
     /// <summary>
     /// Remove the time penalty after disconnecting from too many lobbies.

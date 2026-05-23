@@ -4,7 +4,7 @@ using HarmonyLib;
 namespace AUnlocker;
 
 [HarmonyPatch(typeof(NumberOption), nameof(NumberOption.Increase))]
-public static class IncreaseWithoutLimits_NumberOption_Increase_Prefix
+public static class NumberOption_Increase
 {
     /// <summary>
     /// Increase the value of a NumberOption without limits.
@@ -25,7 +25,7 @@ public static class IncreaseWithoutLimits_NumberOption_Increase_Prefix
 }
 
 [HarmonyPatch(typeof(NumberOption), nameof(NumberOption.Decrease))]
-public static class DecreaseWithoutLimits_NumberOption_Decrease_Prefix
+public static class NumberOption_Decrease
 {
     /// <summary>
     /// Decrease the value of a NumberOption without limits.
@@ -46,7 +46,7 @@ public static class DecreaseWithoutLimits_NumberOption_Decrease_Prefix
 }
 
 [HarmonyPatch(typeof(NumberOption), nameof(NumberOption.Initialize))]
-public static class UnlimitedRange_NumberOption_Initialize_Postfix
+public static class NumberOption_Initialize
 {
     /// <summary>
     /// Set the valid range of a NumberOption to be unlimited.
@@ -62,7 +62,7 @@ public static class UnlimitedRange_NumberOption_Initialize_Postfix
 }
 
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.RpcSyncSettings))]
-public static class NoAntiCheat_PlayerControl_RpcSyncSettings_Prefix
+public static class PlayerControl_RpcSyncSettings
 {
     /// <summary>
     /// Prevent the anti-cheat from kicking you for some settings that are out of the "original" valid range.
@@ -77,7 +77,7 @@ public static class NoAntiCheat_PlayerControl_RpcSyncSettings_Prefix
 }
 
 [HarmonyPatch(typeof(IGameOptionsExtensions), nameof(IGameOptionsExtensions.GetAdjustedNumImpostors))]
-public static class UnlimitedImpostors_IGameOptionsExtensions_GetAdjustedNumImpostors_Prefix
+public static class IGameOptionsExtensions_GetAdjustedNumImpostors
 {
     /// <summary>
     /// Prevent clamping of the number of impostors to the original valid range (1-3).
