@@ -1,5 +1,6 @@
 using System;
 using HarmonyLib;
+using System.Collections.Generic;
 
 namespace AUnlocker;
 
@@ -60,29 +61,77 @@ public static class UnlockCosmetics_HatManager_Initialize_Postfix
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.FixedUpdate))]
 public static class DontShowCosmeticsInGame_PlayerControl_FixedUpdate_Postfix
 {
-    /// <summary>
-    /// Don't show any cosmetics in-game (only client-side).
-    /// </summary>
-    /// <param name="__instance">The <c>PlayerControl</c> instance.</param>
+    private static readonly Dictionary<byte, float> LastCheckTime = new();
+
     public static void Postfix(PlayerControl __instance)
     {
-        if (!AUnlocker.DontShowCosmeticsInGame.Value) return;
+        if (!AUnlocker.DontShowCosmeticsInGame.Value)
+        {
+            LastCheckTime.Clear();
+            return;
+        }
+
         if (__instance == null) return;
-        if (__instance.Data == null) return; 
+        if (__instance.Data == null) return;
+
+        var outfit = __instance.Data.DefaultOutfit;
+        if (outfit == null) return;
+        if (outfit.IsIncomplete) return;
+
+        float now = UnityEngine.Time.time;
+
+        if (LastCheckTime.TryGetValue(__instance.PlayerId, out float lastTime))
+        {
+            if (now - lastTime < 0.25f)
+                return;
+        }
+
+        LastCheckTime[__instance.PlayerId] = now;
+
+        bool hasHat = HasCosmetic(outfit.HatId);
+        bool hasSkin = HasCosmetic(outfit.SkinId);
+        bool hasVisor = HasCosmetic(outfit.VisorId);
+        bool hasPet = HasCosmetic(outfit.PetId);
+        bool hasNamePlate = HasCosmetic(outfit.NamePlateId);
+
+        if (!hasHat && !hasSkin && !hasVisor && !hasPet && !hasNamePlate)
+            return;
+
         try
         {
-            __instance.SetHat("", 0);
-            __instance.SetSkin("", 0);
-            __instance.SetVisor("", 0);
-            __instance.SetNamePlate("");
-            __instance.SetPet("", 0);
+            if (hasHat && !string.IsNullOrEmpty(HatData.EmptyId))
+                __instance.SetHat(HatData.EmptyId, outfit.ColorId);
+
+            if (hasSkin && !string.IsNullOrEmpty(SkinData.EmptyId))
+                __instance.SetSkin(SkinData.EmptyId, outfit.ColorId);
+
+            if (hasVisor && !string.IsNullOrEmpty(VisorData.EmptyId))
+                __instance.SetVisor(VisorData.EmptyId, outfit.ColorId);
+
+            if (hasNamePlate)
+                __instance.SetNamePlate("");
+
+            if (hasPet && !string.IsNullOrEmpty(PetData.EmptyId))
+                __instance.SetPet(PetData.EmptyId, outfit.ColorId);
         }
         catch
         {
         }
     }
-}
 
+    private static bool HasCosmetic(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+            return false;
+
+        string missingId = NetworkedPlayerInfo.PlayerOutfit.MISSING_COSMETIC_ID;
+
+        if (!string.IsNullOrEmpty(missingId) && id == missingId)
+            return false;
+
+        return true;
+    }
+}
 [HarmonyPatch(typeof(PlayerPurchasesData), nameof(PlayerPurchasesData.GetPurchase))]
 public static class UnlockCosmetics_PlayerPurchasesData_GetPurchase_Prefix
 {
