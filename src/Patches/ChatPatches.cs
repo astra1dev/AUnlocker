@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using UnityEngine;
-using static AUnlocker.ChatController_SendChat;
+using static AUnlocker.Patches.ChatController_SendChat;
 
-namespace AUnlocker;
+namespace AUnlocker.Patches;
 
 [HarmonyPatch(typeof(ChatController), nameof(ChatController.Update))]
 public static class ChatController_Update

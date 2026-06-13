@@ -3,7 +3,7 @@ using UnityEngine;
 using HarmonyLib;
 using InnerNet;
 
-namespace AUnlocker;
+namespace AUnlocker.Patches;
 
 [HarmonyPatch(typeof(MainMenuManager), nameof(MainMenuManager.Start))]
 public static class MainMenuManager_Start
@@ -158,8 +158,7 @@ public static class FindAGameManager_HandleList
     }
 }
 
-[HarmonyPatch(typeof(HudManager))]
-[HarmonyPatch("SetHudActive", typeof(PlayerControl), typeof(RoleBehaviour), typeof(bool))]
+[HarmonyPatch(typeof(HudManager), nameof(HudManager.SetHudActive), typeof(PlayerControl), typeof(RoleBehaviour), typeof(bool))]
 public static class HudManager_SetHudActive
 {
     /// <summary>

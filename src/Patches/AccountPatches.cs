@@ -1,7 +1,7 @@
 using AmongUs.Data.Player;
 using HarmonyLib;
 
-namespace AUnlocker;
+namespace AUnlocker.Patches;
 
 // Some of the below patches are from https://github.com/scp222thj/MalumMenu/
 
