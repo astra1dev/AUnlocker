@@ -1,7 +1,7 @@
 using System;
 using HarmonyLib;
 
-namespace AUnlocker;
+namespace AUnlocker.Patches;
 
 [HarmonyPatch(typeof(HatManager), nameof(HatManager.Initialize))]
 public static class HatManager_Initialize

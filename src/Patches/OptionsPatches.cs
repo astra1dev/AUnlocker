@@ -1,7 +1,7 @@
 using AmongUs.GameOptions;
 using HarmonyLib;
 
-namespace AUnlocker;
+namespace AUnlocker.Patches;
 
 [HarmonyPatch(typeof(NumberOption), nameof(NumberOption.Increase))]
 public static class NumberOption_Increase
