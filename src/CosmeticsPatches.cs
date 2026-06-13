@@ -67,11 +67,19 @@ public static class DontShowCosmeticsInGame_PlayerControl_FixedUpdate_Postfix
     public static void Postfix(PlayerControl __instance)
     {
         if (!AUnlocker.DontShowCosmeticsInGame.Value) return;
-        __instance.SetHat("", 0);
-        __instance.SetSkin("", 0);
-        __instance.SetVisor("", 0);
-        __instance.SetNamePlate("");
-        __instance.SetPet("", 0);
+        if (__instance == null) return;
+        if (__instance.Data == null) return; 
+        try
+        {
+            __instance.SetHat("", 0);
+            __instance.SetSkin("", 0);
+            __instance.SetVisor("", 0);
+            __instance.SetNamePlate("");
+            __instance.SetPet("", 0);
+        }
+        catch
+        {
+        }
     }
 }
 
