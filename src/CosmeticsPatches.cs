@@ -60,9 +60,13 @@ public static class UnlockCosmetics_HatManager_Initialize_Postfix
 
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.FixedUpdate))]
 public static class DontShowCosmeticsInGame_PlayerControl_FixedUpdate_Postfix
-{
+{    
     private static readonly Dictionary<byte, float> LastCheckTime = new();
-
+    
+    /// <summary>
+    /// Don't show any cosmetics in-game (only client-side).
+    /// </summary>
+    /// <param name="__instance">The <c>PlayerControl</c> instance.</param>
     public static void Postfix(PlayerControl __instance)
     {
         if (!AUnlocker.DontShowCosmeticsInGame.Value)
