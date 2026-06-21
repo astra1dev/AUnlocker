@@ -40,6 +40,9 @@ public static class AprilFoolsMode_PlayerControl_BodyType_Prefix
             case "LongHorse":
                 __result = PlayerBodyTypes.LongSeeker;
                 return false;
+			case "Classic":
+                __result = PlayerBodyTypes.Classic;
+                return false;
             default:
                 return true;
         }
@@ -57,6 +60,7 @@ public static class AprilFoolsMode_PlayerPhysics_SetBodyType_Prefix
             "Seeker" => PlayerBodyTypes.Seeker,
             "Long" => PlayerBodyTypes.Long,
             "LongHorse" => PlayerBodyTypes.LongSeeker,
+			"Classic" => PlayerBodyTypes.Classic,
             _ => bodyType
         };
     }
