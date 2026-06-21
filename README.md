@@ -43,7 +43,7 @@
   - Remove the 60 FPS cap
   - Resize the in-game buttons (Use, Kill, Report, etc.)
   - Prevent the game from collecting analytics and sending them to Innersloth
-  - Be able to activate the April Fools Mode (Seeker, Long Boi and Horse Mode)
+  - Enable April Fools Mode (Choose between Classic / Nostalgia, Seeker, Long Boi and Horse Mode)
   - Show more information when finding a game: host name, lobby code, host platform, lobby age, and exact number of lobbies online
   - Always display the timer in the bottom left corner to indicate when the server will close the lobby (Works only as Host)
   - Show the task panel (contains a list of your tasks) during meetings
