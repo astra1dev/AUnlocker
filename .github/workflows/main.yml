@@ -16,16 +16,14 @@ jobs:
         with:
           dotnet-version: 6.x
 
-      - name: Run the Cake script
-        uses: cake-build/cake-action@v3
-        with:
-          verbosity: Diagnostic
+      - name: Compile
+        run: dotnet build -c Release
 
       - name: Upload AUnlocker.dll artifact
         uses: actions/upload-artifact@v7
         with:
           name: AUnlocker.dll
-          path: /home/runner/work/AUnlocker/AUnlocker/src/bin/Release/net6.0/AUnlocker.dll
+          path: src/bin/Release/net6.0/AUnlocker.dll
 
       - name: Download and extract BepInEx
         run: |
@@ -38,8 +36,8 @@ jobs:
         run: |
           chmod -R 755 BepInEx_x86
           chmod -R 755 BepInEx_x64
-          cp /home/runner/work/AUnlocker/AUnlocker/src/bin/Release/net6.0/AUnlocker.dll BepInEx_x86/BepInEx/plugins/
-          cp /home/runner/work/AUnlocker/AUnlocker/src/bin/Release/net6.0/AUnlocker.dll BepInEx_x64/BepInEx/plugins/
+          cp src/bin/Release/net6.0/AUnlocker.dll BepInEx_x86/BepInEx/plugins/
+          cp src/bin/Release/net6.0/AUnlocker.dll BepInEx_x64/BepInEx/plugins/
 
       - name: Upload AUnlocker_Steam_Itch.zip artifact
         uses: actions/upload-artifact@v7
