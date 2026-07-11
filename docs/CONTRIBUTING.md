@@ -23,11 +23,11 @@ Issues and Pull requests are the types of contributions we accept.
 
 #### Create a new issue
 
-If you've found something that should be updated, search open issues to see if someone else has reported the same thing. If it's something new, open an issue using a [template](/issues/new/choose). We'll use the issue to have a conversation about the problem you want to fix.
+If you've found something that should be updated, search open issues to see if someone else has reported the same thing. If it's something new, open an issue using a [template](https://github.com/astra1dev/AUnlocker/issues/new/choose). We'll use the issue to have a conversation about the problem you want to fix.
 
 #### Solve an issue
 
-Scan through our [existing issues](/issues) to find one that interests you. You can narrow down the search using `labels` as filters. As a general rule, we don’t assign issues to anyone. If you find an issue to work on, you are welcome to open a PR with a fix.
+Scan through our [existing issues](https://github.com/astra1dev/AUnlocker/issues) to find one that interests you. You can narrow down the search using `labels` as filters. As a general rule, we don’t assign issues to anyone. If you find an issue to work on, you are welcome to open a PR with a fix.
 
 ### 🛠️ Pull requests
 
