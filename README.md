@@ -21,10 +21,10 @@
 <b>🔓Unlock Among Us: cosmetics, account, chat and more!🎉</b>
 
 # 🎉 Features
-- 🎭 Cosmetics Features (Hats, Visors, Skins, Pets, Nameplates, Cosmicubes, Bundles)
+- 🎭 Cosmetics (Hats, Visors, Skins, Pets, Nameplates, Cosmicubes, Bundles)
   - Unlock all[*](/README.md#️-disclaimer)
   - Don't show any in-game
-- 🌐 Account Features
+- 🌐 Account
   - Removes the following restrictions that apply to guest accounts:
     - Not being able to set a custom name
     - Quick Chat Only
@@ -32,14 +32,14 @@
   - Removes the following restrictions that apply to minor accounts:
     - Not being able to play online
   - Removes the time penalty after disconnecting from too many lobbies
-- 💬 Chat Features
+- 💬 Chat
   - Use `Ctrl + C`, `Ctrl + V` and `Ctrl + X` to copy, paste and cut chat messages
   - Scroll through your previously sent chat messages using the Up and Down arrow keys
   - Be able to send symbols, URLs and Email addresses
   - Increase the character limit from 100 to 120
   - Reduce the chat cooldown from 3s to 2.1s
   - Modify the maximum amount of chat messages to keep in the chat history
-- ✨ Other Features
+- ✨ Other
   - Remove the 60 FPS cap
   - Resize the in-game buttons (Use, Kill, Report, etc.)
   - Prevent the game from collecting analytics and sending them to Innersloth
@@ -67,7 +67,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 |    Among Us Version     |          AUnlocker Version          |
 |:-----------------------:|:-----------------------------------:|
-| `17.4.0` (`2026.6.5`)   | [v1.3.0](../../releases/tag/v1.3.0) |
+| `17.4.0` (`2026.6.5`)   | [v1.3.1](../../releases/tag/v1.3.1) |
 | `17.3.0` (`2026.3.31`)  | [v1.3.0](../../releases/tag/v1.3.0) |
 | `17.2.2` (`2026.3.17`)  | [v1.3.0](../../releases/tag/v1.3.0) |
 | `17.2.1` (`2026.2.24`)  | [v1.3.0](../../releases/tag/v1.3.0) |
@@ -92,19 +92,18 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 ## 🪟 Windows
 - [Download](../../releases/latest) either `AUnlocker_v*_Steam_Itch.zip` or `AUnlocker_v*_EpicGames_MicrosoftStore_XboxApp.zip` depending on your edition of Among Us.
 - Extract the contents of the zip into your Among Us folder. You can find your Among Us folder like this:
-  - **Steam:** Right-click Among Us in your library → `Manage` → `Browse local files`
-  - **Epic Games:** Right-click Among Us in your library → `Manage` → click the small folder icon next to `Installation`
-  - **Itch.io:** Open the Itch.io app → Right-click Among Us in your library → `Manage` → `Open folder in Explorer`.
-  - **Xbox App / Microsoft Store:** Open the Xbox app → Right-click Among Us in your library → `Manage` → `Files` → `Browse...`
+  - **Steam:** Right-click Among Us in your library → <kbd>Manage</kbd> → <kbd>Browse local files</kbd>
+  - **Epic Games:** Right-click Among Us in your library → <kbd>Manage</kbd> → click the small folder icon next to <kbd>Installation</kbd>
+  - **Itch.io:** Open the Itch.io app → Right-click Among Us in your library → <kbd>Manage</kbd> → <kbd>Open folder in Explorer</kbd>.
+  - **Xbox App / Microsoft Store:** Open the Xbox app → Right-click Among Us in your library → <kbd>Manage</kbd> → <kbd>Files</kbd> → <kbd>Browse...</kbd>
 - Your game folder should look like this after installation:
 <img src="https://github.com/astra1dev/AUnlocker/assets/90265231/14226f03-a003-4efc-b27b-6df53fb394d6" width=410 height=240>
 
 - Launch Among Us. The first launch will take **MUCH** longer, so don't worry if you have to wait a few minutes.
 
 ## 🐧 Linux
-- Make sure you are running Among Us under Proton (or Wine). On Steam you can check this by right-clicking Among Us in your library → `Properties` → `Compatibility` → `Force the use of a specific Steam Play compatibility tool`. Test different Proton versions if you're having issues launching the game.
-- Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.html) to get BepInEx (the framework AUnlocker is built upon) working. Alternatively, if you are using Proton with Steam, you can specify the DLL override in the launch options (right-click Among Us in your library → `Properties` → `General` → `Launch Options`): `WINEDLLOVERRIDES="winhttp.dll=n,b" %command%` Then follow the steps for Windows.
-- If you are experiencing crashes or errors like `Unable to execute IL2CPP chainloader`, set your launch options (right-click Among Us in your library → `Properties` → `General` → `Launch Options`) to `PROTON_NO_ESYNC=1 PROTON_USE_WINED3D=1 WINEDLLOVERRIDES="winhttp.dll=n,b" %command%`
+- Make sure you are running Among Us under Proton (or Wine). On Steam you can check this by right-clicking Among Us in your library → <kbd>Properties</kbd> → <kbd>Compatibility</kbd> → <kbd>Force the use of a specific Steam Play compatibility tool</kbd>. Test different Proton versions if you're having issues launching the game.
+- Check out [this guide](https://docs.bepinex.dev/articles/advanced/proton_wine.html) to get BepInEx (the framework AUnlocker is built upon) working. Alternatively, if you are using Proton with Steam, you can specify the DLL override in the launch options (right-click Among Us in your library → <kbd>Properties</kbd> → <kbd>General</kbd> → <kbd>Launch Options</kbd>): `WINEDLLOVERRIDES="winhttp.dll=n,b" %command%` Then follow the steps for Windows.
 
 <hr>
 
@@ -112,11 +111,23 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 - You should see a folder called `BepInEx` inside your Among Us folder.
 - Download `AUnlocker_v*.dll` from the [latest release](../../releases/latest), put it into `BepInEx/plugins` and launch Among Us.
 
-<b>👷‍♂️ If you don't want to download the pre-compiled DLL, you can build AUnlocker from source by following these steps:</b>
-- Make sure you have the [Microsoft .NET SDK](https://dotnet.microsoft.com/en-us/download) and [git](https://git-scm.com/downloads) installed.
-- Download the necessary files with `git clone https://github.com/astra1dev/AUnlocker`
-- Run the command `dotnet build` from the AUnlocker folder (where `AUnlocker.sln` is located)
-- The compiled DLL will be located here: `src/bin/Debug/net6.0/AUnlocker.dll`. Put it into `BepInEx/plugins` and launch Among Us.
+# 👷‍♂️ Compiling
+
+Requirements:
+
+- [Microsoft .NET SDK](https://dotnet.microsoft.com/en-us/download)
+- [git](https://git-scm.com/downloads)
+
+```bash
+# Clone the repository
+git clone https://github.com/astra1dev/AUnlocker
+cd AUnlocker
+
+# Build the project
+dotnet build
+```
+
+The compiled DLL will be located in `src/bin/Debug/net6.0/AUnlocker.dll`. Put it into `BepInEx/plugins` and launch Among Us.
 
 # 👨‍💻 Contributing
 General contribution:

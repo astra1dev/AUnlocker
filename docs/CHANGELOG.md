@@ -7,43 +7,52 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-07-13
+
+This release is compatible with Among Us version `17.4.0` (`2026.6.5`).
+
 ### Added
 
+- Add Classic / Nostalgia Mode to April Fools Mode by [@Mungles337] ([#132])
 - New CHANGELOG.md file
 - Recognize Starlight platform when finding a game.
   Previously, if MoreLobbyInfo was enabled, lobbies where the host is playing on Starlight would show "Unknown" as platform
 
 ### Changed
 
-- Bump AmongUs.GameLibs.Steam from 2025.11.18 to 2026.3.31 by [@dependabot](https://github.com/dependabot) (#118)
-- Bump actions/upload-artifact from 6 to 7 by [@dependabot](https://github.com/dependabot) (#114)
+- Remove Cake as it was never needed (we're just using `dotnet build` in GitHub Actions now)
+- Bump actions/checkout from 6 to 7 by [@dependabot] ([#131])
+- Bump AmongUs.GameLibs.Steam from 2026.3.31 to 2026.6.5 by [@dependabot] ([#123])
+- Split `PatchChat` into multiple config options (`ChatKeyboardShortcuts`, `AllowSymbols`, `HigherCharacterLimit`, `LowerChatCooldown`)
+- Bump actions/upload-artifact from 6 to 7 by [@dependabot] ([#114])
+- Bump AmongUs.GameLibs.Steam from 2025.11.18 to 2026.3.31 by [@dependabot] ([#118])
 
 ## [1.3.0] - 2026-01-30
 
-This release is compatible with Among Us version `17.1.0` (`2025.11.18`).
+This release is compatible with Among Us version `17.1.0` (`2025.11.18`), `17.2.0` (`2026.2.17`), `17.2.1` (`2026.2.24`), `17.2.2` (`2026.3.17`), `17.3.0` (`2026.3.31`) and `17.4.0` (`2026.6.5`).
 
 ### Added
 
 - Show the exact number of lobbies online
-- Reduce the chat cooldown from 3s to 2.1s by [@ApeMV](https://github.com/ApeMV) (#87)
+- Reduce the chat cooldown from 3s to 2.1s by [@ApeMV] ([#87])
 - Always display the timer in the bottom left corner to indicate when the server will close the lobby (Works only as Host)
-- Starlight support by [@XtraCube](https://github.com/XtraCube) (#105)
+- Starlight support by [@XtraCube] ([#105])
 
 ### Changed
 
-- Bump Harmonize from 1.0.5 to 1.0.6 by [@dependabot](https://github.com/dependabot) (#106)
-- Bump actions/upload-artifact from 4 to 6 by [@dependabot](https://github.com/dependabot) (#96)
-- Bump actions/checkout from 3 to 6 by [@dependabot](https://github.com/dependabot) (#98)
-- Bump cake-build/cake-action from 1 to 3 by [@dependabot](https://github.com/dependabot) (#97)
-- Bump actions/setup-dotnet from 3 to 5 by [@dependabot](https://github.com/dependabot) (#99)
+- Bump Harmonize from 1.0.5 to 1.0.6 by [@dependabot] ([#106])
+- Bump actions/upload-artifact from 4 to 6 by [@dependabot] ([#96])
+- Bump actions/checkout from 3 to 6 by [@dependabot] ([#98])
+- Bump cake-build/cake-action from 1 to 3 by [@dependabot] ([#97])
+- Bump actions/setup-dotnet from 3 to 5 by [@dependabot] ([#99])
 
 ### Fixed
 
-- Avoid changing game options that may kick the user by [@ApeMV](https://github.com/ApeMV) (#90)
+- Avoid changing game options that may kick the user by [@ApeMV] ([#90])
 
 ### Removed
 
-- Remove `IsCharAllowed` patch as it's causing issues with chinese characters by [@astra1dev](https://github.com/astra1dev) (#102)
+- Remove `IsCharAllowed` patch as it's causing issues with chinese characters ([#102])
 
 ## [1.2.2] - 2025-09-07
 
@@ -53,16 +62,16 @@ This release is compatible with Among Us version `16.1.0` (`2025.6.10`), `17.0.0
 
 - Resize the in-game buttons (like Use, Kill, Report, etc.)
 - Modify the maximum amount of messages to keep in the chat history
-- Scroll through previous chat messages using up and down arrow keys (#69)
+- Scroll through previous chat messages using up and down arrow keys ([#69])
 
 ### Changed
 
 - Unlock Cosmetics now shows all bundles as owned and cosmicubes as 100% completed (before, cosmicubes would show as 0% completion even tho the cosmetics from it are unlocked and usable)
-- Unlock April Fools Mode and Enable Horse Mode are now combined together with Seeker and LongHorse into one April Fools Mode option (#63)
+- Unlock April Fools Mode and Enable Horse Mode are now combined together with Seeker and LongHorse into one April Fools Mode option ([#63])
 
 ### Fixed
 
-- Fix Don't show cosmetics in-game freezing the game (#62)
+- Fix Don't show cosmetics in-game freezing the game ([#62])
 
 ## [1.2.1] - 2025-07-03
 
@@ -70,13 +79,13 @@ This release is compatible with Among Us version `16.1.0` (`2025.6.10`).
 
 ### Added
 
-- Don't show cosmetics in-game (#60)
-- No Options Limits (#54, #56)
+- Don't show cosmetics in-game ([#60])
+- No Options Limits ([#54], [#56])
 - Keybind to reload the config file while in-game
 
 ### Fixed
 
-- Fix pasting unicode characters into chat (#38)
+- Fix pasting unicode characters into chat ([#38])
 
 ## [1.2.0] - 2025-05-20
 
@@ -89,7 +98,7 @@ This release is compatible with Among Us version `16.0.5` (`2025.5.20`).
 
 ### Changed
 
-- Improve No disconnect penalty (#45)
+- Improve No disconnect penalty ([#45])
 
 ## [1.1.8] - 2025-03-25
 
@@ -110,7 +119,7 @@ This release is compatible with Among Us version `16.0.0` (`2025.3.25`).
 
 ### Fixed
 
-- Fix No disconnect penalty causing plugin to fail loading after game update (#41)
+- Fix No disconnect penalty causing plugin to fail loading after game update ([#41])
 
 ## [1.1.7] - 2024-09-07
 
@@ -127,7 +136,7 @@ This release is compatible with Among Us version `2024.9.4`, `2024.10.29` and `2
 
 ### Fixed
 
-- Fix chat messages auto-sending (#25)
+- Fix chat messages auto-sending ([#25])
 
 ## [1.1.6] - 2024-08-14
 
@@ -209,7 +218,38 @@ This release is compatible with Among Us version `2023.10.24`.
 
 - Unused Reactor dependency
 
+[@ApeMV]: https://github.com/ApeMV
+[@dependabot]: https://github.com/dependabot
+[@Mungles337]: https://github.com/Mungles337
+[@XtraCube]: https://github.com/XtraCube
+
+[#25]: https://github.com/astra1dev/AUnlocker/issues/25
+[#38]: https://github.com/astra1dev/AUnlocker/issues/38
+[#41]: https://github.com/astra1dev/AUnlocker/issues/41
+[#45]: https://github.com/astra1dev/AUnlocker/issues/45
+[#54]: https://github.com/astra1dev/AUnlocker/issues/54
+[#56]: https://github.com/astra1dev/AUnlocker/issues/56
+[#60]: https://github.com/astra1dev/AUnlocker/issues/60
+[#62]: https://github.com/astra1dev/AUnlocker/issues/62
+[#63]: https://github.com/astra1dev/AUnlocker/issues/63
+[#69]: https://github.com/astra1dev/AUnlocker/issues/69
+[#87]: https://github.com/astra1dev/AUnlocker/pull/87
+[#90]: https://github.com/astra1dev/AUnlocker/pull/90
+[#96]: https://github.com/astra1dev/AUnlocker/pull/96
+[#97]: https://github.com/astra1dev/AUnlocker/pull/97
+[#98]: https://github.com/astra1dev/AUnlocker/pull/98
+[#99]: https://github.com/astra1dev/AUnlocker/pull/99
+[#102]: https://github.com/astra1dev/AUnlocker/pull/102
+[#105]: https://github.com/astra1dev/AUnlocker/pull/105
+[#106]: https://github.com/astra1dev/AUnlocker/pull/106
+[#114]: https://github.com/astra1dev/AUnlocker/pull/114
+[#118]: https://github.com/astra1dev/AUnlocker/pull/118
+[#123]: https://github.com/astra1dev/AUnlocker/pull/123
+[#131]: https://github.com/astra1dev/AUnlocker/pull/131
+[#132]: https://github.com/astra1dev/AUnlocker/pull/132
+
 [unreleased]: https://github.com/astra1dev/AUnlocker/compare/v1.3.0...HEAD
+[1.3.1]: https://github.com/astra1dev/AUnlocker/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/astra1dev/AUnlocker/compare/v1.2.2...v1.3.0
 [1.2.2]: https://github.com/astra1dev/AUnlocker/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/astra1dev/AUnlocker/compare/v1.2.0...v1.2.1
