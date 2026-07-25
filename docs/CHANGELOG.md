@@ -2,10 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/2.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Changed
+
+- Bump actions/setup-dotnet from 5 to 6 by [@dependabot] ([#144])
 
 ## [1.3.1] - 2026-07-13
 
@@ -20,7 +24,7 @@ This release is compatible with Among Us version `17.4.0` (`2026.6.5`).
 
 ### Changed
 
-- Remove Cake as it was never needed (we're just using `dotnet build` in GitHub Actions now)
+- Remove [Cake](https://cakebuild.net/) as it was never needed (we're just using `dotnet build` in GitHub Actions now)
 - Bump actions/checkout from 6 to 7 by [@dependabot] ([#131])
 - Bump AmongUs.GameLibs.Steam from 2026.3.31 to 2026.6.5 by [@dependabot] ([#123])
 - Split `PatchChat` into multiple config options (`ChatKeyboardShortcuts`, `AllowSymbols`, `HigherCharacterLimit`, `LowerChatCooldown`)
@@ -247,8 +251,9 @@ This release is compatible with Among Us version `2023.10.24`.
 [#123]: https://github.com/astra1dev/AUnlocker/pull/123
 [#131]: https://github.com/astra1dev/AUnlocker/pull/131
 [#132]: https://github.com/astra1dev/AUnlocker/pull/132
+[#144]: https://github.com/astra1dev/AUnlocker/pull/144
 
-[unreleased]: https://github.com/astra1dev/AUnlocker/compare/v1.3.0...HEAD
+[unreleased]: https://github.com/astra1dev/AUnlocker/compare/v1.3.1...HEAD
 [1.3.1]: https://github.com/astra1dev/AUnlocker/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/astra1dev/AUnlocker/compare/v1.2.2...v1.3.0
 [1.2.2]: https://github.com/astra1dev/AUnlocker/compare/v1.2.1...v1.2.2
