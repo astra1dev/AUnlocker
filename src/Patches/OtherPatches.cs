@@ -203,3 +203,12 @@ public static class GameStartManager_Start
         HudManager.Instance.ShowLobbyTimer(600);
     }
 }
+
+[HarmonyPatch(typeof(ModManager), nameof(ModManager.LateUpdate))]
+class ModManagerLateUpdatePatch
+{
+    public static void Prefix(ModManager __instance)
+    {
+        __instance.ShowModStamp();
+    }
+}
