@@ -27,9 +27,9 @@ jobs:
 
       - name: Download and extract BepInEx
         run: |
-          wget -O BepInEx_x64.zip https://builds.bepinex.dev/projects/bepinex_be/735/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.735%2B5fef357.zip
+          wget -O BepInEx_x64.zip https://builds.bepinex.dev/projects/bepinex_be/785/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.785%2B6abdba4.zip
           unzip BepInEx_x64.zip -d BepInEx_x64
-          wget -O BepInEx_x86.zip https://builds.bepinex.dev/projects/bepinex_be/735/BepInEx-Unity.IL2CPP-win-x86-6.0.0-be.735%2B5fef357.zip
+          wget -O BepInEx_x86.zip https://builds.bepinex.dev/projects/bepinex_be/785/BepInEx-Unity.IL2CPP-win-x86-6.0.0-be.785%2B6abdba4.zip
           unzip BepInEx_x86.zip -d BepInEx_x86
 
       - name: Copy AUnlocker.dll to BepInEx/plugins
