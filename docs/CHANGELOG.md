@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Clamp invalid April Fools Mode config setting values to "None"
+
+### Changed
+
 - Bump actions/setup-dotnet from 5 to 6 by [@dependabot] ([#144])
 
 ## [1.3.1] - 2026-07-13
