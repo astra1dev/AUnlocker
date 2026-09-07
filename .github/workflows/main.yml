@@ -1,6 +1,6 @@
 name: CI
 
-on: [ "push", "pull_request" ]
+on: [ "push", "pull_request", "workflow_dispatch" ]
 
 jobs:
   build:
@@ -8,16 +8,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-        with:
-          submodules: true
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v6
+      - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 6.x
 
-      - name: Compile
-        run: dotnet build -c Release
+      - run: dotnet build -c Release
 
       - name: Upload AUnlocker.dll artifact
         uses: actions/upload-artifact@v7
