@@ -7,6 +7,9 @@ registries:
   nuget-bepinex:
     type: nuget-feed
     url: https://nuget.bepinex.dev/v3/index.json
+  nuget-samboy:
+    type: nuget-feed
+    url: https://nuget.samboy.dev/v3/index.json
 
 updates:
   # Enable version updates for NuGet packages
