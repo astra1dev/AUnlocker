@@ -1,4 +1,3 @@
-using System;
 using HarmonyLib;
 
 namespace AUnlocker.Patches;
@@ -7,15 +6,6 @@ namespace AUnlocker.Patches;
 public static class HatManager_Initialize
 {
     // https://github.com/scp222thj/MalumMenu/blob/main/src/Cheats/CosmeticsUnlocker.cs
-
-    /// <summary>
-    /// Ensure the patch is not applied on Android.
-    /// </summary>
-    /// <returns>True if the patch should be applied; otherwise, false.</returns>
-    public static bool Prepare()
-    {
-        return !OperatingSystem.IsAndroid();
-    }
 
     /// <summary>
     /// Unlock all cosmetics by setting their price to 0 and marking them as free.
@@ -78,15 +68,6 @@ public static class PlayerControl_FixedUpdate
 [HarmonyPatch(typeof(PlayerPurchasesData), nameof(PlayerPurchasesData.GetPurchase))]
 public static class PlayerPurchasesData_GetPurchase
 {
-    /// <summary>
-    /// Ensure the patch is not applied on Android.
-    /// </summary>
-    /// <returns>True if the patch should be applied; otherwise, false.</returns>
-    public static bool Prepare()
-    {
-        return !OperatingSystem.IsAndroid();
-    }
-
     public static bool Prefix(PlayerPurchasesData __instance, string itemKey, string bundleKey, ref bool __result)
     {
         if (!AUnlocker.UnlockCosmetics.Value) return true;
