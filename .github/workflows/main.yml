@@ -35,14 +35,14 @@ jobs:
           cp src/bin/Release/net6.0/AUnlocker.dll BepInEx_x86/BepInEx/plugins/
           cp src/bin/Release/net6.0/AUnlocker.dll BepInEx_x64/BepInEx/plugins/
 
-      - name: Upload AUnlocker_Steam_Itch.zip artifact
+      - name: Upload AUnlocker_Itch.zip artifact
         uses: actions/upload-artifact@v7
         with:
-          name: AUnlocker_Steam_Itch
+          name: AUnlocker_Itch.zip
           path: BepInEx_x86
 
-      - name: Upload AUnlocker_EpicGames_MicrosoftStore_XboxApp.zip artifact
+      - name: Upload AUnlocker.zip artifact
         uses: actions/upload-artifact@v7
         with:
-          name: AUnlocker_EpicGames_MicrosoftStore_XboxApp
+          name: AUnlocker.zip
           path: BepInEx_x64
