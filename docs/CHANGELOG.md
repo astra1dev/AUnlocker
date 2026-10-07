@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Bump AmongUs.GameLibs.Steam from 2026.8.18 to 2026.9.29 by [@dependabot] ([#179])
 - Bump AmongUs.GameLibs.Steam from 2026.6.5 to 2026.8.18 by [@dependabot] ([#162])
 - Bump BepInEx from 6.0.0-be.735 to 6.0.0-be.785 (Only affects zip files downloaded from releases and GitHub Actions artifacts)
 - Clamp invalid April Fools Mode config setting values to "None"
@@ -256,6 +257,7 @@ This release is compatible with Among Us version `2023.10.24`.
 [#132]: https://github.com/astra1dev/AUnlocker/pull/132
 [#144]: https://github.com/astra1dev/AUnlocker/pull/144
 [#162]: https://github.com/astra1dev/AUnlocker/pull/162
+[#179]: https://github.com/astra1dev/AUnlocker/pull/179
 
 [unreleased]: https://github.com/astra1dev/AUnlocker/compare/v1.3.1...HEAD
 [1.3.1]: https://github.com/astra1dev/AUnlocker/compare/v1.3.0...v1.3.1
