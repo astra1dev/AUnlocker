@@ -128,11 +128,8 @@ public static class PlayerBanData_BanPoints_Setter
     public static bool Prefix(PlayerBanData __instance, ref float value)
     {
         if (!AUnlocker.RemovePenalty.Value) return true;
-        if (!(bool) (UnityEngine.Object) AmongUsClient.Instance || AmongUsClient.Instance.NetworkMode != NetworkModes.OnlineGame)
-            return true;
 
         value = 0f;
-        //__instance.BanPoints = 0f; // Remove all BanPoints
         return false;
     }
 }
