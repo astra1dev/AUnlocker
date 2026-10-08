@@ -56,7 +56,7 @@ public static class ChatController_Update
         }
 
         // User is trying to navigate up the chat history
-        if (Input.GetKeyDown(KeyCode.UpArrow) && ChatHistory.Count > 0)
+        if (AUnlocker.ChatKeyboardShortcuts.Value && Input.GetKeyDown(KeyCode.UpArrow) && ChatHistory.Count > 0)
         {
             if (!isNavigatingHistory)
             {
@@ -79,7 +79,7 @@ public static class ChatController_Update
         }
 
         // User is trying to navigate down the chat history
-        if (Input.GetKeyDown(KeyCode.DownArrow) && ChatHistory.Count > 0)
+        if (AUnlocker.ChatKeyboardShortcuts.Value && Input.GetKeyDown(KeyCode.DownArrow) && ChatHistory.Count > 0)
         {
             CurrentHistorySelection++;
             if (CurrentHistorySelection < ChatHistory.Count)

@@ -67,7 +67,7 @@ public partial class AUnlocker : BasePlugin
         UnlockMinor = Config.Bind("Account", "RemoveMinorStatus", false, "Remove minor status and restrictions (no online play)");
         RemovePenalty = Config.Bind("Account", "NoDisconnectPenalty", true, "Remove the penalty after disconnecting from too many lobbies");
         // Chat
-        ChatKeyboardShortcuts = Config.Bind("Chat", "ChatKeyboardShortcuts", true, "Use Ctrl+C, Ctrl+V and Ctrl+X to copy, paste and cut chat messages");
+        ChatKeyboardShortcuts = Config.Bind("Chat", "ChatKeyboardShortcuts", true, "Use Ctrl+C, Ctrl+V and Ctrl+X to copy, paste and cut chat messages\nUse the up and down arrow keys to scroll through your previously sent chat messages");
         AllowSymbols = Config.Bind("Chat", "AllowSymbols", true, "Be able to send symbols, URLs and Email addresses");
         HigherCharacterLimit = Config.Bind("Chat", "HigherCharacterLimit", true, "Increase the character limit from 100 to 120");
         LowerChatCooldown = Config.Bind("Chat", "LowerChatCooldown", true, "Reduce the chat cooldown from 3s to 2.1s");

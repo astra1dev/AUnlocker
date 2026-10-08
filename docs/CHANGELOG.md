@@ -15,6 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Clamp invalid April Fools Mode config setting values to "None"
 - Bump actions/setup-dotnet from 5 to 6 by [@dependabot] ([#144])
 
+### Fixed
+
+- Make `ChatKeyboardShortcuts` affect the up and down arrow keys to scroll through your previously sent chat messages.
+  This fixes compatibility issues with mods like Project Lotus
+
 ## [1.3.1] - 2026-07-13
 
 This release is compatible with Among Us version `17.4.0` (`2026.6.5`).
