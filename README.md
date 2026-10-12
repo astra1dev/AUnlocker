@@ -67,6 +67,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 |    Among Us Version     |          AUnlocker Version          |
 |:-----------------------:|:-----------------------------------:|
+| `19.0.0` (`2026.9.29`)  | [v1.3.2](../../releases/tag/v1.3.2) |
 | `18.0.0` (`2026.8.18`)  | [v1.3.1](../../releases/tag/v1.3.1) |
 | `17.4.0` (`2026.6.5`)   | [v1.3.1](../../releases/tag/v1.3.1) |
 | `17.3.0` (`2026.3.31`)  | [v1.3.0](../../releases/tag/v1.3.0) |
@@ -91,7 +92,7 @@ The table below lists the most recent AUnlocker release for each Among Us versio
 
 # 💾 Installation
 ## 🪟 Windows
-- [Download](../../releases/latest) either `AUnlocker_v*_Steam_Itch.zip` or `AUnlocker_v*_EpicGames_MicrosoftStore_XboxApp.zip` depending on your edition of Among Us.
+- [Download](../../releases/latest) either `AUnlocker_v*.zip` or `AUnlocker_v*_Itch.zip` depending on your edition of Among Us.
 - Extract the contents of the zip into your Among Us folder. You can find your Among Us folder like this:
   - **Steam:** Right-click Among Us in your library → <kbd>Manage</kbd> → <kbd>Browse local files</kbd>
   - **Epic Games:** Right-click Among Us in your library → <kbd>Manage</kbd> → click the small folder icon next to <kbd>Installation</kbd>

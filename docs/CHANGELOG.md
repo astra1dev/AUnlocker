@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-10-12
+
+This release is compatible with Among Us version `19.0.0` (`2026.9.29`).
+
 ### Changed
 
 - Bump AmongUs.GameLibs.Steam from 2026.8.18 to 2026.9.29 by [@dependabot] ([#179])
+- Rename the releases and GitHub Actions artifacts zip files: `AUnlocker_EpicGames_MicrosoftStore_XboxApp.zip` → `AUnlocker.zip` and `AUnlocker_Steam_Itch.zip` → `AUnlocker_Itch.zip`
+  Since 19.0.0, Among Us is a 64-bit executable on Steam. Only itch is still on 32-bit
 - Bump AmongUs.GameLibs.Steam from 2026.6.5 to 2026.8.18 by [@dependabot] ([#162])
 - Bump BepInEx from 6.0.0-be.735 to 6.0.0-be.785 (Only affects zip files downloaded from releases and GitHub Actions artifacts)
 - Clamp invalid April Fools Mode config setting values to "None"
@@ -22,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.3.1] - 2026-07-13
 
-This release is compatible with Among Us version `17.4.0` (`2026.6.5`).
+This release is compatible with Among Us version `17.4.0` (`2026.6.5`) and `18.0.0` (`2026.8.18`).
 
 ### Added
 
@@ -264,7 +270,8 @@ This release is compatible with Among Us version `2023.10.24`.
 [#162]: https://github.com/astra1dev/AUnlocker/pull/162
 [#179]: https://github.com/astra1dev/AUnlocker/pull/179
 
-[unreleased]: https://github.com/astra1dev/AUnlocker/compare/v1.3.1...HEAD
+[unreleased]: https://github.com/astra1dev/AUnlocker/compare/v1.3.2...HEAD
+[1.3.2]: https://github.com/astra1dev/AUnlocker/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/astra1dev/AUnlocker/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/astra1dev/AUnlocker/compare/v1.2.2...v1.3.0
 [1.2.2]: https://github.com/astra1dev/AUnlocker/compare/v1.2.1...v1.2.2
